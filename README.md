@@ -20,26 +20,26 @@ The database comes pre-seeded with three tiers of user accounts:
 
 ## 📘 Curriculum & Book Structure
 
-The curriculum is structured across 4 progressive parts containing 15 chapters and all **1,601 unabridged past competitive exam questions** (BCS, Primary, University Admission, Bank, and Ministry exams) cross-matched with original lecture notes:
+The curriculum is structured across 4 progressive parts containing 15 chapters and all **1,641 unabridged past competitive exam questions** (BCS, Primary, University Admission, Bank, and Ministry exams) cross-matched with original lecture notes:
 
 | # | Chapter Title | Topic Scope | Question Count | Answer Keys |
 |---|:---|:---|:---:|:---:|
 | 1 | **Nouns & Classification** | Proper, Common, Collective, Material, Abstract, Personified Nouns | **89** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
 | 2 | **Countability & Determiners** | *Few vs Little*, *Many vs Much*, Mass Nouns, Quantifiers | **131** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
-| 3 | **Pronouns & Substituting Words** | Personal, Reflexive, Emphatic, Demonstrative, Indefinite | **88** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
+| 3 | **Pronouns & Substituting Words** | Personal, Reflexive, Emphatic, Demonstrative, Indefinite, **Try To Solve (30 Qs)** | **119** | `ⓐⓑⓒⓓ` + Answer Grid $\rightarrow$ A, B, C, D, E |
 | 4 | **Relative Pronouns & Clauses** | *Who, Whom, Whose, Which, That*, Antecedent rules | **83** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
 | 5 | **Adjectives & Classification** | Attributive, Predicative, Order of Adjectives | **75** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
-| 6 | **Degree of Comparison** | Positive, Comparative, Superlative, Irregular forms | **116** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
+| 6 | **Degree of Comparison** | Positive, Comparative, Superlative, Irregular forms | **117** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
 | 7 | **Adverbs & Modifiers** | Time, Place, Manner, Degree, Frequency, Dangling Modifiers | **93** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
-| 8 | **Verbs & Classification** | Finite, Non-Finite, Transitive, Intransitive, Linking, Stative | **105** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
-| 9 | **Gerunds vs Participles** | Verbal Noun vs Verbal Adjective identification | **71** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
+| 8 | **Verbs & Classification** | Finite, Non-Finite, Transitive, Intransitive, Linking, Stative | **106** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
+| 9 | **Gerunds vs Participles** | Verbal Noun vs Verbal Adjective identification | **72** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
 | 10 | **Tenses & Right Forms of Verbs** | 12 Tenses, time signals, conditionals, causatives | **238** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
-| 11 | **Subject-Verb Agreement** | 17 Comprehensive Rules, compound subjects, tricky connectors | **211** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
+| 11 | **Subject-Verb Agreement** | 17 Comprehensive Rules, compound subjects, tricky connectors | **215** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
 | 12 | **The Subjunctive Mood** | `RUPA IS MODERN` mnemonic, that-clause base forms | **30** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
 | 13 | **Inversion of Verbs** | `BARSHA-NOVA` mnemonic, negative adverb auxiliary inversion | **35** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
-| 14 | **Voice Transformation** | Active to Passive, modals, quasi-passive, prepositions | **130** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
-| 15 | **Narration & Speech** | Direct to Indirect speech across all 5 sentence types | **106** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
-| **Total** | **All 15 Chapters** | **Comprehensive English Grammar** | **1,601 MCQs** | **100% Verified** |
+| 14 | **Voice Transformation** | Active to Passive, modals, quasi-passive, prepositions | **131** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
+| 15 | **Narration & Speech** | Direct to Indirect speech across all 5 sentence types | **107** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
+| **Total** | **All 15 Chapters** | **Comprehensive English Grammar** | **1,641 MCQs** | **100% Verified** |
 
 ---
 
