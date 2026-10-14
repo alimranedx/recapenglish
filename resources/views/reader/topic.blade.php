@@ -137,70 +137,87 @@
 
             <!-- Lecture Text & Grammar Rules Body -->
             <article class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-10 shadow-xs prose prose-slate max-w-none">
-                <div class="text-slate-800 leading-relaxed text-sm sm:text-base space-y-4 whitespace-pre-line font-normal">
-                    {{ $topic->content }}
+                <div class="markdown-content text-slate-800 leading-relaxed text-sm sm:text-base font-normal space-y-4">
+                    {!! Str::markdown($topic->content) !!}
                 </div>
             </article>
 
             <!-- Interactive Practice MCQs / Exam Questions -->
             @if($topic->exercises->count() > 0)
                 <section class="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 shadow-xs space-y-6">
-                    <div class="border-b border-slate-100 pb-4 flex items-center justify-between">
+                    <div class="border-b border-slate-100 pb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                         <div>
-                            <span class="text-[10px] font-black uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded">Interactive Drill</span>
+                            <span class="text-[10px] font-black uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-100">Interactive Drill</span>
                             <h2 class="text-xl font-black text-slate-900 mt-1">Practice Questions & Past Exam MCQs</h2>
                         </div>
-                        <span class="text-xs font-bold text-slate-600 bg-slate-100 px-3 py-1 rounded-full">
-                            {{ $topic->exercises->count() }} Questions
-                        </span>
+                        <div class="flex items-center gap-3">
+                            <span class="text-xs font-bold text-slate-600 bg-slate-100 px-3 py-1 rounded-full">
+                                {{ $topic->exercises->count() }} Questions
+                            </span>
+                            <span class="text-xs font-extrabold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full flex items-center gap-1.5">
+                                <span>Score:</span>
+                                <span id="quiz-score-val">0</span> / <span>{{ $topic->exercises->count() }}</span>
+                            </span>
+                        </div>
                     </div>
 
                     <div class="space-y-6">
+                        @php $optLetters = ['a', 'b', 'c', 'd']; @endphp
                         @foreach($topic->exercises as $index => $exercise)
-                            <div class="p-5 rounded-2xl border border-slate-100 bg-slate-50/50 space-y-3" id="quiz-{{ $exercise->id }}">
+                            <div class="p-5 sm:p-6 rounded-2xl border border-slate-200/80 bg-slate-50/50 space-y-4 transition" id="quiz-{{ $exercise->id }}" data-answered="0" data-correct="0">
                                 <div class="flex items-start justify-between gap-3">
-                                    <div class="flex items-start gap-2.5">
-                                        <span class="w-6 h-6 rounded-full bg-indigo-100 text-indigo-700 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                                    <div class="flex items-start gap-3">
+                                        <span class="w-7 h-7 rounded-xl bg-indigo-600 text-white font-black text-xs flex items-center justify-center shrink-0 shadow-xs">
                                             {{ $index + 1 }}
                                         </span>
-                                        <div class="font-bold text-sm text-slate-900 leading-snug">
+                                        <div class="font-bold text-sm sm:text-base text-slate-900 leading-snug">
                                             {{ $exercise->question }}
                                         </div>
                                     </div>
                                     @if($exercise->exam_reference)
-                                        <span class="text-[10px] font-bold text-sky-700 bg-sky-50 px-2.5 py-0.5 rounded-full shrink-0 border border-sky-100">
+                                        <span class="text-[11px] font-extrabold text-sky-800 bg-sky-50 px-3 py-1 rounded-full shrink-0 border border-sky-100 shadow-2xs">
                                             {{ $exercise->exam_reference }}
                                         </span>
                                     @endif
                                 </div>
 
                                 <!-- Options List (Interactive) -->
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2">
-                                    @foreach($exercise->options as $opt)
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                                    @foreach($exercise->options as $optIndex => $opt)
                                         @php
-                                            // Extract option letter (a, b, c, d)
-                                            preg_match('/^([a-d])[\)\.]\s*(.*)/i', $opt, $matches);
-                                            $letter = strtolower($matches[1] ?? 'a');
-                                            $optText = $matches[2] ?? $opt;
+                                            if (preg_match('/^([a-d])[\)\.]\s*(.*)/i', $opt, $matches)) {
+                                                $letter = strtolower($matches[1]);
+                                                $optText = $matches[2];
+                                            } else {
+                                                $letter = $optLetters[$optIndex] ?? 'a';
+                                                $optText = $opt;
+                                            }
                                         @endphp
                                         <button type="button" 
-                                                onclick="checkAnswer({{ $exercise->id }}, '{{ $letter }}', '{{ strtolower($exercise->correct_answer) }}')"
+                                                onclick="checkAnswer({{ $exercise->id }}, '{{ $letter }}', '{{ strtolower(trim($exercise->correct_answer)) }}')"
                                                 id="opt-{{ $exercise->id }}-{{ $letter }}"
-                                                class="option-btn text-left px-3.5 py-2.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-800 transition flex items-center gap-2">
-                                            <span class="w-5 h-5 rounded-md bg-slate-100 text-slate-700 font-bold text-[11px] flex items-center justify-center shrink-0 uppercase">
+                                                class="option-btn text-left px-4 py-3.5 rounded-xl border border-slate-200 bg-white hover:bg-indigo-50/60 hover:border-indigo-300 text-xs sm:text-sm font-semibold text-slate-800 transition shadow-2xs flex items-center gap-3 cursor-pointer">
+                                            <span class="w-7 h-7 rounded-lg bg-slate-100 text-slate-700 font-black text-xs flex items-center justify-center shrink-0 uppercase border border-slate-200/80">
                                                 {{ $letter }}
                                             </span>
-                                            <span class="truncate">{{ $optText }}</span>
+                                            <span class="flex-1 leading-snug">{{ $optText }}</span>
                                         </button>
                                     @endforeach
                                 </div>
 
                                 <!-- Explanation Box (Revealed upon answering) -->
-                                <div id="expl-{{ $exercise->id }}" class="hidden pt-3 border-t border-slate-200/80 text-xs text-slate-700 space-y-1">
-                                    <div class="font-bold flex items-center gap-1.5" id="status-{{ $exercise->id }}"></div>
+                                <div id="expl-{{ $exercise->id }}" class="hidden pt-3 border-t border-slate-200/80 text-xs text-slate-700 space-y-3">
+                                    <div class="flex items-center justify-between">
+                                        <div class="font-bold flex items-center gap-1.5" id="status-{{ $exercise->id }}"></div>
+                                        <button type="button" onclick="resetQuestion({{ $exercise->id }})" class="text-xs font-bold text-slate-500 hover:text-indigo-600 underline cursor-pointer flex items-center gap-1">
+                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                                            <span>পুনরায় চেষ্টা করুন (Try Again)</span>
+                                        </button>
+                                    </div>
                                     @if($exercise->explanation)
-                                        <div class="bg-indigo-50/70 p-3 rounded-xl border border-indigo-100 text-indigo-900 font-medium">
-                                            <strong>Explanation:</strong> {{ $exercise->explanation }}
+                                        <div class="bg-indigo-50/90 p-4 rounded-xl border border-indigo-100 text-indigo-950 font-medium leading-relaxed">
+                                            <span class="font-extrabold text-indigo-900 block mb-1">💡 ব্যাখ্যা ও নিয়ম (Explanation):</span>
+                                            {{ $exercise->explanation }}
                                         </div>
                                     @endif
                                 </div>
@@ -247,9 +264,19 @@
 
 @push('scripts')
 <script>
+    let currentScore = 0;
+
     function checkAnswer(exerciseId, selectedLetter, correctLetter) {
-        // Disable further clicking for this question
+        selectedLetter = selectedLetter.toLowerCase().trim();
+        correctLetter = correctLetter.toLowerCase().trim();
+
         const container = document.getElementById('quiz-' + exerciseId);
+        if (container.getAttribute('data-answered') === '1') {
+            return;
+        }
+        container.setAttribute('data-answered', '1');
+
+        // Disable options
         const buttons = container.querySelectorAll('.option-btn');
         buttons.forEach(btn => btn.disabled = true);
 
@@ -259,20 +286,58 @@
         const statusSpan = document.getElementById('status-' + exerciseId);
 
         if (selectedLetter === correctLetter) {
-            selectedBtn.classList.remove('bg-white', 'border-slate-200');
-            selectedBtn.classList.add('bg-emerald-500', 'text-white', 'border-emerald-600');
-            statusSpan.innerHTML = '<span class="text-emerald-600 font-extrabold">✓ Correct Answer!</span>';
+            container.setAttribute('data-correct', '1');
+            currentScore++;
+            updateScoreDisplay();
+
+            if (selectedBtn) {
+                selectedBtn.classList.remove('bg-white', 'border-slate-200');
+                selectedBtn.classList.add('bg-emerald-600', 'text-white', 'border-emerald-700', 'shadow-sm');
+            }
+            statusSpan.innerHTML = '<span class="text-emerald-700 font-extrabold text-sm flex items-center gap-1.5"><svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> সঠিক উত্তর (Correct Answer)!</span>';
         } else {
-            selectedBtn.classList.remove('bg-white', 'border-slate-200');
-            selectedBtn.classList.add('bg-rose-500', 'text-white', 'border-rose-600');
+            container.setAttribute('data-correct', '0');
+            if (selectedBtn) {
+                selectedBtn.classList.remove('bg-white', 'border-slate-200');
+                selectedBtn.classList.add('bg-rose-500', 'text-white', 'border-rose-600', 'shadow-sm');
+            }
             if (correctBtn) {
                 correctBtn.classList.remove('bg-white', 'border-slate-200');
-                correctBtn.classList.add('bg-emerald-100', 'text-emerald-900', 'border-emerald-400', 'font-bold');
+                correctBtn.classList.add('bg-emerald-100', 'text-emerald-950', 'border-emerald-500', 'font-bold');
             }
-            statusSpan.innerHTML = `<span class="text-rose-600 font-extrabold">✗ Incorrect. Correct answer is (${correctLetter.toUpperCase()})</span>`;
+            statusSpan.innerHTML = `<span class="text-rose-600 font-extrabold text-sm flex items-center gap-1.5"><svg class="w-5 h-5 text-rose-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg> ভুল উত্তর। সঠিক উত্তর হলো (${correctLetter.toUpperCase()})</span>`;
         }
 
         explBox.classList.remove('hidden');
+    }
+
+    function resetQuestion(exerciseId) {
+        const container = document.getElementById('quiz-' + exerciseId);
+        const wasCorrect = container.getAttribute('data-correct') === '1';
+
+        if (wasCorrect) {
+            currentScore = Math.max(0, currentScore - 1);
+            updateScoreDisplay();
+        }
+
+        container.setAttribute('data-answered', '0');
+        container.setAttribute('data-correct', '0');
+
+        const buttons = container.querySelectorAll('.option-btn');
+        buttons.forEach(btn => {
+            btn.disabled = false;
+            btn.className = 'option-btn text-left px-4 py-3.5 rounded-xl border border-slate-200 bg-white hover:bg-indigo-50/60 hover:border-indigo-300 text-xs sm:text-sm font-semibold text-slate-800 transition shadow-2xs flex items-center gap-3 cursor-pointer';
+        });
+
+        const explBox = document.getElementById('expl-' + exerciseId);
+        explBox.classList.add('hidden');
+    }
+
+    function updateScoreDisplay() {
+        const scoreElem = document.getElementById('quiz-score-val');
+        if (scoreElem) {
+            scoreElem.textContent = currentScore;
+        }
     }
 </script>
 @endpush

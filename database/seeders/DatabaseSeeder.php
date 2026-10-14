@@ -51,8 +51,11 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        // 2. Load Processed Book Data
-        $jsonPath = database_path('processed_book_data.json');
+        // 2. Load Curated Book Data
+        $jsonPath = database_path('curated_book_data.json');
+        if (!File::exists($jsonPath)) {
+            $jsonPath = database_path('processed_book_data.json');
+        }
         if (File::exists($jsonPath)) {
             $partsData = json_decode(File::get($jsonPath), true);
 

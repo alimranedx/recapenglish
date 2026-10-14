@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminManagementController;
 use App\Http\Controllers\Admin\ChapterController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ExerciseController;
 use App\Http\Controllers\Admin\PartController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\TopicController;
@@ -57,8 +58,11 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
 
     // Topics Management (Existing & New Topics)
     Route::resource('topics', TopicController::class)->except(['show']);
-    Route::post('topics/{topic}/exercises', [TopicController::class, 'addExercise'])->name('topics.exercises.store');
-    Route::delete('exercises/{exercise}', [TopicController::class, 'deleteExercise'])->name('topics.exercises.destroy');
+    Route::post('topics/{topic}/exercises', [ExerciseController::class, 'store'])->name('topics.exercises.store');
+
+    // Questions & MCQs Management
+    Route::resource('exercises', ExerciseController::class)->except(['show']);
+    Route::delete('topics/exercises/{exercise}', [ExerciseController::class, 'destroy'])->name('topics.exercises.destroy');
 
     // Learners / Students tracking
     Route::get('students', [StudentController::class, 'index'])->name('students.index');

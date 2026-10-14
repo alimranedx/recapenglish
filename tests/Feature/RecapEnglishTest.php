@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Models\Chapter;
+use App\Models\Exercise;
 use App\Models\Part;
 use App\Models\Topic;
 use App\Models\User;
@@ -141,5 +142,59 @@ class RecapEnglishTest extends TestCase
             'email' => 'editor2@recapenglish.com',
             'role' => 'admin',
         ]);
+    }
+
+    public function test_admin_can_manage_and_update_exercises(): void
+    {
+        $admin = User::where('role', 'admin')->first();
+        $topic = Topic::first();
+
+        // 1. Admin views questions index
+        $response = $this->actingAs($admin)->get(route('admin.exercises.index'));
+        $response->assertStatus(200);
+
+        // 2. Admin adds a new practice question
+        $createResponse = $this->actingAs($admin)->post(route('admin.exercises.store'), [
+            'topic_id' => $topic->id,
+            'question' => 'Which one is a Proper Noun?',
+            'option_a' => 'Bangladesh',
+            'option_b' => 'Country',
+            'option_c' => 'River',
+            'option_d' => 'City',
+            'correct_answer' => 'a',
+            'exam_reference' => 'BCS 40th',
+            'explanation' => 'Bangladesh কোনো নির্দিষ্ট দেশের নিজস্ব নাম, তাই এটি Proper Noun।',
+        ]);
+
+        $createResponse->assertSessionHas('success');
+        $exercise = Exercise::where('question', 'Which one is a Proper Noun?')->first();
+        $this->assertNotNull($exercise);
+        $this->assertEquals('a', $exercise->correct_answer);
+
+        // 3. Admin edits and updates the question & answer
+        $editResponse = $this->actingAs($admin)->get(route('admin.exercises.edit', $exercise->id));
+        $editResponse->assertStatus(200);
+
+        $updateResponse = $this->actingAs($admin)->put(route('admin.exercises.update', $exercise->id), [
+            'topic_id' => $topic->id,
+            'question' => 'Which one is a Proper Noun? (Updated)',
+            'option_a' => 'Bangladesh',
+            'option_b' => 'River',
+            'option_c' => 'Water',
+            'option_d' => 'Team',
+            'correct_answer' => 'a',
+            'exam_reference' => 'BCS 40th & 41st',
+            'explanation' => 'Proper Noun সর্বদা Capital letter দিয়ে শুরু হয়।',
+        ]);
+
+        $updateResponse->assertSessionHas('success');
+        $exercise->refresh();
+        $this->assertEquals('Which one is a Proper Noun? (Updated)', $exercise->question);
+        $this->assertEquals('BCS 40th & 41st', $exercise->exam_reference);
+
+        // 4. Admin deletes the question
+        $deleteResponse = $this->actingAs($admin)->delete(route('admin.exercises.destroy', $exercise->id));
+        $deleteResponse->assertSessionHas('success');
+        $this->assertDatabaseMissing('exercises', ['id' => $exercise->id]);
     }
 }

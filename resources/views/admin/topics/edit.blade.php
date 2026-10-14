@@ -111,10 +111,14 @@
                                     {{ $ex->exam_reference }}
                                 </span>
                             @endif
+                            <a href="{{ route('admin.exercises.edit', $ex->id) }}" class="text-indigo-600 hover:text-indigo-800 font-bold hover:underline text-xs">
+                                Edit
+                            </a>
+                            <span class="text-slate-300">•</span>
                             <form action="{{ route('admin.topics.exercises.destroy', $ex->id) }}" method="POST" onsubmit="return confirm('Remove this question?');">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="text-rose-600 hover:text-rose-800 font-bold hover:underline">
+                                <button type="submit" class="text-rose-600 hover:text-rose-800 font-bold hover:underline text-xs">
                                     Remove
                                 </button>
                             </form>

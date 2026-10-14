@@ -1,0 +1,1023 @@
+[
+  {
+    "title": "Part I: The Building Blocks (Parts of Speech)",
+    "description": "Foundational grammatical components, classifications, determiners, modifiers, and degrees of comparison.",
+    "order": 1,
+    "chapters": [
+      {
+        "title": "Chapter 1: Nouns & Classification",
+        "slug": "chapter-1-nouns-classification",
+        "summary": "Master Concrete, Abstract, Proper, Common, Collective, Material, and Personified Proper Nouns with competitive exam rules.",
+        "order": 1,
+        "mnemonics": "Capitalization Rule: Proper Nouns সর্বদা Capital letter দিয়ে শুরু হয়। Personified Nouns জড়বস্তু বা ধারণাকে জীবন্ত রূপে তুলে ধরে।",
+        "topics": [
+          {
+            "title": "Nouns & Classification - Core Concepts & Rules",
+            "slug": "chapter-1-nouns-classification-core-concepts",
+            "mnemonics": "Proper Noun = সর্বদা Capital Letter; Personified Noun = বিমূর্ত ভাব বা জড়বস্তুকে দেব/দেবী বা জীবন্ত রূপে কল্পনা।",
+            "estimated_read_time": 8,
+            "order": 1,
+            "content": "## ১. Noun কাকে বলে? (Definition)\n**Noun** শব্দের অর্থ **নাম**। অর্থাৎ যে Word দ্বারা কোনো ব্যক্তি, বস্তু, স্থান, গুণ, অবস্থা বা কার্যের নাম বোঝায়, তাকে **Noun** বলে।\n\n> **উদাহরণ:** Bangladesh, Karim, Dhaka, team, gold, honesty, student, river, Naruto, Hinata ইত্যাদি।\n\n---\n\n## ২. Noun-এর প্রধান শ্রেণিবিভাগ (Classification of Noun)\nNoun প্রধানত **২ প্রকার**:\n1. **Concrete Noun (ইন্দ্রিয়গ্রাহ্য নাম):** যা ইন্দ্রিয়ের সাহায্যে দেখা, ছোঁয়া বা অনুভব করা যায়।\n2. **Abstract Noun (গুণবাচক নাম):** যা দেখা বা ছোঁয়া যায় না, কেবল অনুভব করা যায় (যেমন: Honesty, Kindness, Freedom)।\n\n### Concrete Noun আবার ৪ প্রকার:\n* **Proper Noun (নামবাচক বিশেষ্য):** কোনো নির্দিষ্ট ব্যক্তি, স্থান বা বস্তুর নিজস্ব নাম।\n* **Common Noun (জাতিবাচক বিশেষ্য):** একজাতীয় সকলের সাধারণ নাম (যেমন: boy, river, city)।\n* **Collective Noun (সমষ্টিবাচক বিশেষ্য):** ব্যক্তি বা বস্তুর অবিভক্ত সমষ্টি (যেমন: army, class, team, jury)।\n* **Material Noun (বস্তুবাচক বিশেষ্য):** কোনো পদার্থের সমুদয় অংশ যা গণনা করা যায় না, পরিমাপ করা যায় (যেমন: water, gold, iron, milk)।\n\n| Noun-এর প্রকারভেদ | বৈশিষ্ট্য | উদাহরণ |\n| :--- | :--- | :--- |\n| **Proper Noun** | সর্বদা Capital Letter দিয়ে শুরু হয়; নির্দিষ্ট নাম বোঝায়। | Dhaka, Bangladesh, The Padma, Karim |\n| **Common Noun** | একজাতীয় সকলের সাধারণ নাম; গণনা করা যায়। | man, student, city, river, book, cow |\n| **Collective Noun** | সমজাতীয় কিছুর অবিভক্ত সমষ্টি; সাধারণত Singular Verb নেয়। | team, committee, army, crowd, fleet |\n| **Material Noun** | পদার্থের নাম; পরিমাপযোগ্য কিন্তু গণনা করা যায় না। | water, gold, rice, silver, oil |\n| **Abstract Noun** | গুণ, অবস্থা বা কাজের নাম; অনুভবযোগ্য। | honesty, beauty, courage, childhood, love |\n\n---\n\n## ৩. Proper Noun-এর গুরুত্বপূর্ণ নিয়ম ও ব্যতিক্রম\n1. **Capital Letter নিয়ম:** Proper Noun সর্বদা **Capital Letter** দিয়ে শুরু হয়।\n2. **Article নিয়ম:** সাধারণত Proper Noun-এর পূর্বে `the` বা কোনো Article বসে না।\n   * *ভুল:* I live in the Dhaka.\n   * *সঠিক:* I live in Dhaka.\n3. **ব্যতিক্রম (The ব্যবহারের নিয়ম):** \n   নদী, সাগর, মহাসাগর, উপসাগর, সংবাদপত্র, জাহাজ, এরোপ্লেন, ট্রেন, বিখ্যাত অট্টালিকা, পর্বতমালা, দ্বীপপুঞ্জ, মরুভূমি, ধর্মগ্রন্থ ও দিক ইত্যাদির নামের পূর্বে সর্বদা **`The`** বসে।\n   * *উদাহরণ:* The Padma, The Daily Star, The Himalayas, The Titanic, The Quran, The Pacific Ocean.\n\n---\n\n## ৪. Personified Proper Noun (ব্যক্তি বা দেবীরূপে কল্পনা)\nযখন কোনো অমূর্ত ধারণা (Abstract Noun - যেমন: ভাগ্য, মৃত্যু, সময়, প্রকৃতি) বা জড়বস্তুকে মানুষের মতো গুণাবলি দিয়ে উপস্থাপন করা হয় এবং দেবতা বা দেবীরূপে কল্পনা করা হয়, তখন সেটিকে **Personified Proper Noun** বলে। এর প্রথম অক্ষর Capital Letter হয়।\n\n| বাক্য (Example Sentence) | ব্যাখ্যা ও ভাবার্থ |\n| :--- | :--- |\n| **He is a child of Fortune.** | ভাগ্যকে এখানে 'দেবী' (Goddess) রূপে কল্পনা করা হয়েছে। |\n| **Death comes to all.** | মৃত্যুকে এখানে একজন জীবন্ত আগন্তুক হিসেবে কল্পনা করা হয়েছে। |\n| **Time waits for none.** | সময়কে মানুষের মতো এক অপরাজেয় শক্তি হিসেবে দেখানো হয়েছে। |\n| **Nature is healing herself.** | প্রকৃতিকে এখানে জীবন্ত সত্তা হিসেবে উপস্থাপন করা হয়েছে। |\n| **Justice is blind.** | ন্যায়বিচারকে একজন অন্ধ দেবী হিসেবে কল্পনা করা হয়েছে। |\n| **Fate controls his life.** | ভাগ্যকে এখানে মানুষের জীবনের নিয়ন্ত্রক রূপে কল্পনা করা হয়েছে। |\n\n---\n\n## ৫. Common Noun ও Collective Noun চেনার বিশেষ টেকনিক\n* **Common Noun:** এটি হলো Proper Noun-এর শ্রেণিগত সমষ্টি। যেমন— Karim, Rahim প্রত্যেকেই Proper Noun, কিন্তু তাদের শ্রেণি হলো `man` বা `boy` (Common Noun)।\n* **Collective Noun:** যখন কোনো দল একসঙ্গে এককভাবে কাজ করে, তখন তা Collective Noun হিসেবে Singular Verb গ্রহণ করে। কিন্তু দলের সদস্যদের মধ্যে মতভেদ দেখা দিলে তাকে **Noun of Multitude** বলে এবং তখন Plural Verb গ্রহণ করে।\n  * *The jury was unanimous in its decision.* (সবাই একমত → Singular)\n  * *The jury were divided in their opinions.* (মতভেদ → Plural)",
+            "exercises": [
+              {
+                "question": "We met at McDonalds at noon. The word \"McDonalds\" is a _____ noun.",
+                "options": [
+                  "a) common noun",
+                  "b) proper noun",
+                  "c) collective noun",
+                  "d) material noun"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "Competitive Exam",
+                "explanation": "McDonalds একটি নির্দিষ্ট রেস্তোরাঁর নিজস্ব নাম এবং Capital letter দিয়ে শুরু হয়েছে, তাই এটি Proper Noun।"
+              },
+              {
+                "question": "My favourite movie is Avengers. Here 'Avengers' is a _____.",
+                "options": [
+                  "a) proper noun",
+                  "b) common noun",
+                  "c) collective noun",
+                  "d) material noun"
+                ],
+                "correct_answer": "a",
+                "exam_reference": "Admission Test",
+                "explanation": "কোনো নির্দিষ্ট সিনেমা, বই বা সাহিত্যকর্মের নাম Proper Noun হিসেবে গণ্য হয়।"
+              },
+              {
+                "question": "_____ is a river.",
+                "options": [
+                  "a) padma",
+                  "b) the Padma",
+                  "c) Padmas",
+                  "d) The Padma"
+                ],
+                "correct_answer": "d",
+                "exam_reference": "RU 06-07",
+                "explanation": "নদীর নামের পূর্বে সর্বদা Article 'The' বসে এবং Proper Noun হওয়ার কারণে প্রথম অক্ষর Capital Letter (The Padma) হবে।"
+              },
+              {
+                "question": "The name of one particular person, thing or place is called: ",
+                "options": [
+                  "a) common noun",
+                  "b) abstract noun",
+                  "c) collective noun",
+                  "d) proper noun"
+                ],
+                "correct_answer": "d",
+                "exam_reference": "PEST (CSE) 13-14",
+                "explanation": "কোনো নির্দিষ্ট (particular) ব্যক্তি, স্থান বা বস্তুর নামকে Proper Noun বলা হয়।"
+              },
+              {
+                "question": "The word \"Interjection\" is a/an _____.",
+                "options": [
+                  "a) common noun",
+                  "b) abstract noun",
+                  "c) collective noun",
+                  "d) proper noun"
+                ],
+                "correct_answer": "a",
+                "exam_reference": "RU Admission",
+                "explanation": "ব্যাকরণের বিভিন্ন পারিভাষিক শব্দ (Noun, Pronoun, Verb, Interjection ইত্যাদি) মূলত Common Noun হিসেবে ব্যবহৃত হয়।"
+              },
+              {
+                "question": "Which of the following is a Collective Noun?",
+                "options": [
+                  "a) Teacher",
+                  "b) Fleet",
+                  "c) Gold",
+                  "d) Honesty"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "38th BCS",
+                "explanation": "Fleet (একঝাঁক যুদ্ধজাহাজ বা জাহাজের বহর) একদল জাহাজের সমষ্টিকে বোঝায়, তাই এটি Collective Noun।"
+              },
+              {
+                "question": "In the sentence 'He is a child of Fortune', the word 'Fortune' is a _____.",
+                "options": [
+                  "a) Common Noun",
+                  "b) Material Noun",
+                  "c) Personified Proper Noun",
+                  "d) Collective Noun"
+                ],
+                "correct_answer": "c",
+                "exam_reference": "Admission Model",
+                "explanation": "এখানে ভাগ্যকে (Fortune) জড়বস্তু বা সাধারণ ধারণার পরিবর্তে একজন দেবীরূপে জীবন্ত গণ্য করা হয়েছে, তাই এটি Personified Proper Noun।"
+              },
+              {
+                "question": "The jury _____ divided in their opinions.",
+                "options": [
+                  "a) was",
+                  "b) were",
+                  "c) is",
+                  "d) has been"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "Bank SO 2019",
+                "explanation": "Collective Noun-এর সদস্যদের মধ্যে বিভক্তি বা মতবিরোধ (divided) বোঝালে তাকে Noun of Multitude বলে এবং এরপরে Plural Verb (were) বসে।"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Chapter 2: Countability & Determiners",
+        "slug": "chapter-2-countability-determiners",
+        "summary": "Master Countable vs Uncountable nouns, quantifiers (few, little, many, much), and agreement rules.",
+        "order": 2,
+        "mnemonics": "Few/Many = Countable Noun; Little/Much = Uncountable Noun. Only-এর পর সর্বদা 'a' থাকবে (only a few, only a little)।",
+        "topics": [
+          {
+            "title": "Countability & Determiners - Core Concepts & Rules",
+            "slug": "chapter-2-countability-determiners-core-concepts",
+            "mnemonics": "Few (নাই বললেই চলে - Countable) | Little (নাই বললেই চলে - Uncountable) | A few / A little (কিছু পরিমাণ আছে)।",
+            "estimated_read_time": 8,
+            "order": 1,
+            "content": "## ১. Countable ও Uncountable Noun কী?\n\n* **Countable Noun (গণনাযোগ্য নাম):** যে সকল Noun-কে সংখ্যা দিয়ে পৃথকভাবে গণনা করা যায়।\n  * *যেমন:* book, pen, boy, star, student, chair, tree ইত্যাদি।\n  * *বৈশিষ্ট্য:* এদের পূর্বে `a/an` বা সংখ্যাবাচক শব্দ বসতে পারে এবং এদের Plural রূপ (s/es) হয়। যেমন: *a job → jobs, a machine → machines, five books*।\n* **Uncountable Noun (অগণনযোগ্য নাম):** যে সকল Noun-কে সংখ্যা দিয়ে গণনা করা যায় না, শুধু পরিমাণ নির্ধারণ করা যায়।\n  * *যেমন:* water, milk, rice, money, news, advice, equipment, furniture, luggage, baggage, scenery, traffic, weather, information, knowledge, bread ইত্যাদি।\n  * *বৈশিষ্ট্য:* এদের পূর্বে সরাসরি সংখ্যা বা `a/an` বসে না এবং এদের Plural রূপ (s/es) হয় না। এরা সর্বদা **Singular Verb** গ্রহণ করে।\n\n---\n\n## ২. বিশেষ Uncountable Noun যা পরীক্ষায় বারবার আসে\nপরীক্ষায় সবচেয়ে বেশি আসা বিভ্রান্তিকর Uncountable শব্দগুলো হলো:\n* **Advice, Information, Knowledge, Progress, Research**\n* **Equipment, Furniture, Luggage, Baggage, Machinery**\n* **Bread, Food, Meat, Sugar, Salt, Water, Milk**\n* **Traffic, Travel, Scenery, Weather, Poetry**\n\n> **গুরুত্বপূর্ণ পার্থক্য:**\n> * `Advertising` = **Uncountable** কিন্তু `Advertisements` = **Countable**\n> * `Poetry` = **Uncountable** কিন্তু `Poem` / `Poems` = **Countable**\n> * `Scenery` = **Uncountable** কিন্তু `Scene` / `Scenes` = **Countable**\n> * `Traffic` = **Uncountable** কিন্তু `Vehicles` = **Countable**\n\n---\n\n## ৩. Determiners (Few বনাম Little / Many বনাম Much)\n\n| Determiner | ব্যবহার (Usage) | অর্থ ও রূপ | উদাহরণ |\n| :--- | :--- | :--- | :--- |\n| **Few** | Countable Plural Noun | নেই বললেই চলে (Negative sense) | He has **few** friends. (তার বন্ধু নেই বললেই চলে) |\n| **A few** | Countable Plural Noun | কিছু সংখ্যক (Positive sense) | I have **a few** books. (আমার কয়েকটি বই আছে) |\n| **The few** | Countable Plural Noun | নির্দিষ্ট স্বল্পসংখ্যক | **The few** friends he had left him. |\n| **Little** | Uncountable Noun | নেই বললেই চলে (Negative sense) | There is **little** water in the glass. |\n| **A little** | Uncountable Noun | অল্প পরিমাণ আছে (Positive sense) | I have **a little** money left. |\n| **The little** | Uncountable Noun | নির্দিষ্ট অল্প পরিমাণ | He spent **the little** money he had. |\n| **Many** | Countable Plural Noun | অনেক / বহু | She has **many** friends. |\n| **Much** | Uncountable Noun | প্রচুর / অধিক | He doesn't have **much** time. |\n\n---\n\n## ৪. শর্টকাট রুল (Only এর ব্যবহার)\nবাক্যে `only` থাকলে তার পরে সর্বদা Article **`a`** বসবে:\n* `only a few` (Countable-এর জন্য)\n* `only a little` (Uncountable-এর জন্য)",
+            "exercises": [
+              {
+                "question": "Which of the following is an Uncountable Noun?",
+                "options": [
+                  "a) Pen",
+                  "b) Furniture",
+                  "c) Book",
+                  "d) Star"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "29th BCS",
+                "explanation": "Furniture সামগ্রিক আসবাবপত্র বোঝায় এবং এটি সর্বদা Uncountable Noun হিসেবে ব্যবহৃত হয়।"
+              },
+              {
+                "question": "I have _____ friends in the city, so I feel lonely.",
+                "options": [
+                  "a) a few",
+                  "b) few",
+                  "c) little",
+                  "d) a little"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "DU Admission",
+                "explanation": "যেহেতু সে একাকী (lonely) অনুভব করে, তাই বন্ধু নেই বললেই চলে (Negative sense)। Friends গণনাযোগ্য হওয়ায় 'few' হবে।"
+              },
+              {
+                "question": "There is _____ milk in the fridge, enough for a cup of tea.",
+                "options": [
+                  "a) little",
+                  "b) a little",
+                  "c) few",
+                  "d) a few"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "Bank Exam",
+                "explanation": "দুধ (milk) একটি Uncountable noun এবং এক কাপ চা তৈরির মতো অল্প কিছু দুধ আছে (Positive sense) বোঝাতে 'a little' ব্যবহৃত হয়।"
+              },
+              {
+                "question": "He has only _____ friends in Dhaka.",
+                "options": [
+                  "a) few",
+                  "b) a few",
+                  "c) little",
+                  "d) a little"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "Medical Admission",
+                "explanation": "Only-এর পর সর্বদা 'a' বসে (only a few / only a little)। Friends গণনাযোগ্য হওয়ায় 'only a few' সঠিক।"
+              },
+              {
+                "question": "Which sentence is correct?",
+                "options": [
+                  "a) He gave me many advices.",
+                  "b) He gave me much advice.",
+                  "c) He gave me an advice.",
+                  "d) He gave me many advice."
+                ],
+                "correct_answer": "b",
+                "exam_reference": "36th BCS",
+                "explanation": "Advice একটি Uncountable Noun, তাই এর সাথে s/es যুক্ত হয় না এবং এর পূর্বে 'much' বসে।"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Chapter 3: Pronouns & Substituting Words",
+        "slug": "chapter-3-pronouns-substituting-words",
+        "summary": "Pronoun classification (8 types), case forms, 231 vs 123 rules, and indefinite pronouns.",
+        "order": 3,
+        "mnemonics": "সাধারণ ক্ষেত্রে Person-এর ক্রম: ২-৩-১ (You, he and I)। কিন্তু দোষ বা অপরাধ স্বীকারে ক্রম: ১-২-৩ (I, you and he)।",
+        "topics": [
+          {
+            "title": "Pronouns & Substituting Words - Core Concepts & Rules",
+            "slug": "chapter-3-pronouns-substituting-words-core-concepts",
+            "mnemonics": "স্বাভাবিক ক্ষেত্রে: 2-3-1 (2nd -> 3rd -> 1st person)। দোষ বা ভুল স্বীকারে: 1-2-3 (1st -> 2nd -> 3rd person)।",
+            "estimated_read_time": 9,
+            "order": 1,
+            "content": "## ১. Pronoun কী? (Substituting Word)\nNoun-এর পুনরাবৃত্তি দূর করার জন্য Noun-এর পরিবর্তে যে Word ব্যবহৃত হয়, তাকে **Pronoun** বলে। এ কারণে Pronoun-কে **Substituting Word** বা প্রতিস্থাপিত শব্দ বলা হয়।\n\n> **উদাহরণ:** Karim is a good boy. **He** goes to school regularly. (এখানে Karim-এর পরিবর্তে He বসেছে)।\n\n---\n\n## ২. Pronoun-এর ৮টি প্রকারভেদ (8 Types of Pronouns)\n\n1. **Personal Pronoun:** ব্যক্তি বা বস্তুর পরিবর্তে বসে (I, we, you, he, she, they, it)।\n2. **Demonstrative Pronoun:** কোনো নির্দিষ্ট ব্যক্তি বা বস্তুকে নির্দেশ করে (this, that, these, those, such)।\n3. **Interrogative Pronoun:** প্রশ্ন করার জন্য ব্যবহৃত হয় (who, which, what, whom, whose)।\n4. **Relative Pronoun:** দুটি Clause-কে যুক্ত করে সম্পর্ক স্থাপন করে (who, which, that, whom, whose)।\n5. **Indefinite Pronoun:** কোনো অনির্দিষ্ট ব্যক্তি বা বস্তুকে বোঝায় (one, someone, anyone, somebody, all, many, none, few)।\n6. **Distributive Pronoun:** একজাতীয় ব্যক্তি বা বস্তুর প্রত্যেকটিকে আলাদাভাবে বোঝায় (each, either, neither)।\n7. **Reflexive & Emphatic Pronoun:** Subject ও Object একই ব্যক্তি হলে `self/selves` যুক্ত Pronoun বসে (myself, himself, themselves)।\n8. **Reciprocal Pronoun:** পারস্পরিক সম্পর্ক বোঝায় (**each other** - দুজনের মধ্যে, **one another** - অনেকের মধ্যে)।\n\n---\n\n## ৩. Personal Pronoun ব্যবহারের ২-৩-১ ও ১-২-৩ নিয়ম\n\n### (A) স্বাভাবিক বা প্রশংসনীয় কাজে ক্রম: ২-৩-১ (2nd → 3rd → 1st)\nযখন একাধিক Person একসাথে Subject হিসেবে বসে, তখন ক্রম হবে: **2nd Person + 3rd Person + 1st Person**।\n* *সঠিক:* **You, he and I** are friends.\n* *ভুল:* I, you and he are friends.\n\n### (B) দোষ, অপরাধ বা ভুল স্বীকারে ক্রম: ১-২-৩ (1st → 2nd → 3rd)\nযখন কোনো অন্যায়, ভুল বা অপরাধ স্বীকার করা হয়, তখন ক্রম হবে: **1st Person + 2nd Person + 3rd Person**।\n* *সঠিক:* **I, you and he** are guilty.\n* *ভুল:* You, he and I are guilty.\n\n---\n\n## ৪. Case Forms of Pronouns\n\n| Subjective | Objective | Possessive Adjective | Possessive Pronoun | Reflexive |\n| :--- | :--- | :--- | :--- | :--- |\n| **I** | me | my | mine | myself |\n| **We** | us | our | ours | ourselves |\n| **You** | you | your | yours | yourself / yourselves |\n| **He** | him | his | his | himself |\n| **She** | her | her | hers | herself |\n| **They** | them | their | theirs | themselves |\n| **It** | it | its | its | itself |\n| **One** | one | one's | — | oneself |\n\n> **সতর্কতা:** `One` যদি Subject হয়, তবে তার Possessive রূপ সর্বদা **`one's`** হবে (`his` হবে না)।\n> * *সঠিক:* One should do **one's** duty.",
+            "exercises": [
+              {
+                "question": "A word that takes the place of a noun is called a/an _____.",
+                "options": [
+                  "a) subject",
+                  "b) adverb",
+                  "c) pronoun",
+                  "d) object"
+                ],
+                "correct_answer": "c",
+                "exam_reference": "Govt Recruitment 2019",
+                "explanation": "Noun-এর স্থানে যে শব্দ বসে তাকে Pronoun বা Substituting word বলা হয়।"
+              },
+              {
+                "question": "Which of the following is correct?",
+                "options": [
+                  "a) I, you and he are present.",
+                  "b) You, he and I are present.",
+                  "c) He, you and I are present.",
+                  "d) You, I and he are present."
+                ],
+                "correct_answer": "b",
+                "exam_reference": "BCS & Admission",
+                "explanation": "স্বাভাবিক বাক্যে একাধিক Person থাকলে ক্রম হবে ২-৩-১ (You, he and I)।"
+              },
+              {
+                "question": "Which sentence indicates admission of guilt correctly?",
+                "options": [
+                  "a) You, he and I are guilty.",
+                  "b) He, you and I are guilty.",
+                  "c) I, you and he are guilty.",
+                  "d) You, I and he are guilty."
+                ],
+                "correct_answer": "c",
+                "exam_reference": "DU Admission",
+                "explanation": "দোষ বা অপরাধ স্বীকার করার ক্ষেত্রে Person-এর ক্রম হয় ১-২-৩ (I, you and he)।"
+              },
+              {
+                "question": "One should do _____ duty.",
+                "options": [
+                  "a) his",
+                  "b) her",
+                  "c) one's",
+                  "d) their"
+                ],
+                "correct_answer": "c",
+                "exam_reference": "35th BCS",
+                "explanation": "Subject যদি 'One' হয়, তবে তার Possessive রূপে সর্বদা 'one's' বসে।"
+              },
+              {
+                "question": "The two brothers love _____.",
+                "options": [
+                  "a) one another",
+                  "b) each other",
+                  "c) themselves",
+                  "d) each"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "RU Law 2015",
+                "explanation": "দুজনের মধ্যে পারস্পরিক সম্পর্ক বোঝাতে 'each other' এবং দুইয়ের বেশির মধ্যে 'one another' বসে।"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Chapter 4: Relative Pronouns & Clauses",
+        "slug": "chapter-4-relative-pronouns-clauses",
+        "summary": "Who vs Whom vs Whose vs Which vs That, antecedent agreement rules, and complex sentences.",
+        "order": 4,
+        "mnemonics": "Subject Form = Who; Object Form = Whom; Possessive = Whose; বস্তু/প্রাণী = Which / That।",
+        "topics": [
+          {
+            "title": "Relative Pronouns & Clauses - Core Concepts & Rules",
+            "slug": "chapter-4-relative-pronouns-clauses-core-concepts",
+            "mnemonics": "Antecedent (পূর্বপদ) ব্যক্তি হলে Who/Whom; বস্তু বা প্রাণী হলে Which/That। Verb সর্বদা Antecedent অনুযায়ী বসে।",
+            "estimated_read_time": 7,
+            "order": 1,
+            "content": "## ১. Relative Pronoun কী?\nযে Pronoun বাক্যের পূর্ববর্তী কোনো Noun বা Pronoun-এর পরে বসে তার সাথে সম্পর্ক স্থাপন করে এবং দুটি বাক্য বা Clause-কে যুক্ত করে, তাকে **Relative Pronoun** বলে। \n\n> Relative Pronoun যে Noun বা Pronoun-এর পরে বসে তাকে নির্দেশ করে, তাকে **Antecedent (পূর্বপদ)** বলা হয়।\n> * *উদাহরণ:* I know the man **who** came here yesterday. (এখানে `the man` হলো Antecedent এবং `who` হলো Relative Pronoun)।\n\n---\n\n## ২. Relative Pronoun-এর রূপসমূহ\n\n| কেস (Case Form) | ব্যক্তিবাচক (Person) | বস্তু/প্রাণীবাচক (Thing/Animal) |\n| :--- | :--- | :--- |\n| **Subjective** | **Who** / **Whoever** | **Which** / **That** |\n| **Objective** | **Whom** / **Whomever** | **Which** / **That** |\n| **Possessive** | **Whose** | **Of which** / **Whose** |\n\n---\n\n## ৩. গুরুত্বপূর্ণ নিয়মসমূহ\n\n### নিয়ম ১: Verb সর্বদা Antecedent অনুযায়ী নির্ধারিত হয়\nRelative Pronoun-এর পরবর্তী Verb সর্বদা তার পূর্ববর্তী **Antecedent-এর Number ও Person** অনুযায়ী বসে।\n* *ভুল:* It is I who is to blame.\n* *সঠিক:* It is I who **am** to blame. (I অনুযায়ী am হয়েছে)\n* *ভুল:* It is he who have done this.\n* *সঠিক:* It is he who **has** done this. (He অনুযায়ী has হয়েছে)\n\n### নিয়ম ২: Who বনাম Whom-এর পার্থক্য\n* **Who:** যখন Verb-এর জন্য একজন **Subject** প্রয়োজন হয়।\n  * *The girl **who** won the prize is my sister.*\n* **Whom:** যখন Preposition-এর পরে বা অন্য কোনো Subject-এর **Object** হিসেবে বসে।\n  * *The boy **whom** you met yesterday is an artist.*\n  * *The man to **whom** I spoke was very kind.*\n\n### নিয়ম ৩: That ব্যবহারের বিশেষ ক্ষেত্র\nসাধারণত `All, any, only, the same, none, much, little` এবং **Superlative Degree**-এর পরে Relative Pronoun হিসেবে `who` বা `which`-এর পরিবর্তে **`that`** বসে।\n* *All **that** glitters is not gold.*\n* *This is the best book **that** I have ever read.*",
+            "exercises": [
+              {
+                "question": "It is I who _____ to blame.",
+                "options": [
+                  "a) is",
+                  "b) am",
+                  "c) are",
+                  "d) was"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "BRUR 14-15",
+                "explanation": "Relative Pronoun 'who'-এর পূর্ববর্তী Antecedent হলো 'I'। তাই I-এর সাথে সামঞ্জস্য রেখে verb 'am' বসবে।"
+              },
+              {
+                "question": "I know the man _____ done this.",
+                "options": [
+                  "a) whom has",
+                  "b) who has",
+                  "c) which has",
+                  "d) whose has"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "IU 07-08",
+                "explanation": "যেহেতু 'has done' verb-এর একটি Subject প্রয়োজন এবং Antecedent ব্যক্তি (the man), তাই Subjective রূপ 'who' হবে।"
+              },
+              {
+                "question": "This is the boy _____ father is a doctor.",
+                "options": [
+                  "a) who",
+                  "b) whom",
+                  "c) whose",
+                  "d) which"
+                ],
+                "correct_answer": "c",
+                "exam_reference": "RU Admission",
+                "explanation": "বালকের বাবার সাথে মালিকানা বা সম্বন্ধ (Possessive) বোঝানো হয়েছে, তাই 'whose' সঠিক।"
+              },
+              {
+                "question": "All _____ glitters is not gold.",
+                "options": [
+                  "a) which",
+                  "b) that",
+                  "c) what",
+                  "d) who"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "32nd BCS",
+                "explanation": "'All'-এর পরে Relative Pronoun হিসেবে 'which'-এর পরিবর্তে 'that' বসে।"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Chapter 5: Adjectives & Classification",
+        "slug": "chapter-5-adjectives-classification",
+        "summary": "Attributive vs Predicative adjectives, 8 kinds of adjectives, and adjective order.",
+        "order": 5,
+        "mnemonics": "Predicative-only Adjectives: alike, afraid, alive, aloof, asleep, ashamed, alone, awake, content।",
+        "topics": [
+          {
+            "title": "Adjectives & Classification - Core Concepts & Rules",
+            "slug": "chapter-5-adjectives-classification-core-concepts",
+            "mnemonics": "Attributive = Noun-এর পূর্বে বসে (a smart boy); Predicative = Linking Verb-এর পরে বসে (He is smart)।",
+            "estimated_read_time": 7,
+            "order": 1,
+            "content": "## ১. Adjective কী? (Qualifying / Modifying Word)\nযে Word কোনো Noun বা Pronoun-এর দোষ, গুণ, অবস্থা, সংখ্যা বা পরিমাণ প্রকাশ করে তাকে **Adjective** বলে। Adjective সর্বদা Noun বা Pronoun-কে Qualify বা Modify করে।\n\n---\n\n## ২. ব্যবহারের দিক থেকে Adjective প্রধানত ২ প্রকার:\n\n1. **Attributive Adjective:** \n   যখন Adjective সরাসরি Noun-এর পূর্বে বসে তার গুণ প্রকাশ করে।\n   * *He is an **intelligent** boy.*\n   * *This is a **red** rose.*\n2. **Predicative Adjective:** \n   যখন Adjective কোনো Linking Verb-এর পরে বসে Predicate হিসেবে Subject-এর দোষগুণ প্রকাশ করে।\n   * *The boy is **intelligent**.*\n   * *The rose smells **sweet**.*\n\n> **গুরুত্বপূর্ণ নোট (শুধুমাত্র Predicative হিসেবে ব্যবহৃত Adjective):**\n> কিছু Adjective কখনো Noun-এর পূর্বে বসে না, শুধুমাত্র Predicative হিসেবে বসে:\n> **alike, afraid, alive, aloof, asleep, ashamed, alone, awake, aware, content** ইত্যাদি।\n> * *ভুল:* An asleep baby.\n> * *সঠিক:* A sleeping baby / The baby is asleep.\n\n---\n\n## ৩. প্রকৃতির দিক থেকে Adjective-এর ৮টি প্রকারভেদ\n1. **Proper Adjective:** Proper Noun থেকে গঠিত (e.g., Bangladeshi, Shakespearean, Asian)।\n2. **Descriptive / Qualitative Adjective:** দোষ, গুণ, আকার বোঝায় (e.g., honest, brave, tall, red)।\n3. **Quantitative Adjective:** পরিমাণ বোঝায় (e.g., much, little, some, whole, any)।\n4. **Numeral Adjective:** সংখ্যা ও ক্রম বোঝায় (e.g., one, two, first, second, double)।\n5. **Demonstrative Adjective:** নির্দিষ্ট করে নির্দেশ করে (e.g., this book, that car, these boys)।\n6. **Distributive Adjective:** পৃথক করে বোঝায় (e.g., each student, every girl, either side)।\n7. **Interrogative Adjective:** প্রশ্নের জন্য Noun-এর সাথে বসে (e.g., Which pen do you want?)।\n8. **Possessive Adjective:** মালিকানা বোঝায় (e.g., my book, his car, our country)।",
+            "exercises": [
+              {
+                "question": "A/an _____ is used to qualify or limit the meaning of a noun or pronoun.",
+                "options": [
+                  "a) noun",
+                  "b) verb",
+                  "c) adjective",
+                  "d) adverb"
+                ],
+                "correct_answer": "c",
+                "exam_reference": "Govt Exam",
+                "explanation": "Noun বা Pronoun-এর অর্থকে সীমিত বা বিশেষিত (qualify) করতে Adjective ব্যবহৃত হয়।"
+              },
+              {
+                "question": "In the sentence 'The baby is asleep', the word 'asleep' is a/an _____ adjective.",
+                "options": [
+                  "a) attributive",
+                  "b) predicative",
+                  "c) proper",
+                  "d) numeral"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "Admission Test",
+                "explanation": "যেহেতু এটি Verb 'is'-এর পরে Predicate হিসেবে বসে Subject-এর অবস্থা প্রকাশ করেছে, তাই এটি Predicative Adjective।"
+              },
+              {
+                "question": "Which of the following adjectives can ONLY be used predicatively?",
+                "options": [
+                  "a) Good",
+                  "b) Beautiful",
+                  "c) Alone",
+                  "d) Small"
+                ],
+                "correct_answer": "c",
+                "exam_reference": "BCS English",
+                "explanation": "'Alone' শব্দটি কখনো Noun-এর পূর্বে বসে না (e.g. an alone man ভুল), এটি শুধুমাত্র Predicative হিসেবে ব্যবহৃত হয়।"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Chapter 6: Degree of Comparison",
+        "slug": "chapter-6-degree-of-comparison",
+        "summary": "Positive, Comparative, and Superlative degrees, transformation structures, and Latin comparatives.",
+        "order": 6,
+        "mnemonics": "Latin Comparatives (senior, junior, superior, inferior, prior) এর পর 'than' নয়, সর্বদা 'to' বসে।",
+        "topics": [
+          {
+            "title": "Degree of Comparison - Core Concepts & Rules",
+            "slug": "chapter-6-degree-of-comparison-core-concepts",
+            "mnemonics": "Positive: as/so + adj + as | Comparative: adj + than | Superlative: the + est/most | Latin: senior/junior + to।",
+            "estimated_read_time": 8,
+            "order": 1,
+            "content": "## ১. Degree of Comparison কী?\nদুই বা ততোধিক ব্যক্তি বা বস্তুর মধ্যে গুণ বা অবস্থার তুলনা করার জন্য Adjective-এর যে রূপান্তর ঘটে, তাকে **Degree of Comparison** বলে।\n\nDegree প্রধানত **৩ প্রকার**:\n1. **Positive Degree:** যখন কোনো সাধারণ তুলনা ছাড়া শুধুমাত্র গুণ প্রকাশ পায় বা সমপর্যায়ের তুলনা হয় (`as + adj + as` বা `so + adj + as`)।\n   * *Rahim is as tall as Karim.*\n2. **Comparative Degree:** যখন দুটি ব্যক্তি বা বস্তুর মধ্যে তুলনা করা হয় (`Comparative form + than`)।\n   * *Rahim is taller than Karim.*\n3. **Superlative Degree:** যখন অনেকের মধ্যে বা সবার চেয়ে সেরা/নিকৃষ্ট তুলনা করা হয় (`the + Superlative form`)।\n   * *Rahim is the tallest boy in the class.*\n\n---\n\n## ২. গুরুত্বপূর্ণ নিয়ম ও ব্যতিক্রমসমূহ\n\n### নিয়ম ১: Latin Comparatives-এর পর Than নয়, To বসে\nযে সকল Comparative Adjective-এর শেষে **`or`** থাকে, সেগুলোকে Latin Comparative বলে। এদের পরে `than`-এর পরিবর্তে সর্বদা **`to`** বসে:\n* **Senior to, Junior to, Superior to, Inferior to, Prior to, Preferable to**\n* *ভুল:* He is senior than me.\n* *সঠিক:* He is **senior to** me.\n\n### নিয়ম ২: One of the-এর পর Plural Noun কিন্তু Singular Verb\n`One of the` + Superlative Degree-এর পরে Noun-টি সর্বদা **Plural** হয়।\n* *ভুল:* Rahim is one of the best boy in the class.\n* *সঠিক:* Rahim is one of the best **boys** in the class.\n\n### নিয়ম ৩: The + Comparative, The + Comparative (যত... তত...)\nদুটি অংশের আনুপাতিক বৃদ্ধি বা হ্রাস বোঝাতে উভয় অংশে Comparative-এর পূর্বে `The` বসে।\n* **The more** you read, **the more** you learn. (যত পড়বে, তত শিখবে)\n* **The sooner**, **the better**.",
+            "exercises": [
+              {
+                "question": "He is senior _____ me by two years.",
+                "options": [
+                  "a) than",
+                  "b) to",
+                  "c) from",
+                  "d) of"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "38th BCS",
+                "explanation": "Senior, junior, superior, inferior ইত্যাদি Latin comparative শব্দের পরে 'than' বসে না, সর্বদা 'to' বসে।"
+              },
+              {
+                "question": "The more you read, the more you _____.",
+                "options": [
+                  "a) learn",
+                  "b) learnt",
+                  "c) learning",
+                  "d) will learn"
+                ],
+                "correct_answer": "a",
+                "exam_reference": "26th BCS",
+                "explanation": "'The + comparative ..., the + comparative ...' কাঠামোর উভয় ক্লজেই একই সমান্তরাল tense (Present Indefinite) বজায় থাকে।"
+              },
+              {
+                "question": "Shakespeare is one of the greatest _____ in world literature.",
+                "options": [
+                  "a) playwright",
+                  "b) playwrights",
+                  "c) playwright's",
+                  "d) playwrights'"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "DU Admission",
+                "explanation": "'One of the' এর পরে Noun-টি সর্বদা Plural (playwrights) হয়।"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Chapter 7: Adverbs & Modifiers",
+        "slug": "chapter-7-adverbs-modifiers",
+        "summary": "Adverbs of time, place, manner, frequency, degree, MPT order, and sentence modification.",
+        "order": 7,
+        "mnemonics": "Adverb Order MPT Rule: Manner (কীভাবে) -> Place (কোথায়) -> Time (কখন)। Where, When, How দিয়ে প্রশ্নের উত্তরে Adverb পাওয়া যায়।",
+        "topics": [
+          {
+            "title": "Adverbs & Modifiers - Core Concepts & Rules",
+            "slug": "chapter-7-adverbs-modifiers-core-concepts",
+            "mnemonics": "MPT ক্রম: Manner (ধরণ) + Place (স্থান) + Time (সময়)। যেমন: She sang beautifully (M) at the hall (P) yesterday (T)।",
+            "estimated_read_time": 8,
+            "order": 1,
+            "content": "## ১. Adverb কী?\nযে Word Noun বা Pronoun ব্যতীত অন্য যেকোনো Parts of Speech (প্রধানত Verb, Adjective বা অন্য কোনো Adverb) অথবা একটি সমগ্র Sentence-কে Modify করে, তাকে **Adverb** বলে।\n\n> **কী কী Modify করে?**\n> * **Verb-কে:** Emon runs **quickly**. (runs verb-কে modify করেছে)\n> * **Adjective-কে:** She is a **very** beautiful girl. (beautiful adjective-কে modify করেছে)\n> * **অন্য Adverb-কে:** She sings **extremely** well. (well adverb-কে modify করেছে)\n> * **Preposition-কে:** The bird flew **exactly** over our head. (over preposition-কে modify করেছে)\n> * **সমগ্র Sentence-কে:** **Unfortunately**, he failed the test. (সমগ্র বাক্যকে modify করেছে)\n\n---\n\n## ২. Adverb চেনার সহজ টেকনিক\nকোনো বাক্যের Verb-কে নিচের ৪টি প্রশ্ন করলে যে উত্তর পাওয়া যায়, তা-ই **Adverb**:\n1. **How? (কীভাবে?):** Adverb of Manner (e.g., slowly, quickly, honestly, bravely)\n2. **Where? (কোথায়?):** Adverb of Place (e.g., here, there, everywhere, outside)\n3. **When? (কখন?):** Adverb of Time (e.g., today, yesterday, now, soon, early)\n4. **Why? (কেন?):** Adverb of Reason (e.g., therefore, hence, consequently)\n\n---\n\n## ৩. Adverb-এর অবস্থান ও MPT নিয়ম\nএকটি বাক্যে একাধিক Adverb থাকলে তাদের ক্রম হবে: **Manner (M) → Place (P) → Time (T)**।\n\n* *ভুল:* She sang yesterday beautifully at the party.\n* *সঠিক:* She sang **beautifully** *(Manner)* **at the party** *(Place)* **yesterday** *(Time)*.",
+            "exercises": [
+              {
+                "question": "An adverb modifies which of the following?",
+                "options": [
+                  "a) Noun & Pronoun",
+                  "b) Verb, Adjective & Adverb",
+                  "c) Interjection only",
+                  "d) Preposition only"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "Admission Test",
+                "explanation": "Adverb মূলত Verb, Adjective এবং অন্য Adverb-কে modify করে (Noun/Pronoun-কে Adjective modify করে)।"
+              },
+              {
+                "question": "Choose the sentence with correct adverb order:",
+                "options": [
+                  "a) He spoke yesterday politely in the meeting.",
+                  "b) He spoke politely in the meeting yesterday.",
+                  "c) He spoke in the meeting politely yesterday.",
+                  "d) He spoke yesterday in the meeting politely."
+                ],
+                "correct_answer": "b",
+                "exam_reference": "BCS Model",
+                "explanation": "Adverb-এর সঠিক ক্রম হলো MPT: Manner (politely) + Place (in the meeting) + Time (yesterday)।"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Part II: The Engine of Syntax (Verbs & Verbals)",
+    "description": "The core operational machinery of English sentences: verbs, verbals, tense mechanics, and agreement.",
+    "order": 2,
+    "chapters": [
+      {
+        "title": "Chapter 8: Verbs & Classification",
+        "slug": "chapter-8-verbs-classification",
+        "summary": "Finite vs Non-Finite, Principal, Auxiliary, Transitive, Intransitive, and Linking verbs.",
+        "order": 8,
+        "mnemonics": "Linking Verbs (be, look, taste, smell, feel, seem) এর পর Adverb নয়, Adjective বসে। যেমন: Honey tastes sweet.",
+        "topics": [
+          {
+            "title": "Verbs & Classification - Core Concepts & Rules",
+            "slug": "chapter-8-verbs-classification-core-concepts",
+            "mnemonics": "Finite = Tense/Person অনুযায়ী পরিবর্তন হয়; Non-finite = অপরিবর্তিত থাকে (Gerund, Participle, Infinitive)।",
+            "estimated_read_time": 9,
+            "order": 1,
+            "content": "## ১. Verb কী? (The Soul of a Sentence)\nযে Word দ্বারা কোনো কাজ করা, হওয়া, থাকা বা কোনো অবস্থা প্রকাশ পায়, তাকে **Verb** বলে। \n> **\"Every English sentence must have a verb.\"** — Verb ছাড়া কোনো ইংরেজি বাক্য গঠিত হতে পারে না।\n\n---\n\n## ২. প্রধান শ্রেণিবিভাগ (Finite vs Non-Finite Verb)\n\n* **Finite Verb (সমাপিকা ক্রিয়া):** যে Verb বাক্যের বক্তব্য সমাপ্ত করে এবং Subject-এর Number, Person ও Tense অনুযায়ী যার রূপ পরিবর্তিত হয়।\n  * *He **wants** to play cricket. / They **want** to play cricket. / He **wanted** to play cricket.*\n* **Non-Finite Verb (অসমাপিকা ক্রিয়া):** যে Verb দ্বারা বাক্যের বক্তব্য শেষ হয় না এবং Tense ও Person পরিবর্তনের সাথে যার কোনো রূপ পরিবর্তন হয় না।\n  * Non-Finite Verb মূলত ৩ প্রকার: **Infinitive (to + verb)**, **Gerund (verb + ing)**, এবং **Participle**।\n\n---\n\n## ৩. Transitive ও Intransitive Verb\n* **Transitive Verb (সকর্মক ক্রিয়া):** যে Verb-এর অর্থ সম্পূর্ণ করার জন্য Object (কর্ম) প্রয়োজন হয় (Verb-কে 'কী' বা 'কাকে' দিয়ে প্রশ্ন করলে Object পাওয়া যায়)।\n  * *The boy **plays** football. (কী খেলে? → football - Object আছে)*\n* **Intransitive Verb (অকর্মক ক্রিয়া):** যে Verb-এর কোনো Object থাকে না।\n  * *Birds **fly** in the sky. / He **sleeps**.*\n\n---\n\n## ৪. Linking Verb বা Copulative Verb\nযে Verb Subject এবং তার পরিপূরক গুণাবলি (Complement)-কে সংযুক্ত করে, তাকে **Linking Verb** বলে। \n> **প্রধান Linking Verbs:** `be (am, is, are, was, were), appear, become, look, seem, smell, taste, sound, feel, remain, grow, stay`।\n> \n> **গুরুত্বপূর্ণ নিয়ম:** Linking Verb-এর পরে কখনো Adverb বসে না, সর্বদা **Adjective** বসে!\n> * *ভুল:* Honey tastes sweetly.\n> * *সঠিক:* Honey tastes **sweet**.\n> * *ভুল:* She looks beautifully.\n> * *সঠিক:* She looks **beautiful**.",
+            "exercises": [
+              {
+                "question": "Which one of the following is correct?",
+                "options": [
+                  "a) Every English sentence must have a verb.",
+                  "b) Every English sentence should have an adjective.",
+                  "c) Every English sentence must have an object.",
+                  "d) Every English sentence has an adverb."
+                ],
+                "correct_answer": "a",
+                "exam_reference": "Rajshahi Krishi Bank 2011",
+                "explanation": "ইংরেজি ভাষার প্রতিটি বাক্যে অবশ্যই একটি Verb থাকতে হবে।"
+              },
+              {
+                "question": "Honey tastes _____.",
+                "options": [
+                  "a) sweetly",
+                  "b) sweet",
+                  "c) sweetness",
+                  "d) sweeter"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "Medical Admission",
+                "explanation": "'Taste' একটি Linking Verb, যার পর Adverb না বসে Adjective (sweet) বসে।"
+              },
+              {
+                "question": "In the sentence 'The birds fly in the sky', the verb 'fly' is _____.",
+                "options": [
+                  "a) Transitive verb",
+                  "b) Intransitive verb",
+                  "c) Linking verb",
+                  "d) Causative verb"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "DU Admission",
+                "explanation": "'In the sky' কোনো Object নয়, এটি Adverbial phrase। Fly-এর কোনো সরাসরি Object না থাকায় এটি Intransitive Verb।"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Chapter 9: Gerunds vs Participles",
+        "slug": "chapter-9-gerunds-vs-participles",
+        "summary": "Gerund (Verb+Noun) vs Participle (Verb+Adjective), compound noun test, and functions.",
+        "order": 9,
+        "mnemonics": "Gerund = Verb + Noun এর কাজ করে (স্থির/উদ্দেশ্যমূলক)। Participle = Verb + Adjective এর কাজ করে (চলমান অবস্থা)।",
+        "topics": [
+          {
+            "title": "Gerunds vs Participles - Core Concepts & Rules",
+            "slug": "chapter-9-gerunds-vs-participles-core-concepts",
+            "mnemonics": "A walking stick = A stick for walking (উদ্দেশ্য -> Gerund)। A rolling stone = A stone which is rolling (চলমান -> Participle)।",
+            "estimated_read_time": 8,
+            "order": 1,
+            "content": "## ১. Gerund ও Participle কী?\n\n* **Gerund:** `Verb + ing` যখন একই সাথে **Verb এবং Noun**-এর কাজ করে, তখন তাকে **Gerund** বলে। \n  * এটি মূলত Noun-এর অবস্থানে বসে (Subject, Object, Preposition-এর পর)।\n* **Participle:** `Verb + ing` যখন একই সাথে **Verb এবং Adjective**-এর কাজ করে (কোনো ব্যক্তি বা বস্তুর অবস্থা প্রকাশ করে), তখন তাকে **Present Participle** বলে।\n\n---\n\n## ২. Gerund বসার ৫টি প্রধান স্থান\n1. **Verb-এর Subject হিসেবে:** **Reading** improves your knowledge.\n2. **Verb-এর Object হিসেবে:** I enjoy **swimming**.\n3. **Preposition-এর Object হিসেবে:** He is fond of **reading** novels.\n4. **Subjective Complement হিসেবে:** My hobby is **gardening**.\n5. **Compound Noun-এর অংশ হিসেবে (উদ্দেশ্য বোঝালে):** A **walking** stick (লাঠি হাঁটার কাজে ব্যবহৃত হয়).\n\n---\n\n## ৩. Gerund বনাম Participle চেনার আল্টিমেট টেস্ট\n\n| Compound Noun | বিশ্লেষণ ও অর্থ | সিদ্ধান্ত |\n| :--- | :--- | :--- |\n| **A walking stick** | Stick **for** walking (হাঁটার জন্য লাঠি → উদ্দেশ্য/কাজ) | **Gerund** |\n| **A swimming pool** | Pool **for** swimming (সাঁতার কাটার জন্য পুল → উদ্দেশ্য) | **Gerund** |\n| **A reading room** | Room **for** reading (পড়ার জন্য ঘর → উদ্দেশ্য) | **Gerund** |\n| **A rolling stone** | A stone **which is rolling** (একটি পাথর যা গড়াচ্ছে → চলমান অবস্থা) | **Participle** |\n| **A barking dog** | A dog **which is barking** (একটি কুকুর যা ডাকছে → অবস্থা) | **Participle** |\n| **Flying bird** | A bird **which is flying** (একটি পাখি যা উড়ছে → অবস্থা) | **Participle** |\n\n> **সহজ কৌশল:**\n> * যদি `Noun + for + Verb+ing` অর্থ প্রকাশ করে, তবে তা **Gerund**।\n> * যদি `Noun + which is + Verb+ing` অর্থ প্রকাশ করে, তবে তা **Participle**।",
+            "exercises": [
+              {
+                "question": "A verb that acts as both a verb and a noun is called a/an _____.",
+                "options": [
+                  "a) adverb",
+                  "b) participle",
+                  "c) gerund",
+                  "d) adjective"
+                ],
+                "correct_answer": "c",
+                "exam_reference": "Social Welfare 2018",
+                "explanation": "Verb + ing যখন Verb এবং Noun হিসেবে কাজ করে তখন তাকে Gerund বলে।"
+              },
+              {
+                "question": "'A rolling stone gathers no moss.' Here 'rolling' is a _____.",
+                "options": [
+                  "a) gerund",
+                  "b) participle",
+                  "c) verbal noun",
+                  "d) adverb"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "38th BCS",
+                "explanation": "'Rolling stone' মানে যে পাথর গড়াচ্ছে (চলমান অবস্থা), এটি stone noun-কে qualify করে Adjective-এর মতো কাজ করায় Participle।"
+              },
+              {
+                "question": "He has a walking stick. Here 'walking' is a _____.",
+                "options": [
+                  "a) Participle",
+                  "b) Gerund",
+                  "c) Adverb",
+                  "d) Verb"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "DU Admission",
+                "explanation": "'A walking stick' অর্থ 'a stick for walking' (হাঁটার উদ্দেশ্যমূলক লাঠি), তাই এটি Gerund।"
+              },
+              {
+                "question": "Reading improves our vocabulary. Here 'reading' is a/an _____.",
+                "options": [
+                  "a) Gerund",
+                  "b) Participle",
+                  "c) Adverb",
+                  "d) Infinitive"
+                ],
+                "correct_answer": "a",
+                "exam_reference": "KU 06-07",
+                "explanation": "'Reading' এখানে বাক্যের Subject হিসেবে Noun-এর অবস্থান দখল করায় এটি Gerund।"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Chapter 10: Tenses & Right Forms of Verbs",
+        "slug": "chapter-10-tenses-right-forms-of-verbs",
+        "summary": "12 Tenses, time signal words, conditionals, as if / as though, and high time rules.",
+        "order": 10,
+        "mnemonics": "It is high time / It is time-এর পর Subject থাকলে Past Indefinite (V2) বসে। Lest-এর পর should + base form বসে।",
+        "topics": [
+          {
+            "title": "Tenses & Right Forms of Verbs - Core Concepts & Rules",
+            "slug": "chapter-10-tenses-right-forms-of-verbs-core-concepts",
+            "mnemonics": "Since-এর পূর্বে Present -> পরে Past Indefinite। Since-এর পূর্বে Past Indefinite -> পরে Past Perfect।",
+            "estimated_read_time": 10,
+            "order": 1,
+            "content": "## ১. Tense ও সিগন্যাল শব্দসমূহ (Key Time Indicators)\n\n### (A) Present Indefinite Tense:\n* **সিগন্যাল শব্দ:** `always, often, usually, regularly, daily, everyday, sometimes, generally, normally`।\n* **চিরন্তন সত্য ও বৈজ্ঞানিক সত্য:** সর্বদা Present Indefinite হয়।\n  * *The earth **moves** round the sun.*\n  * *When water **freezes**, it turns into ice.*\n\n### (B) Past Indefinite Tense:\n* **সিগন্যাল শব্দ:** `yesterday, ago, long ago, last night, last year, in the past, once, in 1971`।\n  * *He **left** the country yesterday.*\n\n### (C) Present Perfect Tense:\n* **সিগন্যাল শব্দ:** `just, just now, already, yet, ever, lately, recently`।\n  * *He has **just left** the room.*\n\n---\n\n## ২. বিশেষ নিয়মসমূহ (High-Yield Exam Rules)\n\n### নিয়ম ১: Before ও After-এর ব্যবহার (Past Perfect)\n* **Before-এর পূর্বে Past Perfect:** `Past Perfect + before + Past Indefinite`\n  * *The patient **had died** before the doctor came.*\n* **After-এর পরে Past Perfect:** `Past Indefinite + after + Past Perfect`\n  * *The doctor came after the patient **had died**.*\n\n### নিয়ম ২: It is high time / It is time\n`It is high time` বা `It is time`-এর পর যদি Subject থাকে, তবে পরবর্তী Verb-এর **Past Indefinite form (V2)** হবে।\n* *It is high time we **changed** our bad habits.*\n\n### নিয়ম ৩: Lest-এর নিয়ম\nবাক্যে `lest` (পাছে কিছু ঘটে এই ভয়ে) থাকলে তার পরবর্তী Subject-এর পর **`should`** + Verb-এর base form বসে।\n* *Walk fast lest you **should miss** the train.*\n\n### নিয়ম ৪: Conditionals (শর্তযুক্ত বাক্য)\n1. **First Conditional:** `If + Present → Future (will/can/may + V1)`\n   * *If it rains, we **will stay** at home.*\n2. **Second Conditional:** `If + Past Indefinite → would/could/might + V1`\n   * *If I were a king, I **would help** the poor.*\n3. **Third Conditional:** `If + Past Perfect → would have/could have + V3`\n   * *If you had invited me, I **would have joined**.*",
+            "exercises": [
+              {
+                "question": "When water freezes, it _____ into ice.",
+                "options": [
+                  "a) will turn",
+                  "b) turns",
+                  "c) would turn",
+                  "d) turned"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "38th BCS",
+                "explanation": "চিরন্তন ও বৈজ্ঞানিক সত্য সবসময় Present Indefinite Tense-এ প্রকাশ করা হয় (Zero conditional)।"
+              },
+              {
+                "question": "The earth _____ round the sun.",
+                "options": [
+                  "a) moved",
+                  "b) moves",
+                  "c) has moved",
+                  "d) is moving"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "36th BCS",
+                "explanation": "পৃথিবী সূর্যের চারদিকে ঘোরে এটি একটি চিরন্তন সত্য, তাই Present Indefinite Tense (moves) হবে।"
+              },
+              {
+                "question": "It is high time we _____ the problem.",
+                "options": [
+                  "a) solve",
+                  "b) solved",
+                  "c) had solved",
+                  "d) should solve"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "37th BCS",
+                "explanation": "'It is high time'-এর পরে Subject থাকলে পরবর্তী Verb-টি Past Indefinite Form (V2 - solved) হয়।"
+              },
+              {
+                "question": "Walk fast lest you _____ miss the train.",
+                "options": [
+                  "a) will",
+                  "b) would",
+                  "c) should",
+                  "d) can"
+                ],
+                "correct_answer": "c",
+                "exam_reference": "Medical 2017",
+                "explanation": "'Lest' যুক্ত বাক্যে Subject-এর পর Auxiliary verb হিসেবে সর্বদা 'should' বসে।"
+              },
+              {
+                "question": "The train had left before we _____ at the station.",
+                "options": [
+                  "a) arrived",
+                  "b) had arrived",
+                  "c) arrive",
+                  "d) were arriving"
+                ],
+                "correct_answer": "a",
+                "exam_reference": "Admission Exam",
+                "explanation": "Before-এর পূর্বের ক্লজটি Past Perfect (had left) হওয়ায় পরের ক্লজটি Past Indefinite (arrived) হবে।"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Chapter 11: Subject-Verb Agreement",
+        "slug": "chapter-11-subject-verb-agreement",
+        "summary": "Singular/Plural subject rules, either/or, as well as, collective nouns, and tricky agreement conditions.",
+        "order": 11,
+        "mnemonics": "Either...or / Neither...nor = নিকটতম Subject অনুযায়ী Verb বসে। As well as / Along with / With = ১ম Subject অনুযায়ী Verb বসে।",
+        "topics": [
+          {
+            "title": "Subject-Verb Agreement - Core Concepts & Rules",
+            "slug": "chapter-11-subject-verb-agreement-core-concepts",
+            "mnemonics": "Either/or -> ২য় Subject দেখে Verb। As well as / Together with -> ১ম Subject দেখে Verb।",
+            "estimated_read_time": 9,
+            "order": 1,
+            "content": "## ১. Subject-Verb Agreement-এর মূল নীতি\n* Subject যদি **Singular** হয়, তবে Verb-ও **Singular** হবে।\n* Subject যদি **Plural** হয়, তবে Verb-ও **Plural** হবে।\n\n> **মনে রাখবেন:**\n> * Noun-এর সাথে `s/es` যুক্ত হলে তা **Plural** হয় (book → books, boy → boys)।\n> * কিন্তু Verb-এর সাথে `s/es` যুক্ত হলে তা **Singular** হয় (go → goes, play → plays)।\n\n---\n\n## ২. গোল্ডেন রুলস (Golden Rules)\n\n### নিয়ম ১: As well as, along with, together with, with\nযখন দুটি Subject `as well as, along with, together with, with, accompanied by, in addition to` দ্বারা যুক্ত থাকে, তখন Verb সর্বদা **১ম Subject** অনুযায়ী নির্ধারিত হয়।\n* *The teacher, along with his students, **was** present. (teacher অনুযায়ী was)*\n* *The students, as well as their teacher, **were** present. (students অনুযায়ী were)*\n\n### নিয়ম ২: Either...or, Neither...nor, Not only...but also\nযখন দুটি Subject `either...or, neither...nor, not only...but also, or, nor` দ্বারা যুক্ত হয়, তখন Verb সর্বদা **নিকটতম (২য়) Subject** অনুযায়ী নির্ধারিত হয়।\n* *Either he or his brothers **have** done this. (brothers অনুযায়ী have)*\n* *Neither his brothers nor he **has** done this. (he অনুযায়ী has)*\n\n### নিয়ম ৩: Each, Every, Either, Neither, One of\nএদের পরে Plural Noun থাকলেও Verb সর্বদা **Singular** হবে।\n* *Each of the boys **is** honest.*\n* *One of my friends **is** a doctor.*\n\n### নিয়ম ৪: দূরত্ব, অর্থ, সময় বা পরিমাপের সমষ্টি\nদূরত্ব, সময়, অর্থ বা ওজন একক পরিমাণ হিসেবে বিবেচিত হলে Verb সর্বদা **Singular** হয়।\n* *Fifty miles **is** a long distance.*\n* *Ten thousand dollars **is** a lot of money.*",
+            "exercises": [
+              {
+                "question": "'Subject-Verb Agreement' refers to the agreement of verb with _____.",
+                "options": [
+                  "a) person only",
+                  "b) number and person",
+                  "c) gender only",
+                  "d) tense only"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "Admission Test",
+                "explanation": "Subject-Verb Agreement বলতে Subject-এর Number এবং Person অনুযায়ী Verb-এর সঠিক রূপ নির্ধারণকে বোঝায়।"
+              },
+              {
+                "question": "The big room _____ air-conditioned.",
+                "options": [
+                  "a) is",
+                  "b) are",
+                  "c) should",
+                  "d) were"
+                ],
+                "correct_answer": "a",
+                "exam_reference": "Model Test",
+                "explanation": "'The big room' একটি Singular Subject, তাই Singular Verb হিসেবে 'is' বসবে।"
+              },
+              {
+                "question": "The teacher along with his students _____ present.",
+                "options": [
+                  "a) was",
+                  "b) were",
+                  "c) are",
+                  "d) have been"
+                ],
+                "correct_answer": "a",
+                "exam_reference": "33rd BCS",
+                "explanation": "'Along with' দ্বারা যুক্ত থাকলে ১ম Subject (The teacher - singular) অনুযায়ী Verb 'was' হবে।"
+              },
+              {
+                "question": "Neither Karim nor his friends _____ attended the seminar.",
+                "options": [
+                  "a) has",
+                  "b) have",
+                  "c) is",
+                  "d) was"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "DU Admission",
+                "explanation": "'Neither...nor' দ্বারা যুক্ত থাকলে নিকটবর্তী Subject (his friends - plural) অনুযায়ী Verb 'have' হবে।"
+              },
+              {
+                "question": "Fifty miles _____ a long distance.",
+                "options": [
+                  "a) is",
+                  "b) are",
+                  "c) were",
+                  "d) have been"
+                ],
+                "correct_answer": "a",
+                "exam_reference": "28th BCS",
+                "explanation": "দূরত্ব, সময় বা অর্থ সামগ্রিক একক পরিমাণ প্রকাশ করলে তা Singular Verb (is) গ্রহণ করে।"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Part III: Advanced Syntactic Mechanics",
+    "description": "High-yield specialized grammar topics required for top competitive examination scoring.",
+    "order": 3,
+    "chapters": [
+      {
+        "title": "Chapter 12: The Subjunctive Mood",
+        "slug": "chapter-12-subjunctive-mood",
+        "summary": "Subjunctive triggers, the RUPA IS MODERN mnemonic, that-clause base form rules, and passive forms.",
+        "order": 12,
+        "mnemonics": "RUPA IS MODERN: Request, Urge, Propose, Ask, Insist, Suggest, Move, Obligatory, Demand, Essential, Necessary।",
+        "topics": [
+          {
+            "title": "The Subjunctive Mood - Core Concepts & Rules",
+            "slug": "chapter-12-subjunctive-mood-core-concepts",
+            "mnemonics": "RUPA IS MODERN triggers + that + Subject + [Verb-এর Base Form] (কোনো s/es/ed বা should বসবে না)।",
+            "estimated_read_time": 7,
+            "order": 1,
+            "content": "## ১. Subjunctive Mood কী?\nযখন কোনো বক্তা ইচ্ছা, প্রত্যাশা, অনুরোধ, দাবি বা কোনো বিষয়ের অপরিহার্যতা প্রকাশ করে যে অন্য কেউ কোনো কাজ করুক—তখন Subordinate `that`-clause-এর Verb-টি তার মূল বা **Base Form (V1-এর আদি রূপ)**-এ বসে। একেই ইংরেজিতে **Present Subjunctive** বলা হয়।\n\n> **মজার ব্যাপার:**\n> Subjunctive-এ Subject যাই হোক না কেন (he, she, it বা singular), Verb-এর সাথে কখনোই `s/es`, `ed` বা `should` যুক্ত হয় না!\n> * *ভুল:* He suggested that she goes there.\n> * *সঠিক:* He suggested that she **go** there.\n\n---\n\n## ২. ম্যাজিক টেকনিক: R U P A   I S   M O D E R N\nনিচের শব্দগুলো Subjunctive Trigger হিসেবে কাজ করে:\n\n| বর্ণ | শব্দসমূহ (Trigger Words) |\n| :---: | :--- |\n| **R** | **Request** / **Require** / **Recommend** |\n| **U** | **Urge** / **Urgent** |\n| **P** | **Propose** / **Prefer** / **Proposal** |\n| **A** | **Ask** / **Advise** |\n| **I** | **Insist** / **Important** / **Imperative** |\n| **S** | **Suggest** / **Suggestion** / **Stipulate** |\n| **M** | **Move** / **Mandatory** |\n| **O** | **Obligatory** |\n| **D** | **Demand** / **Decree** |\n| **E** | **Essential** |\n| **N** | **Necessary** |\n\n---\n\n## ৩. Subjunctive-এর ৩টি গুরুত্বপূর্ণ স্ট্রাকচার\n\n### ১. সাধারণ গঠন (Affirmative Structure):\n$$\\text{Subject} + \\text{Subjunctive Verb/Adj} + \\text{that} + \\text{Subject} + \\mathbf{[Base\\ Form]}$$\n* *The doctor recommended that he **stop** smoking.* (stops নয়)\n* *It is essential that she **be** present.* (is/was নয়, be-verb-এর base form হলো `be`)\n\n### ২. নাবোধক গঠন (Negative Structure):\n$$\\text{Subject} + \\text{that} + \\text{Subject} + \\mathbf{not} + \\mathbf{[Base\\ Form]}$$\n* *They insisted that he **not leave** early.* (does not নয়)\n\n### ৩. কর্মবাচ্য গঠন (Passive Structure):\n$$\\text{Subject} + \\text{that} + \\text{Subject} + \\mathbf{be} + \\mathbf{V3}$$\n* *The law requires that taxes **be paid** on time.*",
+            "exercises": [
+              {
+                "question": "The doctor recommended that the patient _____ smoking.",
+                "options": [
+                  "a) stopped",
+                  "b) stops",
+                  "c) stop",
+                  "d) should stop"
+                ],
+                "correct_answer": "c",
+                "exam_reference": "38th BCS",
+                "explanation": "'Recommended' একটি Subjunctive verb। এর পরের that-clause-এর verb-টি সর্বদা Base Form (stop) হবে।"
+              },
+              {
+                "question": "It is essential that everyone _____ present at the meeting.",
+                "options": [
+                  "a) is",
+                  "b) be",
+                  "c) are",
+                  "d) was"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "DU A-Unit",
+                "explanation": "'Essential' একটি Subjunctive adjective। Be-verb-এর base form হলো 'be', তাই 'everyone be present' সঠিক।"
+              },
+              {
+                "question": "He insisted that she _____ the truth.",
+                "options": [
+                  "a) tells",
+                  "b) told",
+                  "c) tell",
+                  "d) should tell"
+                ],
+                "correct_answer": "c",
+                "exam_reference": "Bank SO 2018",
+                "explanation": "'Insist' Subjunctive trigger হওয়ায় Subject 'she' হওয়া সত্ত্বেও Verb-এর সাথে s/es যুক্ত না হয়ে base form 'tell' বসবে।"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Chapter 13: Inversion of Verbs",
+        "slug": "chapter-13-inversion-of-verbs",
+        "summary": "Auxiliary inversion after negative adverbs and the famous BARSHA-NOVA mnemonic.",
+        "order": 13,
+        "mnemonics": "BARSHA-NOVA: Barely, At no time, Rarely, Scarcely/Seldom, Hardly, Neither/Nor/No sooner/Never/Not only, Only, Very seldom।",
+        "topics": [
+          {
+            "title": "Inversion of Verbs - Core Concepts & Rules",
+            "slug": "chapter-13-inversion-of-verbs-core-concepts",
+            "mnemonics": "Negative Adverb বাক্যের শুরুতে আসলে: Negative Adverb + [Auxiliary Verb] + [Subject] + [Main Verb]।",
+            "estimated_read_time": 6,
+            "order": 1,
+            "content": "## ১. Inversion কী?\nসাধারণ ইংরেজি বাক্যে Subject-এর পরে Verb বসে (`Subject + Verb`)। কিন্তু জোর (Emphasis) প্রদানের জন্য যখন কোনো **Negative বা Restrictive Adverb** বাক্যের শুরুতে চলে আসে, তখন **Auxiliary Verb-টি Subject-এর পূর্বে বসে**। এই নিয়মকে **Inversion of Verb** বলে।\n\n> **Inversion-এর মূল গঠন:**\n> $$\\mathbf{Negative\\ Adverb} + \\mathbf{Auxiliary\\ Verb} + \\mathbf{Subject} + \\mathbf{Principal\\ Verb} + \\text{Extension}$$\n\n---\n\n## ২. শর্টকাট মেমোরি এইড: B A R S H A - N O V A\nনিচের শব্দগুলো বাক্যের শুরুতে আসলে অবশ্যই Inversion ঘটাতে হবে:\n\n| বর্ণ | Negative / Restrictive Adverbs |\n| :---: | :--- |\n| **B** | **Barely**, **By no means** |\n| **A** | **At no time**, **At no point** |\n| **R** | **Rarely** |\n| **S** | **Scarcely**, **Seldom** |\n| **H** | **Hardly** |\n| **A** | **At no time** |\n| **N** | **Neither**, **Nor**, **No sooner**, **Never**, **Not only**, **Nowhere**, **Not until** |\n| **O** | **Only after**, **Only when**, **Only if**, **Only then**, **Only rarely** |\n| **V** | **Very seldom** |\n| **A** | **At no cost** |\n\n---\n\n## ৩. বাস্তব উদাহরণ ও তুলনামূলক পার্থক্য\n* *সাধারণ বাক্য:* I have never seen such a beautiful sight.\n* *Inverted রূপ:* **Never have I** seen such a beautiful sight.\n\n* *সাধারণ বাক্য:* He rarely visits his native village.\n* *Inverted রূপ:* **Rarely does he** visit his native village. (যেহেতু auxiliary ছিল না, তাই does আনা হয়েছে)\n\n* *সাধারণ বাক্য:* She had scarcely finished her work when the phone rang.\n* *Inverted রূপ:* **Scarcely had she** finished her work when the phone rang.",
+            "exercises": [
+              {
+                "question": "Rarely _____ seen such a stunning performance.",
+                "options": [
+                  "a) I have",
+                  "b) have I",
+                  "c) I had",
+                  "d) had I have"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "BCS 35th",
+                "explanation": "'Rarely' একটি Negative Adverb যা বাক্যের শুরুতে আসায় Inversion হবে, অর্থাৎ Subject (I)-এর পূর্বে Auxiliary (have) বসবে।"
+              },
+              {
+                "question": "Hardly _____ entered the room when the lights went out.",
+                "options": [
+                  "a) he had",
+                  "b) had he",
+                  "c) did he",
+                  "d) he did"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "DU Admission",
+                "explanation": "'Hardly' বাক্যের শুরুতে বসলে Inversion নিয়ম অনুযায়ী 'had he' হবে।"
+              },
+              {
+                "question": "Never again _____ to that place.",
+                "options": [
+                  "a) will I go",
+                  "b) I will go",
+                  "c) I go",
+                  "d) shall I to go"
+                ],
+                "correct_answer": "a",
+                "exam_reference": "Bank Officer 2017",
+                "explanation": "'Never again' বাক্যের শুরুতে থাকায় Auxiliary verb 'will' Subject 'I'-এর পূর্বে বসবে।"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Part IV: Transformations & Discourse",
+    "description": "Syntactic transformations between voices and narration systems.",
+    "order": 4,
+    "chapters": [
+      {
+        "title": "Chapter 14: Voice Transformation",
+        "slug": "chapter-14-voice-transformation",
+        "summary": "Active to Passive transformation, modal auxiliaries, imperative forms, and prepositional exceptions.",
+        "order": 14,
+        "mnemonics": "Voice-এর ৪টি জায়গা চেক করুন: Subject=Object, Auxiliary Verb, Main Verb (V3), ও Preposition (by/to/with)।",
+        "topics": [
+          {
+            "title": "Voice Transformation - Core Concepts & Rules",
+            "slug": "chapter-14-voice-transformation-core-concepts",
+            "mnemonics": "Continuous হলে 'being' যোগ হবে। Perfect হলে 'been' যোগ হবে। Modal হলে 'be' যোগ হবে। Main verb সর্বদা V3।",
+            "estimated_read_time": 9,
+            "order": 1,
+            "content": "## ১. Voice Transformation-এর ৪টি গোল্ডেন ধাপ\nActive Voice-কে Passive Voice-এ রূপান্তর করার সময় ৪টি বিষয়ে খেয়াল রাখতে হয়:\n1. **Subject = Object:** Active-এর Object প্যাসিভে Subject হয় এবং Subject-টি প্যাসিভে Object হয়।\n2. **Auxiliary Verb:** Tense অনুযায়ী নির্ধারিত Auxiliary verb বসাতে হয়।\n3. **Main Verb:** প্যাসিভে Main Verb সর্বদা **Past Participle (V3)** হয়।\n4. **Preposition:** Object-এর পূর্বে সাধারণত **`by`** বসে (ব্যতিক্রম ক্ষেত্রে `to, with, at, in`)।\n\n---\n\n## ২. Tense অনুযায়ী Auxiliary Verb রূপান্তরের ম্যাজিক চার্ট\n\n| Active Tense | Active রূপ | Passive Auxiliary রূপ |\n| :--- | :--- | :--- |\n| **Present Indefinite** | V1 (do/does) | **am / is / are + V3** |\n| **Past Indefinite** | V2 (did) | **was / were + V3** |\n| **Continuous (যেকোনো)** | Verb + ing | **am/is/are/was/were + being + V3** |\n| **Perfect (যেকোনো)** | have / has / had | **have / has / had + been + V3** |\n| **Modal Auxiliary** | can, could, may, might, must | **Modal + be + V3** |\n| **Semi-Modal** | have to, is to, going to | **Semi-modal + be + V3** |\n\n---\n\n## ৩. গুরুত্বপূর্ণ ব্যতিক্রমী নিয়মসমূহ\n\n### ব্যতিক্রম ১: Preposition হিসেবে By-এর পরিবর্তে অন্যান্য Preposition\nকিছু Verb-এর পরে `by` বসে না:\n* **Know → to:** He is known **to** me. (known by নয়)\n* **Surprise / Shock → at:** I was shocked **at** his conduct.\n* **Please / Satisfy → with:** We are pleased **with** your performance.\n* **Contain → in:** The bottle contains milk → Milk is contained **in** the bottle.\n\n### ব্যতিক্রম ২: Imperative Sentence-এর প্যাসিভ\n* শুধুমাত্র মূল verb দিয়ে শুরু হলে: $$\\mathbf{Let} + \\mathbf{Object} + \\mathbf{be} + \\mathbf{V3}$$\n  * *Do it → **Let it be done**.*\n* 'Do not' দিয়ে শুরু হলে: $$\\mathbf{Let\\ not} + \\mathbf{Object} + \\mathbf{be} + \\mathbf{V3}$$\n  * *Do not open the door → **Let not the door be opened**.*\n\n### ব্যতিক্রম ৩: Who এবং Whom-এর পরিবর্তন\n* **Who → By whom:** Who wrote this? → **By whom** was this written?\n* **Whom → Who:** Whom did you see? → **Who** was seen by you?",
+            "exercises": [
+              {
+                "question": "Change into passive: 'He pleases us.'",
+                "options": [
+                  "a) We are pleased by him.",
+                  "b) We are pleased with him.",
+                  "c) We were pleased by him.",
+                  "d) We are pleased at him."
+                ],
+                "correct_answer": "b",
+                "exam_reference": "36th BCS",
+                "explanation": "'Please' verb-এর পরে passive voice-এ preposition হিসেবে 'by' বসে না, 'with' বসে।"
+              },
+              {
+                "question": "The passive form of 'Who broke this glass?' is _____.",
+                "options": [
+                  "a) By whom was this glass broken?",
+                  "b) By whom is this glass broken?",
+                  "c) Who was broken this glass?",
+                  "d) Whom was this glass broken by?"
+                ],
+                "correct_answer": "a",
+                "exam_reference": "34th BCS",
+                "explanation": "'Who'-এর পরিবর্তে 'By whom' বসে এবং Past Indefinite হওয়ায় 'was this glass broken' সঠিক।"
+              },
+              {
+                "question": "Change into passive: 'Do not close the door.'",
+                "options": [
+                  "a) Let the door not be closed.",
+                  "b) Let not the door be closed.",
+                  "c) The door should not closed.",
+                  "d) Let the door be not closed."
+                ],
+                "correct_answer": "b",
+                "exam_reference": "Admission Exam",
+                "explanation": "Negative imperative বাক্যের প্যাসিভ রূপ হলো: 'Let not + object + be + V3'।"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Chapter 15: Narration & Speech",
+        "slug": "chapter-15-narration-speech",
+        "summary": "Direct and indirect speech conversion across all sentence types (Assertive to Exclamatory).",
+        "order": 15,
+        "mnemonics": "1st Person -> Reporting Subject; 2nd Person -> Reporting Object; 3rd Person -> No Change।",
+        "topics": [
+          {
+            "title": "Narration & Speech - Core Concepts & Rules",
+            "slug": "chapter-15-narration-speech-core-concepts",
+            "mnemonics": "Person পরিবর্তন: ১-২-৩ (1st->Subject, 2nd->Object, 3rd->অপরিবর্তিত)। Tense সর্বদা এক ধাপ অতীতে সরে যায়।",
+            "estimated_read_time": 9,
+            "order": 1,
+            "content": "## ১. Narration বা Speech কী?\nবক্তার বক্তব্য প্রকাশের মাধ্যমকে **Narration বা Speech** বলে। এটি ২ প্রকার:\n1. **Direct Narration:** বক্তার বক্তব্য হুবহু উদ্ধৃতি চিহ্নের (`\"...\"`) মধ্যে প্রকাশ করা।\n   * *He said to me, \"I am ill.\"*\n2. **Indirect Narration:** বক্তার বক্তব্য অন্যের ভাষায় পরোক্ষভাবে প্রকাশ করা।\n   * *He told me that he was ill.*\n\n> **দুটি অংশ:**\n> * `He said to me` → **Reporting Verb** (উদ্ধৃতির বাইরের অংশ)\n> * `\"I am ill\"` → **Reported Speech** (ইনভার্টেড কমার ভেতরের অংশ)\n\n---\n\n## ২. Person পরিবর্তনের ৩টি গোল্ডেন রুল\n* **1st Person (I, we, my, our):** Reporting Verb-এর **Subject** অনুযায়ী পরিবর্তিত হয়।\n* **2nd Person (you, your):** Reporting Verb-এর **Object** অনুযায়ী পরিবর্তিত হয়।\n* **3rd Person (he, she, they, it):** কোনো পরিবর্তন হয় না (**No Change**)।\n\n---\n\n## ৩. Tense পরিবর্তনের চার্ট (যখন Reporting Verb Past Tense হয়)\n\n| Direct Speech | Indirect Speech |\n| :--- | :--- |\n| **am / is / are** | **was / were** |\n| **have / has** | **had** |\n| **Present Indefinite (V1)** | **Past Indefinite (V2)** |\n| **Past Indefinite (V2)** | **Past Perfect (had + V3)** |\n| **will / shall** | **would** |\n| **can** | **could** |\n| **may** | **might** |\n\n---\n\n## ৪. নৈকট্যবাচক শব্দের দূরত্ববাচক শব্দে রূপান্তর\n* `now` → **then**\n* `today` → **that day**\n* `yesterday` → **the previous day** / **the day before**\n* `tomorrow` → **the next day** / **the following day**\n* `here` → **there**\n* `this` → **that** / `these` → **those**\n* `tonight` → **that night**\n\n---\n\n## ৫. বিভিন্ন Sentence-এর ন্যারেশন নিয়ম\n1. **Assertive:** Conjunction হিসেবে `that` বসে এবং say to থাকলে `tell/told` হয়।\n2. **Interrogative:** Reporting verb `asked` হয়; প্রশ্নটি Auxiliary verb দিয়ে শুরু হলে `if/whether` বসে এবং Wh-word দিয়ে শুরু হলে সেই Wh-word-টিই বসে।\n3. **Imperative:** Reporting verb `ordered, requested, advised` হয় এবং কমার বদলে `to + V1` বসে।\n4. **Optative:** Reporting verb `prayed` বা `wished` হয় এবং `that + subject + might + V1` বসে।\n5. **Exclamatory:** Reporting verb `exclaimed with joy / sorrow that` হয়।",
+            "exercises": [
+              {
+                "question": "He said, 'I have done my duty.' The indirect form is: ",
+                "options": [
+                  "a) He said that he has done his duty.",
+                  "b) He said that he had done his duty.",
+                  "c) He said that I had done my duty.",
+                  "d) He told that he had done his duty."
+                ],
+                "correct_answer": "b",
+                "exam_reference": "37th BCS",
+                "explanation": "'Said' past tense হওয়ায় reported speech-এর Present Perfect (have done) পরিবর্তিত হয়ে Past Perfect (had done) হবে এবং 1st person 'I' পরিবর্তিত হয়ে 'he' হবে।"
+              },
+              {
+                "question": "He said to me, 'Are you going to school?' The indirect form is: ",
+                "options": [
+                  "a) He asked me if I was going to school.",
+                  "b) He asked me that I was going to school.",
+                  "c) He told me if I was going to school.",
+                  "d) He asked me whether was I going to school."
+                ],
+                "correct_answer": "a",
+                "exam_reference": "Admission Test",
+                "explanation": "Interrogative বাক্যে connector হিসেবে 'if' বসে এবং এর পরের ক্লজটি Assertive রূপ ধারণ করে (I was going to school)।"
+              },
+              {
+                "question": "The teacher said to the student, 'Leave the room.'",
+                "options": [
+                  "a) The teacher told the student that leave the room.",
+                  "b) The teacher ordered the student to leave the room.",
+                  "c) The teacher requested the student to leave the room.",
+                  "d) The teacher asked the student to left the room."
+                ],
+                "correct_answer": "b",
+                "exam_reference": "Govt Exam",
+                "explanation": "আদেশমূলক Imperative বাক্যে reporting verb হিসেবে 'ordered' এবং কমা উঠে 'to + V1' (to leave the room) বসে।"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
