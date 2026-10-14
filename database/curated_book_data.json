@@ -10729,6 +10729,19 @@
                 "exam_reference": "DU (C) 98-99",
                 "explanation": "সঠিক উত্তর (C) — Copulative। যে Verb Subject ও Adjective Complement-এর মধ্যে সংযোগ স্থাপন করে তাকে Copulative বা Linking Verb বলে।",
                 "order": 106
+              },
+              {
+                "question": "He gave----.",
+                "options": [
+                  "a) to the class a tough assignment",
+                  "b) the class a tough assignment",
+                  "c) a tough assignment for the class",
+                  "d) an assignment very tough to the class"
+                ],
+                "correct_answer": "b",
+                "exam_reference": "DU (C) 05-06, CU (D) 11-12",
+                "explanation": "সঠিক উত্তর (B) — the class a tough assignment। Give একটি Ditransitive Verb। Indirect Object (the class) সরাসরি Verb-এর পর বসে, এরপর Direct Object (a tough assignment) বসে।",
+                "order": 107
               }
             ]
           }
@@ -14797,6 +14810,32 @@
                 "exam_reference": "RU 07-08",
                 "explanation": "সঠিক উত্তর (A) — have finished। এই প্রশ্নটি Chapter 10: Tenses & Right Forms of Verbs-এর নিয়ম ও ব্যতিক্রমের ওপর ভিত্তি করে গঠিত।",
                 "order": 238
+              },
+              {
+                "question": "It's 10 a.m. now. The sun ---- in the eastern sky.",
+                "options": [
+                  "a) had been shining",
+                  "b) shines",
+                  "c) has been shining",
+                  "d) is shining"
+                ],
+                "correct_answer": "d",
+                "exam_reference": "জেলা নির্বাচন অফিসার ও সহকারী সচিব-০৪",
+                "explanation": "সঠিক উত্তর (D) — is shining। বাক্যে \"now\" থাকায় কাজটি বর্তমানে ঘটমান বোঝায়, বিধায় Present Continuous Tense (is shining) হবে।",
+                "order": 239
+              },
+              {
+                "question": "No sooner had the teacher - the class than the students stood up.",
+                "options": [
+                  "a) enter",
+                  "b) entering",
+                  "c) entered",
+                  "d) was entering"
+                ],
+                "correct_answer": "c",
+                "exam_reference": "RU 08-09",
+                "explanation": "সঠিক উত্তর (C) — entered। No sooner had + Subject + V3 (entered) ... than + Subject + V2।",
+                "order": 240
               }
             ]
           }
@@ -17611,6 +17650,32 @@
                 "exam_reference": "Competitive Exam",
                 "explanation": "সঠিক উত্তর (B) — has been finished। Fraction (ভগ্নাংশ)-এর পর Singular Noun (assignment) থাকলে Verb Singular হয়।",
                 "order": 215
+              },
+              {
+                "question": "নিচের কোনটি শুদ্ধ বাক্য?",
+                "options": [
+                  "a) I do not take fruits.",
+                  "b) I have no appetite in food.",
+                  "c) He gave me some good advice.",
+                  "d) Neither of us was present."
+                ],
+                "correct_answer": "d",
+                "exam_reference": "Competitive Exam",
+                "explanation": "সঠিক উত্তর (D) — Neither of us was present। Neither of-এর পর Plural Pronoun (us) এবং Singular Verb (was) বসে।",
+                "order": 216
+              },
+              {
+                "question": "দুই-তৃতীয়াংশের সঠিক ইংরেজি রূপ কোনটি?",
+                "options": [
+                  "a) two-thirds",
+                  "b) two-third",
+                  "c) two by three",
+                  "d) two above three"
+                ],
+                "correct_answer": "a",
+                "exam_reference": "Competitive Exam",
+                "explanation": "সঠিক উত্তর (A) — two-thirds। ভগ্নাংশের লব (Numerator) একের অধিক (two) হলে হর (Denominator)-এর সাথে \"s\" যুক্ত হয়ে Plural হয় (two-thirds)।",
+                "order": 217
               }
             ]
           }
