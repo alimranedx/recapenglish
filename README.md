@@ -1,60 +1,123 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# RecapEnglish (English Grammar Master Book & LMS)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**RecapEnglish** is a digital, user-friendly interactive book and learning management system designed for BCS, University Admission, Medical, and Bank Job aspirants. Built with Laravel 13 and Tailwind CSS, it synthesizes 15 comprehensive lecture notes into an organized 4-part curriculum with mnemonics and interactive practice questions.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🔑 Access Credentials
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+The database comes pre-seeded with three tiers of user accounts:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+| Role | Name | Email | Password | Access URL & Permissions |
+| :--- | :--- | :--- | :--- | :--- |
+| **Super Admin** | Super Administrator | `superadmin@recapenglish.com` | `password123` | `/admin`<br>• Full system control<br>• **Only role that can provision or delete Admins**<br>• Manage all parts, chapters, topics & MCQs |
+| **Admin** | Academic Editor | `admin@recapenglish.com` | `password123` | `/admin`<br>• Manage existing & newly added topics<br>• Create and edit chapters & practice MCQs<br>• Cannot access admin user management (`/admin/admins`) |
+| **Learner / Student** | Tanvir Ahmed | `student@recapenglish.com` | `password123` | `/`<br>• Public reader & study dashboard<br>• Auto-saved last read topic & progress tracking<br>• Topic bookmarking & interactive MCQ drill |
 
-## Learning Laravel
+> **Note on Registration:** Public self-registration (`/register` or Google OAuth) strictly creates **Learner (`user`)** accounts. Admin accounts cannot be self-registered and can only be provisioned by the Super Admin.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 📘 Curriculum & Book Structure
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+The curriculum is structured across 4 progressive parts containing 15 chapters and 225+ past competitive exam questions:
 
-## Agentic Development
+### Part I: The Building Blocks (Parts of Speech)
+- **Chapter 1:** Nouns & Classification (Proper, Common, Collective, Material, Abstract, Personified)
+- **Chapter 2:** Countability & Determiners (*Few vs Little*, *Many vs Much*, Quantifiers)
+- **Chapter 3:** Pronouns & Substituting Words (Personal, Reflexive, Emphatic, Demonstrative, Indefinite)
+- **Chapter 4:** Relative Pronouns & Clauses (*Who, Whom, Whose, Which, That*, Antecedents)
+- **Chapter 5:** Adjectives & Classification (Attributive, Predicative, Order of Adjectives)
+- **Chapter 6:** Degree of Comparison (Positive, Comparative, Superlative, Irregular forms)
+- **Chapter 7:** Adverbs & Modifiers (Time, Place, Manner, Degree, Frequency, Sentence modifiers)
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### Part II: The Engine of Syntax (Verbs & Verbals)
+- **Chapter 8:** Verbs & Classification (Finite, Non-Finite, Transitive, Intransitive, Linking)
+- **Chapter 9:** Gerunds vs. Participles (Verbal Nouns vs. Verbal Adjectives identification tests)
+- **Chapter 10:** Tenses & Right Forms of Verbs (12 Tenses, time signals, stative verbs, conditions)
+- **Chapter 11:** Subject-Verb Agreement (Singular/Plural, compound subjects, tricky connectors)
+
+### Part III: Advanced Syntactic Mechanics
+- **Chapter 12:** The Subjunctive Mood (`RUPA IS MODERN` mnemonic, that-clause base form rules)
+- **Chapter 13:** Inversion of Verbs (`BARSHA-NOVA` mnemonic, negative adverb auxiliary inversion)
+
+### Part IV: Transformations & Discourse
+- **Chapter 14:** Voice Transformation (Active to Passive, modals, quasi-passive, imperatives)
+- **Chapter 15:** Narration & Speech (Direct to Indirect conversion across sentence types)
+
+---
+
+## ✨ Key Features
+
+1. **Auto-Saved Last Topic ("Resume Reading")**:
+   - Automatically tracks every learner's last visited topic and completion percentage.
+   - One-click "Resume Reading" button on the reader homepage.
+2. **Interactive Practice Quizzes**:
+   - Multiple choice questions with instant feedback (Green/Red highlights).
+   - Shows detailed explanation notes and examination references (e.g., 38th BCS, DU A-Unit).
+3. **Saved Topics & Bookmarks**:
+   - Learners can bookmark tricky topics and add personalized revision notes.
+4. **Google OAuth & Email Authentication**:
+   - Register and login with standard credentials or one-click Google Sign-In via Laravel Socialite.
+5. **Super Admin RBAC**:
+   - Dedicated portal for Super Admins to provision and manage editorial staff.
+
+---
+
+## 🚀 Setup & Local Installation
+
+### Prerequisites
+- PHP 8.3+
+- Composer 2.8+
+- Node.js 20+ & npm
+
+### Installation Steps
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/alimranedx/recapenglish.git
+   cd recapenglish
+   ```
+
+2. **Install Composer dependencies:**
+   ```bash
+   composer install
+   ```
+
+3. **Install and build front-end assets:**
+   ```bash
+   npm install
+   npm run build
+   ```
+
+4. **Environment setup:**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
+
+5. **Database migration & seeding:**
+   ```bash
+   php artisan migrate:fresh --seed
+   ```
+
+6. **Start local development server:**
+   ```bash
+   php artisan serve
+   ```
+   Or access directly via Laragon at `http://recapenglish.test`.
+
+---
+
+## 🧪 Running Automated Tests
+
+Run the full test suite (covering authentication, RBAC, reader auto-save, bookmarks, and admin provisioning):
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+php artisan test
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+---
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-# recapenglish
+## 📄 License
+This project is open-source under the [MIT License](LICENSE).
