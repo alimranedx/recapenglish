@@ -78,7 +78,7 @@
                     {{ $totalTopicsCount }} Core Topics
                 </span>
                 <span>•</span>
-                <span class="font-semibold text-slate-700">225+ Practice Questions</span>
+                <span class="font-semibold text-slate-700">{{ number_format($totalExercisesCount ?? 1646) }}+ Practice Questions</span>
             </div>
         </div>
 
@@ -140,7 +140,7 @@
 
                                 <div class="mt-4 pt-3 border-t border-slate-200/60 flex items-center justify-between text-xs">
                                     <span class="text-slate-600 font-medium">
-                                        {{ $chapter->topics->count() }} topic • {{ $chapter->topics->sum(fn($t) => $t->exercises->count()) }} MCQs
+                                        {{ $chapter->topics->count() }} topic • {{ $chapter->topics->sum('exercises_count') }} MCQs
                                     </span>
 
                                     @if($chapter->topics->count() > 0)

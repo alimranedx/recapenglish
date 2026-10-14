@@ -27,8 +27,10 @@
         code, pre { font-family: 'JetBrains Mono', monospace; }
         [x-cloak] { display: none !important; }
     </style>
-</head>
 <body class="bg-slate-50 text-slate-800 min-h-full flex flex-col antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Top Reading Progress Bar -->
+    <div id="reading-progress-bar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-indigo-500 via-sky-400 to-emerald-400 z-50 transition-all duration-75" style="width: 0%"></div>
 
     <!-- Top Navigation Bar -->
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200/80 shadow-xs">
@@ -162,6 +164,35 @@
             <p>Designed for BCS, University Admission & Job Examinations.</p>
         </div>
     </footer>
+
+    <!-- Floating Scroll-to-Top Button -->
+    <button id="scroll-to-top" 
+            onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+            aria-label="Scroll to top"
+            class="fixed bottom-6 right-6 w-11 h-11 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-600/30 flex items-center justify-center transition-all duration-200 opacity-0 pointer-events-none z-40 cursor-pointer hover:scale-105 active:scale-95">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+    </button>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+            const bar = document.getElementById('reading-progress-bar');
+            if (bar) bar.style.width = progress + '%';
+
+            const topBtn = document.getElementById('scroll-to-top');
+            if (topBtn) {
+                if (scrollTop > 350) {
+                    topBtn.classList.remove('opacity-0', 'pointer-events-none');
+                    topBtn.classList.add('opacity-100');
+                } else {
+                    topBtn.classList.add('opacity-0', 'pointer-events-none');
+                    topBtn.classList.remove('opacity-100');
+                }
+            }
+        });
+    </script>
 
     @stack('scripts')
 </body>

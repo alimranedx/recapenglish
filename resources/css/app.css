@@ -21,3 +21,65 @@ body {
 .font-english {
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
+
+/* Reader Markdown Content Polish */
+.markdown-content table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-radius: 0.875rem;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+}
+
+.markdown-content th {
+    background-color: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+    font-size: 0.8125rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+.markdown-content td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.875rem;
+    color: #334155;
+    line-height: 1.5;
+}
+
+.markdown-content tr:last-child td {
+    border-bottom: none;
+}
+
+.markdown-content tr:nth-child(even) td {
+    background-color: #fcfdfe;
+}
+
+.markdown-content tr:hover td {
+    background-color: #f1f5f9/60;
+}
+
+.markdown-content blockquote {
+    border-left: 4px solid #6366f1;
+    background-color: #f8fafc;
+    padding: 0.875rem 1.25rem;
+    border-radius: 0 0.875rem 0.875rem 0;
+    margin: 1.25rem 0;
+    font-size: 0.875rem;
+    color: #334155;
+}
+
+.markdown-content code {
+    background-color: #f1f5f9;
+    color: #4338ca;
+    padding: 0.15rem 0.4rem;
+    border-radius: 0.375rem;
+    font-size: 0.825em;
+    font-weight: 600;
+}

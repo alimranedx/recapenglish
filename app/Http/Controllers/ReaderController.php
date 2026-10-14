@@ -19,7 +19,7 @@ class ReaderController extends Controller
     {
         $parts = Part::with(['chapters' => function ($query) {
             $query->where('is_published', true)->with(['topics' => function ($q) {
-                $q->where('is_published', true);
+                $q->where('is_published', true)->withCount('exercises');
             }]);
         }])->where('is_active', true)->orderBy('order')->get();
 
@@ -44,11 +44,12 @@ class ReaderController extends Controller
         }
 
         $totalTopicsCount = Topic::where('is_published', true)->count();
+        $totalExercisesCount = \App\Models\Exercise::count();
         $userProgressPercent = ($user && $totalTopicsCount > 0)
             ? round((count($completedTopicIds) / $totalTopicsCount) * 100)
             : 0;
 
-        return view('reader.index', compact('parts', 'user', 'completedTopicIds', 'bookmarkedTopicIds', 'lastTopic', 'totalTopicsCount', 'userProgressPercent'));
+        return view('reader.index', compact('parts', 'user', 'completedTopicIds', 'bookmarkedTopicIds', 'lastTopic', 'totalTopicsCount', 'totalExercisesCount', 'userProgressPercent'));
     }
 
     /**
@@ -180,12 +181,13 @@ class ReaderController extends Controller
     }
 
     /**
-     * Search topics and chapters.
+     * Search topics, chapters, and practice questions.
      */
     public function search(Request $request)
     {
         $query = $request->input('q');
         $results = [];
+        $matchingExercises = [];
 
         if (!empty($query)) {
             $results = Topic::with('chapter.part')
@@ -197,8 +199,17 @@ class ReaderController extends Controller
                 })
                 ->take(20)
                 ->get();
+
+            $matchingExercises = \App\Models\Exercise::with('topic.chapter.part')
+                ->where(function ($q) use ($query) {
+                    $q->where('question', 'like', "%{$query}%")
+                      ->orWhere('explanation', 'like', "%{$query}%")
+                      ->orWhere('exam_reference', 'like', "%{$query}%");
+                })
+                ->take(30)
+                ->get();
         }
 
-        return view('reader.search', compact('query', 'results'));
+        return view('reader.search', compact('query', 'results', 'matchingExercises'));
     }
 }
