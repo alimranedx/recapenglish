@@ -20,30 +20,26 @@ The database comes pre-seeded with three tiers of user accounts:
 
 ## 📘 Curriculum & Book Structure
 
-The curriculum is structured across 4 progressive parts containing 15 chapters and 225+ past competitive exam questions:
+The curriculum is structured across 4 progressive parts containing 15 chapters and all **1,601 unabridged past competitive exam questions** (BCS, Primary, University Admission, Bank, and Ministry exams) cross-matched with original lecture notes:
 
-### Part I: The Building Blocks (Parts of Speech)
-- **Chapter 1:** Nouns & Classification (Proper, Common, Collective, Material, Abstract, Personified)
-- **Chapter 2:** Countability & Determiners (*Few vs Little*, *Many vs Much*, Quantifiers)
-- **Chapter 3:** Pronouns & Substituting Words (Personal, Reflexive, Emphatic, Demonstrative, Indefinite)
-- **Chapter 4:** Relative Pronouns & Clauses (*Who, Whom, Whose, Which, That*, Antecedents)
-- **Chapter 5:** Adjectives & Classification (Attributive, Predicative, Order of Adjectives)
-- **Chapter 6:** Degree of Comparison (Positive, Comparative, Superlative, Irregular forms)
-- **Chapter 7:** Adverbs & Modifiers (Time, Place, Manner, Degree, Frequency, Sentence modifiers)
-
-### Part II: The Engine of Syntax (Verbs & Verbals)
-- **Chapter 8:** Verbs & Classification (Finite, Non-Finite, Transitive, Intransitive, Linking)
-- **Chapter 9:** Gerunds vs. Participles (Verbal Nouns vs. Verbal Adjectives identification tests)
-- **Chapter 10:** Tenses & Right Forms of Verbs (12 Tenses, time signals, stative verbs, conditions)
-- **Chapter 11:** Subject-Verb Agreement (Singular/Plural, compound subjects, tricky connectors)
-
-### Part III: Advanced Syntactic Mechanics
-- **Chapter 12:** The Subjunctive Mood (`RUPA IS MODERN` mnemonic, that-clause base form rules)
-- **Chapter 13:** Inversion of Verbs (`BARSHA-NOVA` mnemonic, negative adverb auxiliary inversion)
-
-### Part IV: Transformations & Discourse
-- **Chapter 14:** Voice Transformation (Active to Passive, modals, quasi-passive, imperatives)
-- **Chapter 15:** Narration & Speech (Direct to Indirect conversion across sentence types)
+| # | Chapter Title | Topic Scope | Question Count | Answer Keys |
+|---|:---|:---|:---:|:---:|
+| 1 | **Nouns & Classification** | Proper, Common, Collective, Material, Abstract, Personified Nouns | **89** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
+| 2 | **Countability & Determiners** | *Few vs Little*, *Many vs Much*, Mass Nouns, Quantifiers | **131** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
+| 3 | **Pronouns & Substituting Words** | Personal, Reflexive, Emphatic, Demonstrative, Indefinite | **88** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
+| 4 | **Relative Pronouns & Clauses** | *Who, Whom, Whose, Which, That*, Antecedent rules | **83** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
+| 5 | **Adjectives & Classification** | Attributive, Predicative, Order of Adjectives | **75** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
+| 6 | **Degree of Comparison** | Positive, Comparative, Superlative, Irregular forms | **116** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
+| 7 | **Adverbs & Modifiers** | Time, Place, Manner, Degree, Frequency, Dangling Modifiers | **93** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
+| 8 | **Verbs & Classification** | Finite, Non-Finite, Transitive, Intransitive, Linking, Stative | **105** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
+| 9 | **Gerunds vs Participles** | Verbal Noun vs Verbal Adjective identification | **71** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
+| 10 | **Tenses & Right Forms of Verbs** | 12 Tenses, time signals, conditionals, causatives | **238** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
+| 11 | **Subject-Verb Agreement** | 17 Comprehensive Rules, compound subjects, tricky connectors | **211** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
+| 12 | **The Subjunctive Mood** | `RUPA IS MODERN` mnemonic, that-clause base forms | **30** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
+| 13 | **Inversion of Verbs** | `BARSHA-NOVA` mnemonic, negative adverb auxiliary inversion | **35** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
+| 14 | **Voice Transformation** | Active to Passive, modals, quasi-passive, prepositions | **130** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
+| 15 | **Narration & Speech** | Direct to Indirect speech across all 5 sentence types | **106** | `ⓐⓑⓒⓓ` $\rightarrow$ A, B, C, D |
+| **Total** | **All 15 Chapters** | **Comprehensive English Grammar** | **1,601 MCQs** | **100% Verified** |
 
 ---
 
@@ -52,15 +48,20 @@ The curriculum is structured across 4 progressive parts containing 15 chapters a
 1. **Auto-Saved Last Topic ("Resume Reading")**:
    - Automatically tracks every learner's last visited topic and completion percentage.
    - One-click "Resume Reading" button on the reader homepage.
-2. **Interactive Practice Quizzes**:
-   - Multiple choice questions with instant feedback (Green/Red highlights).
-   - Shows detailed explanation notes and examination references (e.g., 38th BCS, DU A-Unit).
-3. **Saved Topics & Bookmarks**:
+2. **Show / Hide Answer & Interactive Quiz Drill**:
+   - Answers and explanations remain **hidden by default** on each question card to encourage active recall.
+   - Per-question toggle: **"Show Answer (উত্তর দেখুন)" / "Hide Answer (উত্তর লুকান)"**.
+   - Global header toggle: **"Show All Answers (সব উত্তর দেখুন)"** for rapid self-assessment.
+   - Real-time interactive feedback (Green for correct, Red with correct answer highlighted for wrong).
+   - Instant reset button: **"↺ পুনরায় চেষ্টা করুন (Try Again)"** with dynamic score tracker.
+3. **Bangla & English Dual Font Typography**:
+   - Integrated `Hind Siliguri` / `Noto Sans Bengali` alongside `Plus Jakarta Sans` with zero broken glyphs or rendering artifacts.
+4. **Saved Topics & Bookmarks**:
    - Learners can bookmark tricky topics and add personalized revision notes.
-4. **Google OAuth & Email Authentication**:
+5. **Google OAuth & Email Authentication**:
    - Register and login with standard credentials or one-click Google Sign-In via Laravel Socialite.
-5. **Super Admin RBAC**:
-   - Dedicated portal for Super Admins to provision and manage editorial staff.
+6. **Super Admin RBAC & MCQ Management**:
+   - Dedicated admin suite to manage topics and questions, plus Super Admin portal to provision editorial staff.
 
 ---
 
