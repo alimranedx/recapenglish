@@ -150,7 +150,14 @@
                             <span class="text-[10px] font-black uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-100">Interactive Drill</span>
                             <h2 class="text-xl font-black text-slate-900 mt-1">Practice Questions & Past Exam MCQs</h2>
                         </div>
-                        <div class="flex items-center gap-3">
+                        <div class="flex flex-wrap items-center gap-3">
+                            <button type="button" 
+                                    onclick="toggleAllAnswers()" 
+                                    id="toggle-all-btn"
+                                    class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-slate-200 bg-white hover:bg-slate-50 text-xs font-bold text-slate-700 transition cursor-pointer shadow-2xs">
+                                <svg id="toggle-all-icon" class="w-3.5 h-3.5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                <span id="toggle-all-label">Show All Answers (সব উত্তর দেখুন)</span>
+                            </button>
                             <span class="text-xs font-bold text-slate-600 bg-slate-100 px-3 py-1 rounded-full">
                                 {{ $topic->exercises->count() }} Questions
                             </span>
@@ -164,7 +171,22 @@
                     <div class="space-y-6">
                         @php $optLetters = ['a', 'b', 'c', 'd']; @endphp
                         @foreach($topic->exercises as $index => $exercise)
-                            <div class="p-5 sm:p-6 rounded-2xl border border-slate-200/80 bg-slate-50/50 space-y-4 transition" id="quiz-{{ $exercise->id }}" data-answered="0" data-correct="0">
+                            @php
+                                $correctKey = strtolower(trim($exercise->correct_answer));
+                                $correctOptText = '';
+                                foreach($exercise->options as $oIdx => $oVal) {
+                                    if (preg_match('/^([a-d])[\)\.]\s*(.*)/i', $oVal, $m)) {
+                                        if (strtolower($m[1]) === $correctKey) {
+                                            $correctOptText = $m[2];
+                                            break;
+                                        }
+                                    } elseif (($optLetters[$oIdx] ?? '') === $correctKey) {
+                                        $correctOptText = $oVal;
+                                        break;
+                                    }
+                                }
+                            @endphp
+                            <div class="p-5 sm:p-6 rounded-2xl border border-slate-200/80 bg-slate-50/50 space-y-4 transition quiz-card" id="quiz-{{ $exercise->id }}" data-answered="0" data-correct="0" data-showing-answer="0" data-correct-letter="{{ $correctKey }}">
                                 <div class="flex items-start justify-between gap-3">
                                     <div class="flex items-start gap-3">
                                         <span class="w-7 h-7 rounded-xl bg-indigo-600 text-white font-black text-xs flex items-center justify-center shrink-0 shadow-xs">
@@ -194,7 +216,7 @@
                                             }
                                         @endphp
                                         <button type="button" 
-                                                onclick="checkAnswer({{ $exercise->id }}, '{{ $letter }}', '{{ strtolower(trim($exercise->correct_answer)) }}')"
+                                                onclick="checkAnswer({{ $exercise->id }}, '{{ $letter }}', '{{ $correctKey }}')"
                                                 id="opt-{{ $exercise->id }}-{{ $letter }}"
                                                 class="option-btn text-left px-4 py-3.5 rounded-xl border border-slate-200 bg-white hover:bg-indigo-50/60 hover:border-indigo-300 text-xs sm:text-sm font-semibold text-slate-800 transition shadow-2xs flex items-center gap-3 cursor-pointer">
                                             <span class="w-7 h-7 rounded-lg bg-slate-100 text-slate-700 font-black text-xs flex items-center justify-center shrink-0 uppercase border border-slate-200/80">
@@ -205,15 +227,44 @@
                                     @endforeach
                                 </div>
 
-                                <!-- Explanation Box (Revealed upon answering) -->
+                                <!-- Question Actions: Show/Hide Answer Toggle & Reset -->
+                                <div class="flex items-center justify-between pt-3 border-t border-slate-200/60">
+                                    <button type="button" 
+                                            onclick="toggleAnswer({{ $exercise->id }}, '{{ $correctKey }}')" 
+                                            id="toggle-btn-{{ $exercise->id }}"
+                                            class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl border border-indigo-200 bg-indigo-50/70 hover:bg-indigo-100 text-indigo-700 font-bold text-xs transition cursor-pointer shadow-2xs">
+                                        <svg id="eye-icon-{{ $exercise->id }}" class="w-3.5 h-3.5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                        <span id="toggle-label-{{ $exercise->id }}">Show Answer (উত্তর দেখুন)</span>
+                                    </button>
+
+                                    <button type="button" 
+                                            onclick="resetQuestion({{ $exercise->id }})" 
+                                            id="reset-btn-{{ $exercise->id }}"
+                                            class="hidden text-xs font-bold text-slate-500 hover:text-indigo-600 underline cursor-pointer items-center gap-1">
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                                        <span>পুনরায় চেষ্টা করুন (Try Again)</span>
+                                    </button>
+                                </div>
+
+                                <!-- Explanation & Answer Box (Toggled on button click or upon answering) -->
                                 <div id="expl-{{ $exercise->id }}" class="hidden pt-3 border-t border-slate-200/80 text-xs text-slate-700 space-y-3">
-                                    <div class="flex items-center justify-between">
-                                        <div class="font-bold flex items-center gap-1.5" id="status-{{ $exercise->id }}"></div>
-                                        <button type="button" onclick="resetQuestion({{ $exercise->id }})" class="text-xs font-bold text-slate-500 hover:text-indigo-600 underline cursor-pointer flex items-center gap-1">
-                                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-                                            <span>পুনরায় চেষ্টা করুন (Try Again)</span>
-                                        </button>
+                                    <!-- Correct Answer Callout -->
+                                    <div class="flex items-center gap-2.5 p-3.5 bg-emerald-50 border border-emerald-200 rounded-xl">
+                                        <span class="w-6 h-6 rounded-lg bg-emerald-600 text-white font-black text-xs flex items-center justify-center shrink-0">
+                                            ✓
+                                        </span>
+                                        <div class="text-xs text-emerald-950 font-bold">
+                                            <span>সঠিক উত্তর (Correct Answer): </span>
+                                            <span class="uppercase font-black text-emerald-800 text-sm">Option ({{ strtoupper($correctKey) }})</span>
+                                            @if($correctOptText)
+                                                <span class="text-emerald-900 font-semibold">— {{ $correctOptText }}</span>
+                                            @endif
+                                        </div>
                                     </div>
+
+                                    <!-- Status Message from Interactive Attempt -->
+                                    <div class="font-bold flex items-center gap-1.5" id="status-{{ $exercise->id }}"></div>
+
                                     @if($exercise->explanation)
                                         <div class="bg-indigo-50/90 p-4 rounded-xl border border-indigo-100 text-indigo-950 font-medium leading-relaxed">
                                             <span class="font-extrabold text-indigo-900 block mb-1">💡 ব্যাখ্যা ও নিয়ম (Explanation):</span>
@@ -265,7 +316,77 @@
 @push('scripts')
 <script>
     let currentScore = 0;
+    let allAnswersVisible = false;
 
+    // Toggle single answer show/hide
+    function toggleAnswer(exerciseId, correctLetter) {
+        correctLetter = correctLetter.toLowerCase().trim();
+        const container = document.getElementById('quiz-' + exerciseId);
+        const explBox = document.getElementById('expl-' + exerciseId);
+        const toggleLabel = document.getElementById('toggle-label-' + exerciseId);
+        const eyeIcon = document.getElementById('eye-icon-' + exerciseId);
+        const correctBtn = document.getElementById(`opt-${exerciseId}-${correctLetter}`);
+
+        const isCurrentlyShown = container.getAttribute('data-showing-answer') === '1';
+
+        if (isCurrentlyShown) {
+            // Hide answer
+            explBox.classList.add('hidden');
+            container.setAttribute('data-showing-answer', '0');
+            toggleLabel.textContent = 'Show Answer (উত্তর দেখুন)';
+            eyeIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>';
+
+            // Only remove highlight if user hasn't attempted yet
+            if (container.getAttribute('data-answered') !== '1' && correctBtn) {
+                correctBtn.classList.remove('bg-emerald-100', 'text-emerald-950', 'border-emerald-500', 'font-bold');
+            }
+        } else {
+            // Show answer
+            explBox.classList.remove('hidden');
+            container.setAttribute('data-showing-answer', '1');
+            toggleLabel.textContent = 'Hide Answer (উত্তর লুকান)';
+            eyeIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18"/>';
+
+            // Highlight the correct option
+            if (correctBtn && container.getAttribute('data-answered') !== '1') {
+                correctBtn.classList.add('bg-emerald-100', 'text-emerald-950', 'border-emerald-500', 'font-bold');
+            }
+        }
+    }
+
+    // Toggle all answers show/hide across the whole topic
+    function toggleAllAnswers() {
+        allAnswersVisible = !allAnswersVisible;
+        const allCards = document.querySelectorAll('.quiz-card');
+        const toggleAllLabel = document.getElementById('toggle-all-label');
+        const toggleAllIcon = document.getElementById('toggle-all-icon');
+
+        if (allAnswersVisible) {
+            toggleAllLabel.textContent = 'Hide All Answers (সব উত্তর লুকান)';
+            toggleAllIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l18 18"/>';
+            
+            allCards.forEach(card => {
+                const exId = card.id.replace('quiz-', '');
+                const correctLetter = card.getAttribute('data-correct-letter');
+                if (card.getAttribute('data-showing-answer') !== '1') {
+                    toggleAnswer(exId, correctLetter);
+                }
+            });
+        } else {
+            toggleAllLabel.textContent = 'Show All Answers (সব উত্তর দেখুন)';
+            toggleAllIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>';
+
+            allCards.forEach(card => {
+                const exId = card.id.replace('quiz-', '');
+                const correctLetter = card.getAttribute('data-correct-letter');
+                if (card.getAttribute('data-showing-answer') === '1') {
+                    toggleAnswer(exId, correctLetter);
+                }
+            });
+        }
+    }
+
+    // Interactive answering
     function checkAnswer(exerciseId, selectedLetter, correctLetter) {
         selectedLetter = selectedLetter.toLowerCase().trim();
         correctLetter = correctLetter.toLowerCase().trim();
@@ -284,6 +405,8 @@
         const correctBtn = document.getElementById(`opt-${exerciseId}-${correctLetter}`);
         const explBox = document.getElementById('expl-' + exerciseId);
         const statusSpan = document.getElementById('status-' + exerciseId);
+        const resetBtn = document.getElementById('reset-btn-' + exerciseId);
+        const toggleLabel = document.getElementById('toggle-label-' + exerciseId);
 
         if (selectedLetter === correctLetter) {
             container.setAttribute('data-correct', '1');
@@ -294,7 +417,7 @@
                 selectedBtn.classList.remove('bg-white', 'border-slate-200');
                 selectedBtn.classList.add('bg-emerald-600', 'text-white', 'border-emerald-700', 'shadow-sm');
             }
-            statusSpan.innerHTML = '<span class="text-emerald-700 font-extrabold text-sm flex items-center gap-1.5"><svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> সঠিক উত্তর (Correct Answer)!</span>';
+            statusSpan.innerHTML = '<span class="text-emerald-700 font-extrabold text-sm flex items-center gap-1.5"><svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> আপনার উত্তরটি সঠিক হয়েছে (Correct Answer)!</span>';
         } else {
             container.setAttribute('data-correct', '0');
             if (selectedBtn) {
@@ -305,12 +428,20 @@
                 correctBtn.classList.remove('bg-white', 'border-slate-200');
                 correctBtn.classList.add('bg-emerald-100', 'text-emerald-950', 'border-emerald-500', 'font-bold');
             }
-            statusSpan.innerHTML = `<span class="text-rose-600 font-extrabold text-sm flex items-center gap-1.5"><svg class="w-5 h-5 text-rose-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg> ভুল উত্তর। সঠিক উত্তর হলো (${correctLetter.toUpperCase()})</span>`;
+            statusSpan.innerHTML = `<span class="text-rose-600 font-extrabold text-sm flex items-center gap-1.5"><svg class="w-5 h-5 text-rose-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg> ভুল উত্তর নির্বাচন করেছেন। সঠিক উত্তর হলো (${correctLetter.toUpperCase()})</span>`;
         }
 
+        // Show answer & explanation
         explBox.classList.remove('hidden');
+        container.setAttribute('data-showing-answer', '1');
+        if (toggleLabel) toggleLabel.textContent = 'Hide Answer (উত্তর লুকান)';
+        if (resetBtn) {
+            resetBtn.classList.remove('hidden');
+            resetBtn.classList.add('inline-flex');
+        }
     }
 
+    // Reset single question to retry
     function resetQuestion(exerciseId) {
         const container = document.getElementById('quiz-' + exerciseId);
         const wasCorrect = container.getAttribute('data-correct') === '1';
@@ -322,6 +453,7 @@
 
         container.setAttribute('data-answered', '0');
         container.setAttribute('data-correct', '0');
+        container.setAttribute('data-showing-answer', '0');
 
         const buttons = container.querySelectorAll('.option-btn');
         buttons.forEach(btn => {
@@ -331,6 +463,18 @@
 
         const explBox = document.getElementById('expl-' + exerciseId);
         explBox.classList.add('hidden');
+
+        const statusSpan = document.getElementById('status-' + exerciseId);
+        if (statusSpan) statusSpan.innerHTML = '';
+
+        const resetBtn = document.getElementById('reset-btn-' + exerciseId);
+        if (resetBtn) {
+            resetBtn.classList.add('hidden');
+            resetBtn.classList.remove('inline-flex');
+        }
+
+        const toggleLabel = document.getElementById('toggle-label-' + exerciseId);
+        if (toggleLabel) toggleLabel.textContent = 'Show Answer (উত্তর দেখুন)';
     }
 
     function updateScoreDisplay() {
