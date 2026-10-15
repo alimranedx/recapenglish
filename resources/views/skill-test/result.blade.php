@@ -300,11 +300,23 @@
                             @endif
                         </div>
 
-                        @if($exercise->exam_reference)
-                            <span class="text-[11px] font-extrabold text-sky-800 bg-sky-50 px-3 py-1 rounded-full shrink-0 border border-sky-100 shadow-2xs">
-                                {{ $exercise->exam_reference }}
-                            </span>
-                        @endif
+                        <div class="flex flex-wrap items-center gap-2">
+                            @if($exercise->exam_reference)
+                                <span class="text-[11px] font-extrabold text-sky-800 bg-sky-50 px-3 py-1 rounded-full shrink-0 border border-sky-100 shadow-2xs">
+                                    {{ $exercise->exam_reference }}
+                                </span>
+                            @endif
+
+                            @if(auth()->check() && auth()->user()->isAdmin())
+                                <a href="{{ route('admin.exercises.edit', ['exercise' => $exercise->id, 'return_url' => url()->full()]) }}" 
+                                   target="_blank" 
+                                   class="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 rounded-lg text-xs font-bold transition shadow-xs"
+                                   title="Admin: Fix wrong answer key, options, or explanation">
+                                    <svg class="w-3.5 h-3.5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                                    <span>Correct Question / Answer Key</span>
+                                </a>
+                            @endif
+                        </div>
                     </div>
 
                     <!-- Question Stem -->
@@ -415,14 +427,30 @@
                     <!-- Detailed Explanation & Notes -->
                     @if($exercise->explanation)
                         <div class="p-4 rounded-2xl bg-white border border-slate-200 text-xs sm:text-sm text-slate-700 space-y-2 font-bangla leading-relaxed shadow-2xs">
-                            <span class="font-bold text-slate-900 font-sans uppercase text-[11px] tracking-wider flex items-center gap-1.5">
-                                <svg class="w-4 h-4 text-indigo-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
-                                <span>ব্যাখ্যা ও সঠিক উত্তরের যুক্তি (Explanation):</span>
-                            </span>
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-slate-900 font-sans uppercase text-[11px] tracking-wider flex items-center gap-1.5">
+                                    <svg class="w-4 h-4 text-indigo-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+                                    <span>ব্যাখ্যা ও সঠিক উত্তরের যুক্তি (Explanation):</span>
+                                </span>
+                                @if(auth()->check() && auth()->user()->isAdmin())
+                                    <a href="{{ route('admin.exercises.edit', ['exercise' => $exercise->id, 'return_url' => url()->full()]) }}" target="_blank" class="font-sans text-[11px] font-bold text-indigo-600 hover:text-indigo-800 hover:underline">
+                                        ✎ Edit / Enhance Explanation
+                                    </a>
+                                @endif
+                            </div>
                             <div class="whitespace-pre-line text-slate-800 pt-1 border-t border-slate-100">
                                 {{ $exercise->explanation }}
                             </div>
                         </div>
+                    @else
+                        @if(auth()->check() && auth()->user()->isAdmin())
+                            <div class="p-3 rounded-xl bg-amber-50/70 border border-dashed border-amber-300 text-xs text-amber-900 flex items-center justify-between">
+                                <span class="italic">No explanation written yet for this question.</span>
+                                <a href="{{ route('admin.exercises.edit', ['exercise' => $exercise->id, 'return_url' => url()->full()]) }}" target="_blank" class="font-bold text-amber-800 hover:text-amber-950 underline">
+                                    + Add Explanation & Grammar Rule
+                                </a>
+                            </div>
+                        @endif
                     @endif
 
                 </div>

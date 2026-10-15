@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Exercise;
 use App\Models\SkillTestAttempt;
+use App\Models\SkillTestConfig;
 use App\Models\Topic;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,11 +17,18 @@ class SkillTestController extends Controller
      */
     public function index(Request $request)
     {
-        $topics = Topic::where('is_published', true)
+        $config = SkillTestConfig::getActive();
+
+        $query = Topic::where('is_published', true)
             ->has('exercises')
             ->withCount('exercises')
-            ->orderBy('order')
-            ->get();
+            ->orderBy('order');
+
+        if ($config->isFixedTopicMode()) {
+            $query->whereIn('id', $config->fixed_topic_ids);
+        }
+
+        $topics = $query->get();
 
         $user = Auth::user();
         $recentAttempts = collect();
@@ -50,16 +58,18 @@ class SkillTestController extends Controller
             'recentAttempts',
             'totalQuestionsInPool',
             'totalTopicsCount',
-            'user'
+            'user',
+            'config'
         ));
     }
 
     /**
-     * Start a new Skill Test attempt with 50 randomized questions covering all topics.
+     * Start a new Skill Test attempt with randomized questions based on active exam settings.
      */
     public function start(Request $request)
     {
-        $questionIds = SkillTestAttempt::generateRandomSkillTestQuestionIds(50);
+        $config = SkillTestConfig::getActive();
+        $questionIds = SkillTestAttempt::generateRandomSkillTestQuestionIds($config->total_questions);
 
         if (empty($questionIds)) {
             return redirect()->route('skill-test.index')
@@ -82,7 +92,7 @@ class SkillTestController extends Controller
     }
 
     /**
-     * Present the 50-question interactive test.
+     * Present the interactive skill test.
      */
     public function take(Request $request, string $uuid)
     {
@@ -93,14 +103,15 @@ class SkillTestController extends Controller
             return redirect()->route('skill-test.result', $attempt->uuid);
         }
 
+        $config = SkillTestConfig::getActive();
         $exercises = $attempt->getOrderedExercises();
 
-        // Standard 50-minute exam duration (3000 seconds)
-        $totalTimeSeconds = 50 * 60;
+        // Exam duration in seconds based on admin settings
+        $totalTimeSeconds = max(60, ($config->duration_minutes ?? 50) * 60);
         $elapsedSeconds = $attempt->started_at ? (int) abs(now()->diffInSeconds($attempt->started_at)) : 0;
         $remainingSeconds = max(0, $totalTimeSeconds - $elapsedSeconds);
 
-        return view('skill-test.take', compact('attempt', 'exercises', 'remainingSeconds'));
+        return view('skill-test.take', compact('attempt', 'exercises', 'remainingSeconds', 'config'));
     }
 
     /**
@@ -239,8 +250,9 @@ class SkillTestController extends Controller
             return redirect()->route('skill-test.take', $attempt->uuid);
         }
 
+        $config = SkillTestConfig::getActive();
         $exercises = $attempt->getOrderedExercises();
 
-        return view('skill-test.result', compact('attempt', 'exercises'));
+        return view('skill-test.result', compact('attempt', 'exercises', 'config'));
     }
 }

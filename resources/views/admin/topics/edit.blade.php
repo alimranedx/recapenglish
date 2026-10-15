@@ -92,9 +92,15 @@
                 <h3 class="text-lg font-black text-slate-900">Topic Practice Questions & MCQs</h3>
                 <p class="text-xs text-slate-600 mt-0.5">Manage multiple-choice questions, answer keys, explanations, and exam references.</p>
             </div>
-            <span class="text-xs font-bold bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full">
-                {{ $topic->exercises->count() }} Questions
-            </span>
+            <div class="flex items-center gap-2.5">
+                <span class="text-xs font-bold bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full">
+                    {{ $topic->exercises->count() }} Questions
+                </span>
+                <a href="{{ route('admin.exercises.create', ['topic_id' => $topic->id]) }}" class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-1 shadow-xs">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+                    <span>+ Add MCQ</span>
+                </a>
+            </div>
         </div>
 
         <!-- Existing Questions List -->

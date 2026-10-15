@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Models\Exercise;
 use App\Models\SkillTestAttempt;
+use App\Models\SkillTestConfig;
 use App\Models\Topic;
 use App\Models\User;
 use Database\Seeders\DatabaseSeeder;
@@ -166,5 +167,62 @@ class SkillTestFeatureTest extends TestCase
         $attempt->refresh();
         $this->assertEquals(['b'], array_values($attempt->user_answers));
         $this->assertEquals(65, $attempt->duration_seconds);
+    }
+
+    public function test_admin_can_update_skill_test_settings_and_change_duration_and_fixed_topics(): void
+    {
+        $admin = User::where('role', 'admin')->first();
+
+        // 1. Admin accesses settings page
+        $editResponse = $this->actingAs($admin)->get(route('admin.skill-test-settings.edit'));
+        $editResponse->assertStatus(200);
+        $editResponse->assertSeeText('Skill Test Rules & Configuration');
+
+        // Pick 3 specific topics to fix
+        $topics = Topic::where('is_published', true)->take(3)->get();
+        $fixedIds = $topics->pluck('id')->toArray();
+
+        // 2. Admin updates settings: 30 minutes duration, 24 questions, fixed topic mode
+        $updateResponse = $this->actingAs($admin)->put(route('admin.skill-test-settings.update'), [
+            'title' => 'Grammar Sprint 30-Minute Test',
+            'duration_minutes' => 30,
+            'total_questions' => 24,
+            'pass_percentage' => 70,
+            'topic_mode' => 'fixed',
+            'fixed_topic_ids' => $fixedIds,
+            'instructions' => 'Follow all guidelines carefully.',
+        ]);
+
+        $updateResponse->assertSessionHas('success');
+
+        $config = SkillTestConfig::getActive();
+        $this->assertEquals(30, $config->duration_minutes);
+        $this->assertEquals(24, $config->total_questions);
+        $this->assertEquals(70, $config->pass_percentage);
+        $this->assertEquals('fixed', $config->topic_mode);
+        $this->assertEquals($fixedIds, $config->fixed_topic_ids);
+
+        // 3. Start a test and verify it picks questions from only the fixed topics
+        $startResponse = $this->post(route('skill-test.start'));
+        $attempt = SkillTestAttempt::latest()->first();
+
+        $this->assertEquals(24, count($attempt->question_ids));
+        $this->assertEquals(24, $attempt->total_questions);
+
+        $topicsInTest = Exercise::whereIn('id', $attempt->question_ids)
+            ->pluck('topic_id')
+            ->unique()
+            ->sort()
+            ->values()
+            ->toArray();
+
+        sort($fixedIds);
+        $this->assertEquals($fixedIds, $topicsInTest, 'Only the selected fixed topics should be tested');
+
+        // 4. Verify test screen shows 30 minutes countdown
+        $takeResponse = $this->get(route('skill-test.take', $attempt->uuid));
+        $takeResponse->assertStatus(200);
+        $takeResponse->assertSee('Grammar Sprint 30-Minute Test');
+        $takeResponse->assertSee('30:00');
     }
 }

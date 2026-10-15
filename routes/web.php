@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\ChapterController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ExerciseController;
 use App\Http\Controllers\Admin\PartController;
+use App\Http\Controllers\Admin\SkillTestConfigController;
 use App\Http\Controllers\Admin\SkillTestReportController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\TopicController;
@@ -85,6 +86,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
 
     // Skill Test Submissions & Performance Analytics
     Route::resource('skill-tests', SkillTestReportController::class)->only(['index', 'destroy']);
+    Route::get('skill-test-settings', [SkillTestConfigController::class, 'edit'])->name('skill-test-settings.edit');
+    Route::put('skill-test-settings', [SkillTestConfigController::class, 'update'])->name('skill-test-settings.update');
 
     // Super Admin Only: Provision & manage administrators
     Route::middleware('super_admin')->group(function () {

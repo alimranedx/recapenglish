@@ -66,12 +66,16 @@
                                 {{ $topic->is_published ? 'Published' : 'Draft' }}
                             </span>
                         </td>
-                        <td class="px-6 py-4 text-right space-x-2">
-                            <a href="{{ route('reader.topic', $topic->slug) }}" target="_blank" class="text-slate-600 hover:text-slate-800 font-semibold" title="Preview on Reader">
-                                View
+                        <td class="px-6 py-4 text-right space-x-2 whitespace-nowrap">
+                            <a href="{{ route('admin.exercises.create', ['topic_id' => $topic->id]) }}" class="px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold text-[11px] transition inline-flex items-center gap-1">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+                                <span>Add Question</span>
                             </a>
                             <a href="{{ route('admin.topics.edit', $topic->id) }}" class="text-indigo-600 hover:text-indigo-800 font-bold hover:underline">
-                                Edit / MCQs
+                                Edit Topic
+                            </a>
+                            <a href="{{ route('reader.topic', $topic->slug) }}" target="_blank" class="text-slate-600 hover:text-slate-800 font-semibold" title="Preview on Reader">
+                                View
                             </a>
                             <form action="{{ route('admin.topics.destroy', $topic->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this topic?');" class="inline">
                                 @csrf

@@ -219,4 +219,34 @@ class RecapEnglishTest extends TestCase
         $studentsResponse->assertStatus(200);
         $studentsResponse->assertSee('Skill Tests');
     }
+
+    public function test_admin_can_correct_exercise_answer_and_update_explanation_with_return_url(): void
+    {
+        $admin = User::where('role', 'admin')->first();
+        $exercise = Exercise::first();
+
+        $returnUrl = 'http://recapenglish.test/skill-test/test-review-uuid/result';
+
+        // Admin corrects wrong answer from 'a' to 'c' and enhances explanation
+        $response = $this->actingAs($admin)->put(route('admin.exercises.update', $exercise->id), [
+            'topic_id' => $exercise->topic_id,
+            'question' => $exercise->question,
+            'option_a' => 'Option Alpha',
+            'option_b' => 'Option Beta',
+            'option_c' => 'Option Gamma Correct',
+            'option_d' => 'Option Delta',
+            'correct_answer' => 'c',
+            'exam_reference' => '44th BCS Preliminary',
+            'explanation' => 'সংশোধিত ব্যাখ্যা: নিয়ম অনুযায়ী সঠিক উত্তর Option (C)।',
+            'return_url' => $returnUrl,
+        ]);
+
+        $response->assertRedirect($returnUrl);
+        $response->assertSessionHas('success');
+
+        $exercise->refresh();
+        $this->assertEquals('c', $exercise->correct_answer);
+        $this->assertEquals('44th BCS Preliminary', $exercise->exam_reference);
+        $this->assertStringContainsString('সংশোধিত ব্যাখ্যা', $exercise->explanation);
+    }
 }

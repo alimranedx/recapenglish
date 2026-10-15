@@ -72,16 +72,37 @@ class SkillTestAttempt extends Model
     }
 
     /**
-     * Generate 50 questions randomly chosen from ALL topics.
-     * Guarantees every single topic is represented (never misses any topic).
+     * Generate randomized questions across topics based on active settings.
+     * If fixed topic mode is active, only questions from fixed topics are selected.
+     * Otherwise, guarantees every single published topic is represented without missing any topic.
      * Randomizes the questions for each test attempt.
      */
-    public static function generateRandomSkillTestQuestionIds(int $totalQuestions = 50): array
+    public static function generateRandomSkillTestQuestionIds(?int $totalQuestions = null, ?array $allowedTopicIds = null): array
     {
-        $topics = Topic::where('is_published', true)
+        $config = SkillTestConfig::getActive();
+        $totalQuestions = $totalQuestions ?? ($config->total_questions ?? 50);
+
+        if ($allowedTopicIds === null && $config->isFixedTopicMode()) {
+            $allowedTopicIds = $config->fixed_topic_ids;
+        }
+
+        $query = Topic::where('is_published', true)
             ->has('exercises')
-            ->withCount('exercises')
-            ->get();
+            ->withCount('exercises');
+
+        if (!empty($allowedTopicIds)) {
+            $query->whereIn('id', $allowedTopicIds);
+        }
+
+        $topics = $query->get();
+
+        // Fallback to all published topics if custom topic filtering returned 0 topics
+        if ($topics->isEmpty() && !empty($allowedTopicIds)) {
+            $topics = Topic::where('is_published', true)
+                ->has('exercises')
+                ->withCount('exercises')
+                ->get();
+        }
 
         $topicCount = $topics->count();
         if ($topicCount === 0) {

@@ -10,8 +10,8 @@
             <span class="text-[10px] font-bold text-indigo-600 uppercase tracking-wider">Question Management</span>
             <h2 class="text-2xl font-black text-slate-900 tracking-tight mt-0.5">Edit Question & Answer Key</h2>
         </div>
-        <a href="{{ route('admin.exercises.index') }}" class="px-3.5 py-1.5 border border-slate-200 text-xs font-bold text-slate-700 rounded-xl hover:bg-slate-50 transition">
-            ← Back to All Questions
+        <a href="{{ request('return_url', route('admin.exercises.index')) }}" class="px-3.5 py-1.5 border border-slate-200 text-xs font-bold text-slate-700 rounded-xl hover:bg-slate-50 transition">
+            ← Back
         </a>
     </div>
 
@@ -19,6 +19,7 @@
         <form action="{{ route('admin.exercises.update', $exercise->id) }}" method="POST" class="space-y-6">
             @csrf
             @method('PUT')
+            <input type="hidden" name="return_url" value="{{ request('return_url', old('return_url')) }}">
 
             <!-- Associated Topic -->
             <div>
@@ -113,7 +114,7 @@
 
             <!-- Form Actions -->
             <div class="flex items-center justify-end gap-3 pt-4 border-t border-slate-100">
-                <a href="{{ route('admin.exercises.index') }}" class="px-4 py-2 border border-slate-300 text-xs font-bold text-slate-700 rounded-xl hover:bg-slate-50 transition">
+                <a href="{{ request('return_url', route('admin.exercises.index')) }}" class="px-4 py-2 border border-slate-300 text-xs font-bold text-slate-700 rounded-xl hover:bg-slate-50 transition">
                     Cancel
                 </a>
                 <button type="submit" class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs rounded-xl shadow-xs transition">

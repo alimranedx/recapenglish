@@ -19,35 +19,45 @@
             </div>
 
             <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight">
-                50-Question Master Skill Test
+                {{ $config->title ?? '50-Question Master Skill Test' }}
                 <span class="block text-xl sm:text-2xl font-bold text-indigo-200/90 font-bangla mt-2">
-                    সকল টপিক থেকে ৫০টি প্রশ্নে আপনার সার্বিক ইংরেজি গ্রামার দক্ষতা যাচাই করুন
+                    {{ $config->topic_mode === 'fixed' ? 'নির্বাচিত গুরুত্বপূর্ণ টপিকসমূহে আপনার সার্বিক প্রস্তুতি যাচাই করুন' : 'সকল টপিক থেকে বিভিন্ন প্রশ্নে আপনার সার্বিক ইংরেজি গ্রামার দক্ষতা যাচাই করুন' }}
                 </span>
             </h1>
 
             <p class="text-indigo-100/90 text-sm sm:text-base leading-relaxed">
                 Take an authentic exam-style skill test. Every single test is dynamically generated with 
-                <strong class="text-amber-300">50 questions selected randomly across every topic</strong> in the book — guarantee that 
-                no topic is ever omitted! Immediate scoring, topic-wise diagnostic analytics, and detailed bilingual solutions.
+                <strong class="text-amber-300">{{ $config->total_questions ?? 50 }} questions selected randomly</strong> 
+                {{ $config->topic_mode === 'fixed' ? 'from ' . $totalTopicsCount . ' designated key topics' : 'across every topic in the book — guarantee that no topic is omitted!' }} 
+                Immediate scoring, topic-wise diagnostic analytics, and detailed bilingual solutions.
             </p>
+
+            @if(!empty($config->instructions))
+                <div class="p-4 rounded-2xl bg-white/10 border border-white/15 text-xs text-indigo-100 font-medium leading-relaxed backdrop-blur">
+                    <strong class="text-amber-300 block mb-1 uppercase tracking-wider text-[11px]">Notice & Guidelines:</strong>
+                    {{ $config->instructions }}
+                </div>
+            @endif
 
             <!-- Test Meta Highlights -->
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
                 <div class="bg-white/10 backdrop-blur rounded-2xl p-3 border border-white/10">
                     <span class="text-[11px] font-semibold text-indigo-200 uppercase block">Questions</span>
-                    <span class="text-xl font-extrabold text-white">50 MCQs</span>
+                    <span class="text-xl font-extrabold text-white">{{ $config->total_questions ?? 50 }} MCQs</span>
                 </div>
                 <div class="bg-white/10 backdrop-blur rounded-2xl p-3 border border-white/10">
-                    <span class="text-[11px] font-semibold text-indigo-200 uppercase block">Topic Coverage</span>
-                    <span class="text-xl font-extrabold text-emerald-300">100% Guaranteed</span>
+                    <span class="text-[11px] font-semibold text-indigo-200 uppercase block">Topic Scope</span>
+                    <span class="text-xl font-extrabold text-emerald-300">
+                        {{ $config->topic_mode === 'fixed' ? $totalTopicsCount . ' Fixed Topics' : '100% Guaranteed' }}
+                    </span>
                 </div>
                 <div class="bg-white/10 backdrop-blur rounded-2xl p-3 border border-white/10">
-                    <span class="text-[11px] font-semibold text-indigo-200 uppercase block">Question Order</span>
-                    <span class="text-xl font-extrabold text-amber-300">Randomized</span>
+                    <span class="text-[11px] font-semibold text-indigo-200 uppercase block">Pass Benchmark</span>
+                    <span class="text-xl font-extrabold text-amber-300">{{ $config->pass_percentage ?? 60 }}%</span>
                 </div>
                 <div class="bg-white/10 backdrop-blur rounded-2xl p-3 border border-white/10">
-                    <span class="text-[11px] font-semibold text-indigo-200 uppercase block">Suggested Time</span>
-                    <span class="text-xl font-extrabold text-sky-300">50 Minutes</span>
+                    <span class="text-[11px] font-semibold text-indigo-200 uppercase block">Exam Duration</span>
+                    <span class="text-xl font-extrabold text-sky-300">{{ $config->duration_minutes ?? 50 }} Minutes</span>
                 </div>
             </div>
 
@@ -57,7 +67,7 @@
                     @csrf
                     <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white font-black text-base rounded-2xl shadow-xl shadow-emerald-500/25 transition transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer">
                         <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        <span>Start 50-Question Skill Test (পরীক্ষা শুরু করুন)</span>
+                        <span>Start {{ $config->total_questions ?? 50 }}-Question Skill Test (পরীক্ষা শুরু করুন)</span>
                     </button>
                 </form>
 

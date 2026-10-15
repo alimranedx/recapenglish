@@ -13,8 +13,8 @@
             <div class="flex items-center gap-3">
                 <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
                 <div>
-                    <h1 class="text-sm font-extrabold text-slate-900 leading-tight">50-Question Master Skill Test</h1>
-                    <span class="text-[11px] text-slate-500 hidden sm:inline">Randomized from all {{ count($exercises->pluck('topic_id')->unique()) }} topics</span>
+                    <h1 class="text-sm font-extrabold text-slate-900 leading-tight">{{ $config->title ?? 'Master Skill Test' }}</h1>
+                    <span class="text-[11px] text-slate-500 hidden sm:inline">Randomized from {{ count($exercises->pluck('topic_id')->unique()) }} topics</span>
                 </div>
             </div>
 
@@ -30,7 +30,7 @@
                 <!-- Timer Indicator -->
                 <div id="exam-timer-box" class="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900 text-white font-mono text-sm font-black tracking-wider shadow-inner">
                     <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    <span id="timer-display">50:00</span>
+                    <span id="timer-display">{{ sprintf('%02d:%02d', floor($remainingSeconds / 60), $remainingSeconds % 60) }}</span>
                 </div>
             </div>
 

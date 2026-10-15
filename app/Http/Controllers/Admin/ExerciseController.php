@@ -160,6 +160,10 @@ class ExerciseController extends Controller
             'exam_reference' => $validated['exam_reference'],
         ]);
 
+        if ($request->filled('return_url')) {
+            return redirect($request->input('return_url'))->with('success', 'Question, correct answer key, and explanation updated successfully!');
+        }
+
         if ($request->input('redirect_to') === 'topic_edit') {
             return redirect()->route('admin.topics.edit', $exercise->topic_id)->with('success', 'Practice question updated successfully!');
         }
