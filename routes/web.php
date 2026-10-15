@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\TopicController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\GoogleAuthController;
 use App\Http\Controllers\ReaderController;
+use App\Http\Controllers\SkillTestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ReaderController::class, 'index'])->name('reader.home');
 Route::get('/topic/{slug}', [ReaderController::class, 'showTopic'])->name('reader.topic');
 Route::get('/search', [ReaderController::class, 'search'])->name('reader.search');
+
+/*
+|--------------------------------------------------------------------------
+| Skill Test Routes (50 Questions across all topics)
+|--------------------------------------------------------------------------
+*/
+Route::prefix('skill-test')->name('skill-test.')->group(function () {
+    Route::get('/', [SkillTestController::class, 'index'])->name('index');
+    Route::post('/start', [SkillTestController::class, 'start'])->name('start');
+    Route::get('/{uuid}', [SkillTestController::class, 'take'])->name('take');
+    Route::post('/{uuid}/save-progress', [SkillTestController::class, 'saveProgress'])->name('save-progress');
+    Route::post('/{uuid}/submit', [SkillTestController::class, 'submit'])->name('submit');
+    Route::get('/{uuid}/result', [SkillTestController::class, 'result'])->name('result');
+});
 
 Route::middleware('auth')->group(function () {
     Route::post('/topic/{id}/toggle-complete', [ReaderController::class, 'toggleComplete'])->name('reader.toggle-complete');

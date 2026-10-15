@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Chapter;
 use App\Models\Exercise;
-use App\Models\Part;
+use App\Models\SkillTestAttempt;
 use App\Models\Topic;
 use App\Models\TopicRead;
 use App\Models\User;
@@ -22,6 +22,7 @@ class DashboardController extends Controller
             'total_students' => User::where('role', 'user')->count(),
             'total_admins' => User::where('role', 'admin')->count(),
             'completed_reads' => TopicRead::where('is_completed', true)->count(),
+            'total_skill_tests' => SkillTestAttempt::where('status', 'completed')->count(),
         ];
 
         $recentStudents = User::where('role', 'user')
@@ -35,6 +36,12 @@ class DashboardController extends Controller
             ->take(6)
             ->get();
 
-        return view('admin.dashboard', compact('stats', 'recentStudents', 'recentTopics'));
+        $recentSkillTests = SkillTestAttempt::with('user')
+            ->where('status', 'completed')
+            ->latest()
+            ->take(6)
+            ->get();
+
+        return view('admin.dashboard', compact('stats', 'recentStudents', 'recentTopics', 'recentSkillTests'));
     }
 }

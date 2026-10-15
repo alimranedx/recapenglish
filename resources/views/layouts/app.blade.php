@@ -66,6 +66,12 @@
                     Table of Contents
                 </a>
 
+                <a href="{{ route('skill-test.index') }}" class="inline-flex items-center gap-1.5 text-sm font-bold text-slate-700 hover:text-indigo-600 px-3 py-1.5 rounded-lg hover:bg-slate-50 transition {{ request()->routeIs('skill-test.*') ? 'text-indigo-600 bg-indigo-50' : '' }}">
+                    <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    <span>Skill Test</span>
+                    <span class="px-1.5 py-0.5 text-[10px] font-extrabold uppercase rounded-full bg-emerald-100 text-emerald-800">50 MCQs</span>
+                </a>
+
                 @auth
                     <a href="{{ route('reader.bookmarks') }}" class="text-sm font-semibold text-slate-600 hover:text-indigo-600 px-3 py-1.5 rounded-lg hover:bg-slate-50 transition flex items-center gap-1.5">
                         <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"/></svg>

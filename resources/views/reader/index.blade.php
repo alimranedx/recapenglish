@@ -65,6 +65,29 @@
         </div>
     </div>
 
+    <!-- 50-Question Master Skill Test Promo Banner -->
+    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-emerald-600 via-teal-600 to-indigo-700 text-white p-6 sm:p-8 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="space-y-2 max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-black uppercase tracking-wider">
+                <span>⚡ Skill Assessment Test</span>
+                <span class="w-1 h-1 rounded-full bg-white"></span>
+                <span>Randomized 50 MCQs</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-black tracking-tight">
+                Evaluate Your Grammar Mastery Across All Topics
+            </h3>
+            <p class="text-emerald-50 text-xs sm:text-sm leading-relaxed">
+                Take a 50-question mock exam selected randomly from all {{ $totalTopicsCount }} chapters (Nouns to Narration). Get immediate scoring, full topic diagnostics, and complete answer explanations.
+            </p>
+        </div>
+        <div class="shrink-0 flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+            <a href="{{ route('skill-test.index') }}" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-emerald-900 hover:bg-emerald-50 font-black text-sm rounded-2xl shadow-lg transition transform hover:scale-105">
+                <svg class="w-4 h-4 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/></svg>
+                <span>Take 50-Question Skill Test (দক্ষতা পরীক্ষা)</span>
+            </a>
+        </div>
+    </div>
+
     <!-- Curriculum Table of Contents -->
     <div class="space-y-8">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-4">

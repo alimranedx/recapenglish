@@ -71,4 +71,9 @@ class User extends Authenticatable
     {
         return $this->topicReads()->where('is_completed', true)->count();
     }
+
+    public function skillTestAttempts(): HasMany
+    {
+        return $this->hasMany(SkillTestAttempt::class)->latest();
+    }
 }
