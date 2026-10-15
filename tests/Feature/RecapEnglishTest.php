@@ -197,4 +197,26 @@ class RecapEnglishTest extends TestCase
         $deleteResponse->assertSessionHas('success');
         $this->assertDatabaseMissing('exercises', ['id' => $exercise->id]);
     }
+
+    public function test_admin_can_view_dashboard_with_topic_diagnostics_and_skill_test_reports(): void
+    {
+        $admin = User::where('role', 'admin')->first();
+
+        // 1. Dashboard loads with analytics
+        $response = $this->actingAs($admin)->get(route('admin.dashboard'));
+        $response->assertStatus(200);
+        $response->assertSeeText('Grammar Topic Difficulty & Diagnostic Analysis');
+        $response->assertSeeText('MCQ Bank Pool');
+        $response->assertSeeText('50-MCQ Skill Tests');
+
+        // 2. Skill test submissions report page loads
+        $reportResponse = $this->actingAs($admin)->get(route('admin.skill-tests.index'));
+        $reportResponse->assertStatus(200);
+        $reportResponse->assertSee('Skill Test Submissions');
+
+        // 3. Students index loads with test stats column
+        $studentsResponse = $this->actingAs($admin)->get(route('admin.students.index'));
+        $studentsResponse->assertStatus(200);
+        $studentsResponse->assertSee('Skill Tests');
+    }
 }

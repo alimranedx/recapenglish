@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\ChapterController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ExerciseController;
 use App\Http\Controllers\Admin\PartController;
+use App\Http\Controllers\Admin\SkillTestReportController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\TopicController;
 use App\Http\Controllers\Auth\AuthController;
@@ -81,6 +82,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
 
     // Learners / Students tracking
     Route::get('students', [StudentController::class, 'index'])->name('students.index');
+
+    // Skill Test Submissions & Performance Analytics
+    Route::resource('skill-tests', SkillTestReportController::class)->only(['index', 'destroy']);
 
     // Super Admin Only: Provision & manage administrators
     Route::middleware('super_admin')->group(function () {

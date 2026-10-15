@@ -29,6 +29,7 @@
                     <th class="px-6 py-3.5">Auth Method</th>
                     <th class="px-6 py-3.5">Last Read Topic</th>
                     <th class="px-6 py-3.5">Completed Topics</th>
+                    <th class="px-6 py-3.5">Skill Tests</th>
                     <th class="px-6 py-3.5">Last Active</th>
                     <th class="px-6 py-3.5">Joined</th>
                 </tr>
@@ -83,6 +84,28 @@
                             </div>
                         </td>
                         <td class="px-6 py-4">
+                            @php
+                                $testsCount = $st->skillTestAttempts->count();
+                                $bestScore = $testsCount > 0 ? $st->skillTestAttempts->max('score') : null;
+                                $bestPct = $testsCount > 0 ? $st->skillTestAttempts->max('percentage') : null;
+                            @endphp
+                            @if($testsCount > 0)
+                                <div class="space-y-1">
+                                    <div class="flex items-center gap-1.5">
+                                        <span class="font-extrabold text-slate-900">{{ $testsCount }} {{ Str::plural('test', $testsCount) }}</span>
+                                        <span class="px-1.5 py-0.5 rounded text-[10px] font-black {{ $bestPct >= 80 ? 'bg-emerald-100 text-emerald-800' : ($bestPct >= 50 ? 'bg-indigo-100 text-indigo-800' : 'bg-amber-100 text-amber-800') }}">
+                                            Best: {{ $bestScore }}/50 ({{ round($bestPct) }}%)
+                                        </span>
+                                    </div>
+                                    <a href="{{ route('admin.skill-tests.index', ['search' => $st->email]) }}" class="text-[10px] font-bold text-indigo-600 hover:text-indigo-800 hover:underline block">
+                                        View Submissions →
+                                    </a>
+                                </div>
+                            @else
+                                <span class="italic text-slate-600 text-[11px]">No tests yet</span>
+                            @endif
+                        </td>
+                        <td class="px-6 py-4">
                             {{ $st->last_read_at ? $st->last_read_at->diffForHumans() : 'Never' }}
                         </td>
                         <td class="px-6 py-4">
@@ -91,7 +114,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="6" class="px-6 py-8 text-center text-slate-600">No students registered matching criteria.</td>
+                        <td colspan="7" class="px-6 py-8 text-center text-slate-600">No students registered matching criteria.</td>
                     </tr>
                 @endforelse
             </tbody>

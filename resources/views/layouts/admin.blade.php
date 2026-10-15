@@ -86,6 +86,11 @@
                 Registered Students
             </a>
 
+            <a href="{{ route('admin.skill-tests.index') }}" class="flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-semibold transition {{ request()->routeIs('admin.skill-tests.*') ? 'bg-indigo-600 text-white' : 'hover:bg-slate-800 text-slate-300' }}">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                Skill Test Reports
+            </a>
+
             @if(auth()->user()->isSuperAdmin())
                 <div class="pt-6 px-3 pb-2 text-[11px] font-bold uppercase tracking-wider text-amber-500">Super Admin Only</div>
 

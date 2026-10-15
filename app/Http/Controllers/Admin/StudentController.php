@@ -13,7 +13,11 @@ class StudentController extends Controller
     {
         $search = $request->input('search');
 
-        $query = User::where('role', 'user')->with(['lastTopic.chapter', 'topicReads']);
+        $query = User::where('role', 'user')->with([
+            'lastTopic.chapter',
+            'topicReads',
+            'skillTestAttempts' => fn($q) => $q->where('status', 'completed')->latest(),
+        ]);
 
         if ($search) {
             $query->where(function ($q) use ($search) {
@@ -22,7 +26,7 @@ class StudentController extends Controller
             });
         }
 
-        $students = $query->latest('last_read_at')->paginate(20);
+        $students = $query->latest('last_read_at')->paginate(20)->withQueryString();
         $totalTopics = Topic::where('is_published', true)->count();
 
         return view('admin.students.index', compact('students', 'search', 'totalTopics'));
