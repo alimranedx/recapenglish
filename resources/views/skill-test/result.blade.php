@@ -26,10 +26,10 @@
 
                 <p class="text-indigo-100/80 text-xs sm:text-sm leading-relaxed">
                     Test taken on {{ $attempt->completed_at ? $attempt->completed_at->format('M d, Y - h:i A') : $attempt->created_at->format('M d, Y') }}. 
-                    Examine your answers below — review which options you chose versus the correct answers with full explanations.
+                    Examine all 50 questions below — view correct answers for questions you answered wrong as well as questions you didn't touch (skipped).
                 </p>
 
-                <!-- Evaluation Tier Badge & Quick Action -->
+                <!-- Evaluation Tier Badge & Quick Action Buttons -->
                 <div class="flex flex-wrap items-center gap-3">
                     @php
                         $pct = $attempt->percentage;
@@ -56,7 +56,15 @@
                                 onclick="scrollToReview('incorrect')" 
                                 class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs sm:text-sm font-extrabold shadow-md transition transform hover:scale-105 cursor-pointer">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-                            <span>Show {{ $attempt->incorrect_count }} Wrong Answers (ভুল উত্তর ও সঠিক সমাধান) ↓</span>
+                            <span>Show {{ $attempt->incorrect_count }} Wrong Answers (ভুল উত্তরগুলো) ↓</span>
+                        </button>
+                    @endif
+
+                    @if($attempt->unanswered_count > 0)
+                        <button type="button" 
+                                onclick="scrollToReview('unanswered')" 
+                                class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs sm:text-sm font-black shadow-md transition transform hover:scale-105 cursor-pointer">
+                            <span>⚪ Show {{ $attempt->unanswered_count }} Untouched Questions & Answers (না ছোঁয়া প্রশ্ন ও উত্তর) ↓</span>
                         </button>
                     @endif
                 </div>
@@ -129,13 +137,13 @@
 
             <button type="button" 
                     onclick="scrollToReview('unanswered')" 
-                    class="text-left bg-white/5 hover:bg-white/15 rounded-2xl p-4 border border-white/10 transition cursor-pointer group">
-                <div class="flex items-center justify-between text-slate-300 mb-1">
-                    <span class="text-[11px] font-bold uppercase tracking-wider">Skipped</span>
+                    class="text-left bg-amber-500/20 hover:bg-amber-500/30 rounded-2xl p-4 border border-amber-400/40 transition cursor-pointer group">
+                <div class="flex items-center justify-between text-amber-300 mb-1">
+                    <span class="text-[11px] font-bold uppercase tracking-wider">Untouched (না ছোঁয়া)</span>
                     <svg class="w-4 h-4 group-hover:scale-125 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M20 12H4"/></svg>
                 </div>
                 <div class="text-2xl font-black text-white">{{ $attempt->unanswered_count }}</div>
-                <span class="text-[10px] text-slate-400 font-bold block mt-1">Unanswered questions</span>
+                <span class="text-[10px] text-amber-200 font-bold block mt-1">Click to view untouched & answers →</span>
             </button>
 
             <div class="bg-white/5 rounded-2xl p-4 border border-white/10">
@@ -164,56 +172,56 @@
             <div>
                 <div class="flex items-center gap-2">
                     <span class="w-2.5 h-2.5 rounded-full bg-indigo-600"></span>
-                    <span class="text-[11px] font-black uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full">Answer Review</span>
+                    <span class="text-[11px] font-black uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full">All Questions Review</span>
                 </div>
                 <h2 class="text-xl sm:text-2xl font-black text-slate-900 mt-1">
-                    Answers Comparison & Detailed Solutions
+                    Questions, Given Answers & Correct Solutions
                 </h2>
                 <p class="text-xs text-slate-500 mt-0.5">
-                    Compare the exact answer you selected against the correct answer for every question.
+                    View answers for all questions: correct choices, questions answered wrong, and questions not touched (skipped).
                 </p>
             </div>
 
             <!-- Filter Tabs -->
             <div class="flex items-center gap-2 shrink-0 overflow-x-auto text-xs font-bold p-1 bg-slate-100/80 rounded-2xl">
+                <button type="button" 
+                        onclick="filterReview('all')" 
+                        id="rev-filter-all" 
+                        class="rev-tab px-3.5 py-2 rounded-xl bg-indigo-600 text-white shadow-xs font-extrabold transition cursor-pointer">
+                    All ({{ count($exercises) }})
+                </button>
+
                 @if($attempt->incorrect_count > 0)
                     <button type="button" 
                             onclick="filterReview('incorrect')" 
                             id="rev-filter-incorrect" 
-                            class="rev-tab px-3.5 py-2 rounded-xl bg-rose-600 text-white shadow-xs font-extrabold transition cursor-pointer flex items-center gap-1.5">
-                        <span>✗ Wrong Answers</span>
-                        <span class="bg-white text-rose-700 px-1.5 py-0.2 rounded-full text-[10px]">{{ $attempt->incorrect_count }}</span>
+                            class="rev-tab px-3.5 py-2 rounded-xl text-slate-700 hover:bg-white font-extrabold transition cursor-pointer flex items-center gap-1.5">
+                        <span class="text-rose-600">✗ Wrong ({{ $attempt->incorrect_count }})</span>
+                    </button>
+                @endif
+
+                @if($attempt->unanswered_count > 0)
+                    <button type="button" 
+                            onclick="filterReview('unanswered')" 
+                            id="rev-filter-unanswered" 
+                            class="rev-tab px-3.5 py-2 rounded-xl text-slate-700 hover:bg-white font-extrabold transition cursor-pointer flex items-center gap-1.5">
+                        <span class="text-amber-700">⚪ Untouched / Skipped ({{ $attempt->unanswered_count }})</span>
                     </button>
                 @endif
 
                 <button type="button" 
                         onclick="filterReview('correct')" 
                         id="rev-filter-correct" 
-                        class="rev-tab px-3.5 py-2 rounded-xl {{ $attempt->incorrect_count == 0 && $attempt->correct_count > 0 ? 'bg-emerald-600 text-white' : 'text-slate-700 hover:bg-white' }} font-extrabold transition cursor-pointer flex items-center gap-1.5">
-                    <span>✓ Correct</span>
-                    <span class="bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded-full text-[10px]">{{ $attempt->correct_count }}</span>
-                </button>
-
-                <button type="button" 
-                        onclick="filterReview('all')" 
-                        id="rev-filter-all" 
-                        class="rev-tab px-3.5 py-2 rounded-xl {{ $attempt->incorrect_count == 0 && $attempt->correct_count == 0 ? 'bg-indigo-600 text-white' : 'text-slate-700 hover:bg-white' }} font-bold transition cursor-pointer">
-                    All ({{ count($exercises) }})
-                </button>
-
-                <button type="button" 
-                        onclick="filterReview('unanswered')" 
-                        id="rev-filter-unanswered" 
-                        class="rev-tab px-3.5 py-2 rounded-xl text-slate-700 hover:bg-white font-bold transition cursor-pointer">
-                    Skipped ({{ $attempt->unanswered_count }})
+                        class="rev-tab px-3.5 py-2 rounded-xl text-slate-700 hover:bg-white font-extrabold transition cursor-pointer flex items-center gap-1.5">
+                    <span class="text-emerald-700">✓ Correct ({{ $attempt->correct_count }})</span>
                 </button>
             </div>
         </div>
 
         <!-- Filter Count Alert -->
-        <div id="filter-active-message" class="text-xs font-bold text-slate-700 p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
-            <span id="filter-active-text">Showing all questions</span>
-            <span class="text-[11px] text-slate-400 font-normal">Scroll to examine each question</span>
+        <div id="filter-active-message" class="text-xs font-bold text-slate-700 p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+            <span id="filter-active-text">Showing all {{ count($exercises) }} questions with their correct solutions</span>
+            <span class="text-[11px] text-slate-400 font-normal">Scroll to examine any question</span>
         </div>
 
         <!-- Questions List Review -->
@@ -258,14 +266,14 @@
                     }
                 @endphp
 
-                <div class="p-5 sm:p-7 rounded-3xl border transition review-card {{ $reviewStatus === 'correct' ? 'border-emerald-300 bg-emerald-50/15' : ($reviewStatus === 'incorrect' ? 'border-rose-300 bg-rose-50/20' : 'border-slate-200/90 bg-slate-50/40') }}" 
+                <div class="p-5 sm:p-7 rounded-3xl border transition review-card {{ $reviewStatus === 'correct' ? 'border-emerald-300 bg-emerald-50/15' : ($reviewStatus === 'incorrect' ? 'border-rose-300 bg-rose-50/20' : 'border-amber-200/90 bg-amber-50/10') }}" 
                      id="rev-card-{{ $exercise->id }}"
                      data-status="{{ $reviewStatus }}">
 
                     <!-- Card Header -->
                     <div class="flex items-start justify-between gap-3 border-b border-slate-200/80 pb-3 mb-4">
                         <div class="flex items-center gap-2.5 flex-wrap">
-                            <span class="w-8 h-8 rounded-xl font-black text-xs sm:text-sm flex items-center justify-center shrink-0 {{ $reviewStatus === 'correct' ? 'bg-emerald-600 text-white' : ($reviewStatus === 'incorrect' ? 'bg-rose-600 text-white' : 'bg-slate-400 text-white') }}">
+                            <span class="w-8 h-8 rounded-xl font-black text-xs sm:text-sm flex items-center justify-center shrink-0 {{ $reviewStatus === 'correct' ? 'bg-emerald-600 text-white' : ($reviewStatus === 'incorrect' ? 'bg-rose-600 text-white' : 'bg-amber-500 text-white') }}">
                                 {{ $index + 1 }}
                             </span>
 
@@ -280,8 +288,8 @@
                                     <span>Wrong Answer (ভুল উত্তর দিয়েছেন)</span>
                                 </span>
                             @else
-                                <span class="text-xs font-black text-slate-700 bg-slate-200/80 px-3 py-1 rounded-xl flex items-center gap-1.5">
-                                    <span>⚪</span> <span>Skipped / Unanswered (উত্তর দেননি)</span>
+                                <span class="text-xs font-black text-amber-900 bg-amber-100 border border-amber-300 px-3 py-1 rounded-xl flex items-center gap-1.5">
+                                    <span>⚪</span> <span>Untouched Question (আপনি স্পর্শ করেননি — সঠিক উত্তর নিচে দেখুন)</span>
                                 </span>
                             @endif
 
@@ -305,17 +313,17 @@
                     </div>
 
                     <!-- HIGH-CONTRAST ANSWER COMPARISON BANNER -->
-                    <div class="mb-5 p-4 rounded-2xl border {{ $reviewStatus === 'correct' ? 'bg-emerald-50 border-emerald-200' : ($reviewStatus === 'incorrect' ? 'bg-rose-50 border-rose-200' : 'bg-slate-100/80 border-slate-200') }}">
+                    <div class="mb-5 p-4 rounded-2xl border {{ $reviewStatus === 'correct' ? 'bg-emerald-50 border-emerald-200' : ($reviewStatus === 'incorrect' ? 'bg-rose-50 border-rose-200' : 'bg-amber-50/70 border-amber-200') }}">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
                             
                             <!-- Student's Given Answer -->
-                            <div class="p-3.5 rounded-xl bg-white border {{ $reviewStatus === 'correct' ? 'border-emerald-300' : ($reviewStatus === 'incorrect' ? 'border-rose-400 ring-2 ring-rose-400/20' : 'border-slate-200') }} flex items-start gap-3">
-                                <span class="w-7 h-7 rounded-lg font-black text-xs flex items-center justify-center shrink-0 uppercase {{ $reviewStatus === 'correct' ? 'bg-emerald-600 text-white' : ($reviewStatus === 'incorrect' ? 'bg-rose-600 text-white' : 'bg-slate-300 text-slate-700') }}">
-                                    {{ $userAns ? strtoupper($userAns) : '—' }}
+                            <div class="p-3.5 rounded-xl bg-white border {{ $reviewStatus === 'correct' ? 'border-emerald-300' : ($reviewStatus === 'incorrect' ? 'border-rose-400 ring-2 ring-rose-400/20' : 'border-amber-300') }} flex items-start gap-3">
+                                <span class="w-7 h-7 rounded-lg font-black text-xs flex items-center justify-center shrink-0 uppercase {{ $reviewStatus === 'correct' ? 'bg-emerald-600 text-white' : ($reviewStatus === 'incorrect' ? 'bg-rose-600 text-white' : 'bg-amber-100 text-amber-800 border border-amber-300') }}">
+                                    {{ $userAns ? strtoupper($userAns) : '⚪' }}
                                 </span>
                                 <div class="min-w-0">
-                                    <span class="text-[10px] font-bold uppercase tracking-wider block {{ $reviewStatus === 'correct' ? 'text-emerald-700' : ($reviewStatus === 'incorrect' ? 'text-rose-700' : 'text-slate-500') }}">
-                                        Your Given Answer (আপনার দেয়া উত্তর):
+                                    <span class="text-[10px] font-bold uppercase tracking-wider block {{ $reviewStatus === 'correct' ? 'text-emerald-700' : ($reviewStatus === 'incorrect' ? 'text-rose-700' : 'text-amber-800') }}">
+                                        Your Given Answer (আপনার দেয়া উত্তর):
                                     </span>
                                     @if($userAns)
                                         <p class="font-extrabold text-sm {{ $reviewStatus === 'correct' ? 'text-emerald-950' : 'text-rose-950' }} mt-0.5 leading-snug">
@@ -327,8 +335,8 @@
                                             @endif
                                         </p>
                                     @else
-                                        <p class="font-semibold text-xs text-slate-500 italic mt-0.5">
-                                            Not Answered (আপনি উত্তর দেননি)
+                                        <p class="font-extrabold text-xs text-amber-900 mt-0.5">
+                                            Not Touched / Skipped (স্পর্শ করেননি)
                                         </p>
                                     @endif
                                 </div>
@@ -393,11 +401,11 @@
 
                                 @if($isThisCorrect)
                                     <span class="text-[11px] font-black uppercase text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md shrink-0 flex items-center gap-1">
-                                        <span>✓</span> <span>Correct</span>
+                                        <span>✓</span> <span>Correct Answer</span>
                                     </span>
                                 @elseif($isThisUserChoice && !$isThisCorrect)
                                     <span class="text-[11px] font-black uppercase text-rose-700 bg-rose-100 px-2 py-0.5 rounded-md shrink-0 flex items-center gap-1">
-                                        <span>✗</span> <span>Your Answer</span>
+                                        <span>✗</span> <span>Your Choice</span>
                                     </span>
                                 @endif
                             </div>
@@ -494,19 +502,22 @@
 </div>
 
 <script>
+    const totalCount = {{ count($exercises) }};
     const incorrectCount = {{ $attempt->incorrect_count }};
     const correctCount = {{ $attempt->correct_count }};
     const unansweredCount = {{ $attempt->unanswered_count }};
 
     function filterReview(status) {
         // Toggle tab styles
-        const tabs = ['all', 'incorrect', 'correct', 'unanswered'];
+        const tabs = ['all', 'incorrect', 'unanswered', 'correct'];
         tabs.forEach(t => {
             const btn = document.getElementById('rev-filter-' + t);
             if (btn) {
                 if (t === status) {
                     if (t === 'incorrect') {
                         btn.className = 'rev-tab px-3.5 py-2 rounded-xl bg-rose-600 text-white shadow-xs font-extrabold transition cursor-pointer flex items-center gap-1.5';
+                    } else if (t === 'unanswered') {
+                        btn.className = 'rev-tab px-3.5 py-2 rounded-xl bg-amber-500 text-slate-950 shadow-xs font-black transition cursor-pointer flex items-center gap-1.5';
                     } else if (t === 'correct') {
                         btn.className = 'rev-tab px-3.5 py-2 rounded-xl bg-emerald-600 text-white shadow-xs font-extrabold transition cursor-pointer flex items-center gap-1.5';
                     } else {
@@ -536,12 +547,12 @@
         if (msgEl) {
             if (status === 'incorrect') {
                 msgEl.innerText = `Showing all ${visibleCount} questions you answered incorrectly (showing your choice vs correct answer)`;
+            } else if (status === 'unanswered') {
+                msgEl.innerText = `Showing all ${visibleCount} questions you didn't touch (showing the correct answers and explanations for each)`;
             } else if (status === 'correct') {
                 msgEl.innerText = `Showing all ${visibleCount} questions you answered correctly`;
-            } else if (status === 'unanswered') {
-                msgEl.innerText = `Showing all ${visibleCount} skipped questions with correct answers and explanations`;
             } else {
-                msgEl.innerText = `Showing all ${visibleCount} questions`;
+                msgEl.innerText = `Showing all ${visibleCount} questions (both answered and untouched) with correct solutions`;
             }
         }
     }
@@ -576,15 +587,9 @@
         }
     }
 
-    // Auto-select initial filter: if student made mistakes, default to showing their wrong answers immediately!
+    // Default to 'all' so every question and its correct answer is immediately visible
     document.addEventListener('DOMContentLoaded', function() {
-        if (incorrectCount > 0) {
-            filterReview('incorrect');
-        } else if (correctCount > 0) {
-            filterReview('correct');
-        } else {
-            filterReview('all');
-        }
+        filterReview('all');
     });
 </script>
 @endsection
