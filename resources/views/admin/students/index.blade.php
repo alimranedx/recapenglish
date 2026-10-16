@@ -10,11 +10,11 @@
             <h2 class="text-xl font-black text-slate-900">Registered Students</h2>
             <p class="text-xs text-slate-600 mt-0.5">Track user reading activity, last saved topics, and curriculum completion rates.</p>
         </div>
-        <div>
-            <form action="{{ route('admin.students.index') }}" method="GET" class="flex items-center gap-2">
+        <div class="w-full sm:w-auto">
+            <form action="{{ route('admin.students.index') }}" method="GET" class="flex items-center gap-2 w-full sm:w-auto">
                 <input type="text" name="search" placeholder="Search by name or email..." value="{{ $search }}"
-                       class="px-3.5 py-2 border border-slate-300 rounded-xl text-xs focus:ring-2 focus:ring-indigo-500 focus:outline-none w-64 bg-white">
-                <button type="submit" class="px-3 py-2 bg-indigo-600 text-white rounded-xl text-xs font-bold hover:bg-indigo-700 transition">
+                       class="px-3.5 py-2 border border-slate-300 rounded-xl text-xs focus:ring-2 focus:ring-indigo-500 focus:outline-none flex-1 sm:w-64 bg-white">
+                <button type="submit" class="px-3.5 py-2 bg-indigo-600 text-white rounded-xl text-xs font-bold hover:bg-indigo-700 transition shrink-0">
                     Search
                 </button>
             </form>
@@ -22,7 +22,8 @@
     </div>
 
     <div class="bg-white rounded-2xl border border-slate-200/80 shadow-xs overflow-hidden">
-        <table class="w-full text-left text-xs text-slate-600">
+        <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs text-slate-600">
             <thead class="bg-slate-50 border-b border-slate-200 text-slate-700 uppercase font-bold text-[10px] tracking-wider">
                 <tr>
                     <th class="px-6 py-3.5">Student</th>
@@ -119,6 +120,7 @@
                 @endforelse
             </tbody>
         </table>
+        </div>
     </div>
 
     <div class="pt-2">

@@ -24,13 +24,16 @@ body {
 
 /* Reader Markdown Content Polish */
 .markdown-content table {
+    display: block;
     width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     border-collapse: separate;
     border-spacing: 0;
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
     border-radius: 0.875rem;
-    overflow: hidden;
     border: 1px solid #e2e8f0;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
 }
@@ -43,6 +46,7 @@ body {
     padding: 0.75rem 1rem;
     border-bottom: 1px solid #e2e8f0;
     text-align: left;
+    white-space: nowrap;
 }
 
 .markdown-content td {
@@ -82,4 +86,22 @@ body {
     border-radius: 0.375rem;
     font-size: 0.825em;
     font-weight: 600;
+    word-break: break-word;
+}
+
+.markdown-content pre {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 0.75rem;
+    padding: 0.875rem 1rem;
+}
+
+/* Horizontal scrollbar utility for filter tabs & button bars */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }

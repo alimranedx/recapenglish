@@ -6,7 +6,7 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
 
     <!-- Top Scoreboard Card -->
-    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-950 to-indigo-900 text-white p-6 sm:p-10 shadow-2xl border border-indigo-800/40">
+    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-950 to-indigo-900 text-white p-5 sm:p-10 shadow-2xl border border-indigo-800/40">
         <div class="absolute -right-10 -bottom-10 w-80 h-80 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
@@ -165,7 +165,7 @@
     </div>
 
     <!-- PRIMARY SECTION: Question-by-Question Solutions with Given Answer vs Correct Answer -->
-    <div id="questions-review-section" class="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 space-y-6 shadow-xs scroll-mt-24">
+    <div id="questions-review-section" class="bg-white rounded-3xl border border-slate-200/90 p-4 sm:p-8 space-y-6 shadow-xs scroll-mt-24">
         
         <!-- Header & Filter Tabs -->
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5">
@@ -183,11 +183,11 @@
             </div>
 
             <!-- Filter Tabs -->
-            <div class="flex items-center gap-2 shrink-0 overflow-x-auto text-xs font-bold p-1 bg-slate-100/80 rounded-2xl">
+            <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar max-w-full text-xs font-bold p-1 bg-slate-100/80 rounded-2xl">
                 <button type="button" 
                         onclick="filterReview('all')" 
                         id="rev-filter-all" 
-                        class="rev-tab px-3.5 py-2 rounded-xl bg-indigo-600 text-white shadow-xs font-extrabold transition cursor-pointer">
+                        class="rev-tab px-3 sm:px-3.5 py-2 rounded-xl bg-indigo-600 text-white shadow-xs font-extrabold transition cursor-pointer whitespace-nowrap shrink-0">
                     All ({{ count($exercises) }})
                 </button>
 
@@ -195,7 +195,7 @@
                     <button type="button" 
                             onclick="filterReview('incorrect')" 
                             id="rev-filter-incorrect" 
-                            class="rev-tab px-3.5 py-2 rounded-xl text-slate-700 hover:bg-white font-extrabold transition cursor-pointer flex items-center gap-1.5">
+                            class="rev-tab px-3 sm:px-3.5 py-2 rounded-xl text-slate-700 hover:bg-white font-extrabold transition cursor-pointer flex items-center gap-1.5 whitespace-nowrap shrink-0">
                         <span class="text-rose-600">✗ Wrong ({{ $attempt->incorrect_count }})</span>
                     </button>
                 @endif
@@ -204,15 +204,15 @@
                     <button type="button" 
                             onclick="filterReview('unanswered')" 
                             id="rev-filter-unanswered" 
-                            class="rev-tab px-3.5 py-2 rounded-xl text-slate-700 hover:bg-white font-extrabold transition cursor-pointer flex items-center gap-1.5">
-                        <span class="text-amber-700">⚪ Untouched / Skipped ({{ $attempt->unanswered_count }})</span>
+                            class="rev-tab px-3 sm:px-3.5 py-2 rounded-xl text-slate-700 hover:bg-white font-extrabold transition cursor-pointer flex items-center gap-1.5 whitespace-nowrap shrink-0">
+                        <span class="text-amber-700">⚪ Untouched ({{ $attempt->unanswered_count }})</span>
                     </button>
                 @endif
 
                 <button type="button" 
                         onclick="filterReview('correct')" 
                         id="rev-filter-correct" 
-                        class="rev-tab px-3.5 py-2 rounded-xl text-slate-700 hover:bg-white font-extrabold transition cursor-pointer flex items-center gap-1.5">
+                        class="rev-tab px-3 sm:px-3.5 py-2 rounded-xl text-slate-700 hover:bg-white font-extrabold transition cursor-pointer flex items-center gap-1.5 whitespace-nowrap shrink-0">
                     <span class="text-emerald-700">✓ Correct ({{ $attempt->correct_count }})</span>
                 </button>
             </div>
@@ -266,7 +266,7 @@
                     }
                 @endphp
 
-                <div class="p-5 sm:p-7 rounded-3xl border transition review-card {{ $reviewStatus === 'correct' ? 'border-emerald-300 bg-emerald-50/15' : ($reviewStatus === 'incorrect' ? 'border-rose-300 bg-rose-50/20' : 'border-amber-200/90 bg-amber-50/10') }}" 
+                <div class="p-4 sm:p-7 rounded-3xl border transition review-card {{ $reviewStatus === 'correct' ? 'border-emerald-300 bg-emerald-50/15' : ($reviewStatus === 'incorrect' ? 'border-rose-300 bg-rose-50/20' : 'border-amber-200/90 bg-amber-50/10') }}" 
                      id="rev-card-{{ $exercise->id }}"
                      data-status="{{ $reviewStatus }}">
 
@@ -543,16 +543,16 @@
             if (btn) {
                 if (t === status) {
                     if (t === 'incorrect') {
-                        btn.className = 'rev-tab px-3.5 py-2 rounded-xl bg-rose-600 text-white shadow-xs font-extrabold transition cursor-pointer flex items-center gap-1.5';
+                        btn.className = 'rev-tab px-3 sm:px-3.5 py-2 rounded-xl bg-rose-600 text-white shadow-xs font-extrabold transition cursor-pointer flex items-center gap-1.5 whitespace-nowrap shrink-0';
                     } else if (t === 'unanswered') {
-                        btn.className = 'rev-tab px-3.5 py-2 rounded-xl bg-amber-500 text-slate-950 shadow-xs font-black transition cursor-pointer flex items-center gap-1.5';
+                        btn.className = 'rev-tab px-3 sm:px-3.5 py-2 rounded-xl bg-amber-500 text-slate-950 shadow-xs font-black transition cursor-pointer flex items-center gap-1.5 whitespace-nowrap shrink-0';
                     } else if (t === 'correct') {
-                        btn.className = 'rev-tab px-3.5 py-2 rounded-xl bg-emerald-600 text-white shadow-xs font-extrabold transition cursor-pointer flex items-center gap-1.5';
+                        btn.className = 'rev-tab px-3 sm:px-3.5 py-2 rounded-xl bg-emerald-600 text-white shadow-xs font-extrabold transition cursor-pointer flex items-center gap-1.5 whitespace-nowrap shrink-0';
                     } else {
-                        btn.className = 'rev-tab px-3.5 py-2 rounded-xl bg-indigo-600 text-white shadow-xs font-extrabold transition cursor-pointer';
+                        btn.className = 'rev-tab px-3 sm:px-3.5 py-2 rounded-xl bg-indigo-600 text-white shadow-xs font-extrabold transition cursor-pointer whitespace-nowrap shrink-0';
                     }
                 } else {
-                    btn.className = 'rev-tab px-3.5 py-2 rounded-xl text-slate-700 hover:bg-white font-bold transition cursor-pointer flex items-center gap-1.5';
+                    btn.className = 'rev-tab px-3 sm:px-3.5 py-2 rounded-xl text-slate-700 hover:bg-white font-bold transition cursor-pointer flex items-center gap-1.5 whitespace-nowrap shrink-0';
                 }
             }
         });

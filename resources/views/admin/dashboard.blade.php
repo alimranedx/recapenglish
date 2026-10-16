@@ -6,7 +6,7 @@
 <div class="space-y-8">
 
     <!-- Header Banner / Academic Console Greeting -->
-    <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-3xl p-6 lg:p-8 shadow-lg border border-slate-800 relative overflow-hidden">
+    <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-3xl p-5 sm:p-6 lg:p-8 shadow-lg border border-slate-800 relative overflow-hidden">
         <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute right-1/3 -top-10 w-48 h-48 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
 
@@ -56,7 +56,7 @@
     </div>
 
     <!-- Primary KPI Metric Cards (5 Cards) -->
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4">
         
         <!-- Card 1: Curriculum Topics -->
         <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-xs hover:border-indigo-200 transition">
@@ -116,7 +116,7 @@
         </div>
 
         <!-- Card 5: High Mastery & Speed -->
-        <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-xs hover:border-indigo-200 transition col-span-2 md:col-span-1 lg:col-span-1">
+        <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-xs hover:border-indigo-200 transition col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-1">
             <div class="flex items-center justify-between mb-2">
                 <span class="text-[10px] font-bold uppercase tracking-wider text-slate-600">High Scores (≥80%)</span>
                 <span class="p-1.5 rounded-lg bg-amber-50 text-amber-600">
@@ -132,7 +132,7 @@
     </div>
 
     <!-- Diagnostic Hub: Grammar Topic Difficulty & Performance Matrix -->
-    <div class="bg-white rounded-3xl border border-slate-200/90 shadow-xs p-6 lg:p-7 space-y-6">
+    <div class="bg-white rounded-3xl border border-slate-200/90 shadow-xs p-5 sm:p-6 lg:p-7 space-y-6">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-5">
             <div>
                 <div class="flex items-center gap-2">
@@ -286,7 +286,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
         <!-- Left: Recent 50-MCQ Skill Tests (2 columns width) -->
-        <div class="lg:col-span-2 bg-white rounded-3xl border border-slate-200/90 p-6 shadow-xs space-y-4">
+        <div class="lg:col-span-2 bg-white rounded-3xl border border-slate-200/90 p-5 sm:p-6 shadow-xs space-y-4">
             <div class="flex items-center justify-between border-b border-slate-100 pb-3">
                 <div class="flex items-center gap-2">
                     <span class="w-2.5 h-2.5 rounded-full bg-indigo-600"></span>
@@ -352,7 +352,7 @@
         </div>
 
         <!-- Right: Recent Student Signups & Reading Activity (1 column width) -->
-        <div class="bg-white rounded-3xl border border-slate-200/90 p-6 shadow-xs space-y-4">
+        <div class="bg-white rounded-3xl border border-slate-200/90 p-5 sm:p-6 shadow-xs space-y-4">
             <div class="flex items-center justify-between border-b border-slate-100 pb-3">
                 <div class="flex items-center gap-2">
                     <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>

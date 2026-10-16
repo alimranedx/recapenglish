@@ -10,7 +10,7 @@
             <h2 class="text-xl font-black text-slate-900">Book Topics & Modules</h2>
             <p class="text-xs text-slate-600 mt-0.5">Edit existing lecture topics, organize sequences, or add newly written chapters.</p>
         </div>
-        <div class="flex items-center gap-2">
+        <div class="flex flex-wrap items-center gap-2">
             <!-- Filter by Chapter -->
             <form action="{{ route('admin.topics.index') }}" method="GET" class="inline">
                 <select name="chapter_id" onchange="this.form.submit()" class="text-xs font-semibold px-3 py-2 border border-slate-300 rounded-xl bg-white focus:outline-none">
@@ -31,7 +31,8 @@
     </div>
 
     <div class="bg-white rounded-2xl border border-slate-200/80 shadow-xs overflow-hidden">
-        <table class="w-full text-left text-xs text-slate-600">
+        <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs text-slate-600">
             <thead class="bg-slate-50 border-b border-slate-200 text-slate-700 uppercase font-bold text-[10px] tracking-wider">
                 <tr>
                     <th class="px-6 py-3.5">Order</th>
@@ -93,6 +94,7 @@
                 @endforelse
             </tbody>
         </table>
+        </div>
     </div>
 
     <div class="pt-2">

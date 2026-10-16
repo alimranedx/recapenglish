@@ -7,20 +7,20 @@
 
     <!-- Sticky Exam Control Bar -->
     <div class="sticky top-16 z-30 bg-white/95 backdrop-blur border-b border-slate-200/90 shadow-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex items-center justify-between gap-2 sm:gap-4">
             
             <!-- Left: Info -->
-            <div class="flex items-center gap-3">
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                <div>
-                    <h1 class="text-sm font-extrabold text-slate-900 leading-tight">{{ $config->title ?? 'Master Skill Test' }}</h1>
+            <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
+                <div class="min-w-0">
+                    <h1 class="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight truncate max-w-[110px] xs:max-w-[150px] sm:max-w-xs md:max-w-md">{{ $config->title ?? 'Master Skill Test' }}</h1>
                     <span class="text-[11px] text-slate-500 hidden sm:inline">Randomized from {{ count($exercises->pluck('topic_id')->unique()) }} topics</span>
                 </div>
             </div>
 
             <!-- Middle: Progress & Stats -->
-            <div class="flex items-center gap-4">
-                <div class="text-right hidden sm:block">
+            <div class="flex items-center gap-2 sm:gap-4 shrink-0">
+                <div class="text-right hidden md:block">
                     <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">Progress</span>
                     <span class="text-xs font-black text-slate-800">
                         <span id="answered-counter-top">0</span> / {{ count($exercises) }} Answered
@@ -28,25 +28,25 @@
                 </div>
 
                 <!-- Timer Indicator -->
-                <div id="exam-timer-box" class="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900 text-white font-mono text-sm font-black tracking-wider shadow-inner">
-                    <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <div id="exam-timer-box" class="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1.5 rounded-xl bg-slate-900 text-white font-mono text-xs sm:text-sm font-black tracking-wider shadow-inner shrink-0">
+                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                     <span id="timer-display">{{ sprintf('%02d:%02d', floor($remainingSeconds / 60), $remainingSeconds % 60) }}</span>
                 </div>
             </div>
 
             <!-- Right: Submit Action Button -->
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
                 <button type="button" 
                         onclick="toggleMobileNavigator()" 
-                        class="lg:hidden inline-flex items-center gap-1.5 px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition cursor-pointer">
+                        class="lg:hidden inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 sm:py-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold text-xs rounded-xl transition cursor-pointer border border-indigo-200">
                     <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
                     <span>Grid</span>
                 </button>
 
                 <button type="button" 
                         onclick="openSubmitModal()" 
-                        class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs sm:text-sm rounded-xl shadow-md shadow-emerald-600/20 transition cursor-pointer">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                        class="inline-flex items-center gap-1.5 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs sm:text-sm rounded-xl shadow-md shadow-emerald-600/20 transition cursor-pointer">
+                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                     <span>Submit</span>
                 </button>
             </div>
@@ -79,7 +79,7 @@
                             $selectedLetter = strtolower(trim($preAnswers[$exercise->id] ?? ''));
                             $isAnswered = !empty($selectedLetter);
                         @endphp
-                        <div class="bg-white rounded-3xl border {{ $isAnswered ? 'border-indigo-300' : 'border-slate-200/90' }} p-5 sm:p-7 shadow-xs space-y-5 transition scroll-mt-32 question-card" 
+                        <div class="bg-white rounded-3xl border {{ $isAnswered ? 'border-indigo-300' : 'border-slate-200/90' }} p-4 sm:p-7 shadow-xs space-y-4 sm:space-y-5 transition scroll-mt-32 question-card" 
                              id="question-card-{{ $exercise->id }}"
                              data-question-id="{{ $exercise->id }}"
                              data-index="{{ $index + 1 }}">
@@ -293,6 +293,73 @@
     </div>
 </div>
 
+<!-- Mobile Question Grid Bottom Sheet / Drawer (Visible on < lg) -->
+<div id="mobile-navigator-modal" class="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-slate-900/60 backdrop-blur-xs hidden lg:hidden p-0 sm:p-4">
+    <div class="bg-white rounded-t-3xl sm:rounded-3xl w-full max-w-lg max-h-[85vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden transform transition-all">
+        <!-- Drawer Header -->
+        <div class="px-5 py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/80">
+            <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-indigo-600"></span>
+                <h3 class="text-sm font-black text-slate-900 uppercase tracking-wider">Question Navigator</h3>
+                <span class="text-xs font-bold text-slate-500">({{ count($exercises) }} Questions)</span>
+            </div>
+            <button type="button" onclick="toggleMobileNavigator()" class="p-1.5 text-slate-400 hover:text-slate-700 rounded-lg hover:bg-slate-200 transition cursor-pointer">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+
+        <!-- Drawer Content -->
+        <div class="p-5 space-y-4 overflow-y-auto flex-1">
+            <!-- Mini Stats Legend -->
+            <div class="grid grid-cols-2 gap-3 text-xs">
+                <div class="p-2.5 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                    <div>
+                        <span class="text-[10px] text-emerald-800 uppercase font-bold block">Answered</span>
+                        <span class="font-black text-emerald-900 text-sm" id="nav-stat-answered-mobile">0</span>
+                    </div>
+                </div>
+                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-slate-300"></span>
+                    <div>
+                        <span class="text-[10px] text-slate-500 uppercase font-bold block">Unanswered</span>
+                        <span class="font-black text-slate-800 text-sm" id="nav-stat-unanswered-mobile">{{ count($exercises) }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 50 Jump Buttons Grid -->
+            <div class="grid grid-cols-5 gap-2 pt-1">
+                @foreach($exercises as $index => $exercise)
+                    @php
+                        $isPreAnswered = !empty($preAnswers[$exercise->id]);
+                    @endphp
+                    <button type="button" 
+                            onclick="jumpToQuestionFromMobile({{ $exercise->id }})" 
+                            id="nav-btn-mobile-{{ $exercise->id }}"
+                            class="h-10 rounded-xl border font-extrabold text-xs transition flex items-center justify-center cursor-pointer shadow-2xs {{ $isPreAnswered ? 'bg-emerald-600 text-white border-emerald-600' : 'border-slate-200 bg-white hover:bg-slate-100 text-slate-700' }}">
+                        {{ $index + 1 }}
+                    </button>
+                @endforeach
+            </div>
+        </div>
+
+        <!-- Drawer Footer -->
+        <div class="p-4 border-t border-slate-100 bg-slate-50/80 flex items-center gap-3">
+            <button type="button" 
+                    onclick="toggleMobileNavigator()" 
+                    class="flex-1 py-2.5 px-4 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 text-xs font-bold transition cursor-pointer">
+                Close Navigator
+            </button>
+            <button type="button" 
+                    onclick="toggleMobileNavigator(); openSubmitModal();" 
+                    class="flex-1 py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition shadow-sm cursor-pointer">
+                Submit Test
+            </button>
+        </div>
+    </div>
+</div>
+
 <script>
     const testUuid = "{{ $attempt->uuid }}";
     const totalQuestions = {{ count($exercises) }};
@@ -408,11 +475,16 @@
             card.classList.add('border-indigo-300');
         }
 
-        // Update navigator button
+        // Update navigator buttons (desktop & mobile)
         const navBtn = document.getElementById('nav-btn-' + exerciseId);
         if (navBtn) {
             navBtn.classList.remove('bg-white', 'text-slate-700', 'border-slate-200');
             navBtn.classList.add('bg-emerald-600', 'text-white', 'border-emerald-600');
+        }
+        const navBtnMobile = document.getElementById('nav-btn-mobile-' + exerciseId);
+        if (navBtnMobile) {
+            navBtnMobile.classList.remove('bg-white', 'text-slate-700', 'border-slate-200');
+            navBtnMobile.classList.add('bg-emerald-600', 'text-white', 'border-emerald-600');
         }
 
         updateStats();
@@ -451,11 +523,16 @@
             card.classList.add('border-slate-200/90');
         }
 
-        // Reset nav button
+        // Reset nav buttons (desktop & mobile)
         const navBtn = document.getElementById('nav-btn-' + exerciseId);
         if (navBtn) {
             navBtn.classList.remove('bg-emerald-600', 'text-white', 'border-emerald-600');
             navBtn.classList.add('bg-white', 'text-slate-700', 'border-slate-200');
+        }
+        const navBtnMobile = document.getElementById('nav-btn-mobile-' + exerciseId);
+        if (navBtnMobile) {
+            navBtnMobile.classList.remove('bg-emerald-600', 'text-white', 'border-emerald-600');
+            navBtnMobile.classList.add('bg-white', 'text-slate-700', 'border-slate-200');
         }
 
         updateStats();
@@ -471,6 +548,12 @@
         document.getElementById('answered-counter-top').innerText = answeredCount;
         document.getElementById('nav-stat-answered').innerText = answeredCount;
         document.getElementById('nav-stat-unanswered').innerText = unansweredCount;
+        
+        const mobAns = document.getElementById('nav-stat-answered-mobile');
+        if (mobAns) mobAns.innerText = answeredCount;
+        const mobUnans = document.getElementById('nav-stat-unanswered-mobile');
+        if (mobUnans) mobUnans.innerText = unansweredCount;
+
         document.getElementById('test-progress-bar').style.width = percent + '%';
     }
 
@@ -486,10 +569,17 @@
         }
     }
 
+    function jumpToQuestionFromMobile(exerciseId) {
+        toggleMobileNavigator();
+        setTimeout(() => {
+            jumpToQuestion(exerciseId);
+        }, 150);
+    }
+
     function toggleMobileNavigator() {
-        const nav = document.getElementById('navigator-desktop-container');
-        if (nav) {
-            nav.scrollIntoView({ behavior: 'smooth' });
+        const modal = document.getElementById('mobile-navigator-modal');
+        if (modal) {
+            modal.classList.toggle('hidden');
         }
     }
 

@@ -6,13 +6,13 @@
 <div class="space-y-8 max-w-5xl">
 
     <!-- Topic Edit Form -->
-    <div class="bg-white rounded-2xl border border-slate-200/80 p-8 shadow-xs space-y-6">
-        <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+    <div class="bg-white rounded-2xl border border-slate-200/80 p-5 sm:p-8 shadow-xs space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
             <div>
                 <span class="text-[10px] font-bold text-indigo-600 uppercase">{{ $topic->chapter->title }}</span>
                 <h2 class="text-xl font-black text-slate-900 mt-0.5">Edit Topic Content</h2>
             </div>
-            <a href="{{ route('reader.topic', $topic->slug) }}" target="_blank" class="px-3.5 py-1.5 border border-slate-200 text-xs font-bold text-slate-700 rounded-xl hover:bg-slate-50 transition flex items-center gap-1.5">
+            <a href="{{ route('reader.topic', $topic->slug) }}" target="_blank" class="px-3.5 py-1.5 border border-slate-200 text-xs font-bold text-slate-700 rounded-xl hover:bg-slate-50 transition flex items-center gap-1.5 shrink-0 self-start sm:self-auto">
                 <span>View on Reader</span>
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
             </a>
@@ -48,7 +48,7 @@
                        class="mt-1 block w-full px-3.5 py-2.5 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none">
             </div>
 
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                     <label for="estimated_read_time" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">Estimated Read Time (Minutes)</label>
                     <input id="estimated_read_time" name="estimated_read_time" type="number" min="1" value="{{ old('estimated_read_time', $topic->estimated_read_time) }}" required
@@ -86,17 +86,17 @@
     </div>
 
     <!-- Practice Questions / Exercises Management -->
-    <div class="bg-white rounded-2xl border border-slate-200/80 p-8 shadow-xs space-y-6">
-        <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+    <div class="bg-white rounded-2xl border border-slate-200/80 p-5 sm:p-8 shadow-xs space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
             <div>
                 <h3 class="text-lg font-black text-slate-900">Topic Practice Questions & MCQs</h3>
                 <p class="text-xs text-slate-600 mt-0.5">Manage multiple-choice questions, answer keys, explanations, and exam references.</p>
             </div>
-            <div class="flex items-center gap-2.5">
+            <div class="flex flex-wrap items-center gap-2.5">
                 <span class="text-xs font-bold bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full">
                     {{ $topic->exercises->count() }} Questions
                 </span>
-                <a href="{{ route('admin.exercises.create', ['topic_id' => $topic->id]) }}" class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-1 shadow-xs">
+                <a href="{{ route('admin.exercises.create', ['topic_id' => $topic->id]) }}" class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-1 shadow-xs shrink-0">
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
                     <span>+ Add MCQ</span>
                 </a>

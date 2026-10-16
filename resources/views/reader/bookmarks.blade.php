@@ -5,15 +5,15 @@
 @section('content')
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
 
-    <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 pb-4">
         <div>
             <h1 class="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2">
-                <svg class="w-6 h-6 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"/></svg>
-                Saved Topics & Bookmarks
+                <svg class="w-6 h-6 text-amber-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z"/></svg>
+                <span>Saved Topics & Bookmarks</span>
             </h1>
             <p class="text-xs text-slate-600 mt-1">Easily revisit challenging grammar concepts and review them before exams.</p>
         </div>
-        <span class="text-xs font-bold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-full">
+        <span class="text-xs font-bold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-full self-start sm:self-auto">
             {{ $bookmarks->total() }} Saved
         </span>
     </div>

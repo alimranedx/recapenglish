@@ -40,9 +40,9 @@
                             {{ Str::limit(strip_tags($topic->content), 260) }}
                         </p>
 
-                        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between gap-2 flex-wrap text-xs">
                             <span class="text-slate-600">~{{ $topic->estimated_read_time }} min read • {{ $topic->exercises->count() }} MCQs</span>
-                            <a href="{{ route('reader.topic', $topic->slug) }}" class="font-bold text-indigo-600 hover:text-indigo-800">
+                            <a href="{{ route('reader.topic', $topic->slug) }}" class="font-bold text-indigo-600 hover:text-indigo-800 shrink-0">
                                 Read Topic →
                             </a>
                         </div>
@@ -72,9 +72,9 @@
                                 <strong class="text-indigo-900">ব্যাখ্যা:</strong> {{ Str::limit($ex->explanation, 180) }}
                             </p>
                         @endif
-                        <div class="pt-2 flex items-center justify-between text-xs">
+                        <div class="pt-2 flex items-center justify-between gap-2 flex-wrap text-xs">
                             <span class="text-emerald-700 font-bold">উত্তর: {{ strtoupper($ex->correct_answer) }}</span>
-                            <a href="{{ route('reader.topic', $ex->topic->slug) }}#quiz-{{ $ex->id }}" class="font-bold text-indigo-600 hover:text-indigo-800">
+                            <a href="{{ route('reader.topic', $ex->topic->slug) }}#quiz-{{ $ex->id }}" class="font-bold text-indigo-600 hover:text-indigo-800 shrink-0">
                                 Practice in Topic →
                             </a>
                         </div>

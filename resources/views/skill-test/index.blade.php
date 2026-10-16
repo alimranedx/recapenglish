@@ -6,7 +6,7 @@
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
 
     <!-- Hero Header -->
-    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-950 via-indigo-900 to-slate-900 text-white p-8 sm:p-12 shadow-2xl border border-indigo-700/40">
+    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-950 via-indigo-900 to-slate-900 text-white p-6 sm:p-10 lg:p-12 shadow-2xl border border-indigo-700/40">
         <div class="absolute -right-12 -bottom-12 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute -left-12 -top-12 w-80 h-80 bg-sky-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -112,7 +112,7 @@
     </div>
 
     <!-- Topics Grid (Guarantee Proof) -->
-    <div class="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 space-y-6 shadow-xs">
+    <div class="bg-white rounded-3xl border border-slate-200/90 p-5 sm:p-8 space-y-6 shadow-xs">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
             <div>
                 <span class="text-[11px] font-black uppercase tracking-wider text-indigo-600 bg-indigo-50 px-2.5 py-0.5 rounded-full">Coverage Guarantee</span>
@@ -146,7 +146,7 @@
 
     <!-- Recent Attempts (if any) -->
     @if($recentAttempts->isNotEmpty())
-        <div class="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 space-y-6 shadow-xs">
+        <div class="bg-white rounded-3xl border border-slate-200/90 p-5 sm:p-8 space-y-6 shadow-xs">
             <div class="flex items-center justify-between border-b border-slate-100 pb-4">
                 <div>
                     <h2 class="text-xl font-black text-slate-900">Your Recent Skill Test Scores</h2>

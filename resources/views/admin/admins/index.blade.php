@@ -5,19 +5,20 @@
 @section('content')
 <div class="space-y-6">
 
-    <div class="flex items-center justify-between">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
             <h2 class="text-xl font-black text-slate-900">Administrator Accounts</h2>
             <p class="text-xs text-slate-600 mt-0.5">Only Super Admins can provision new administrator accounts. No public registration exists for admin roles.</p>
         </div>
-        <a href="{{ route('admin.admins.create') }}" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs rounded-xl shadow-xs transition flex items-center gap-1.5">
+        <a href="{{ route('admin.admins.create') }}" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs rounded-xl shadow-xs transition flex items-center gap-1.5 shrink-0 self-start sm:self-auto">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
             Create New Admin
         </a>
     </div>
 
     <div class="bg-white rounded-2xl border border-slate-200/80 shadow-xs overflow-hidden">
-        <table class="w-full text-left text-xs text-slate-600">
+        <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs text-slate-600">
             <thead class="bg-slate-50 border-b border-slate-200 text-slate-700 uppercase font-bold text-[10px] tracking-wider">
                 <tr>
                     <th class="px-6 py-3.5">Name</th>
@@ -63,6 +64,7 @@
                 @endforeach
             </tbody>
         </table>
+        </div>
     </div>
 
     <div class="pt-2">

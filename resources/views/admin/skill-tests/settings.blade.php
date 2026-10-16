@@ -17,7 +17,7 @@
             <h2 class="text-2xl font-black text-slate-900 mt-1">Skill Test Rules & Configuration</h2>
             <p class="text-xs text-slate-600 mt-0.5">Customize exam duration, question count, topic selection modes (All vs Fixed Topics), and pass requirements.</p>
         </div>
-        <div class="flex items-center gap-2">
+        <div class="flex flex-wrap items-center gap-2">
             <a href="{{ route('admin.skill-tests.index') }}" class="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-bold transition flex items-center gap-1.5">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
                 <span>Submissions & Reports</span>
@@ -30,7 +30,7 @@
     </div>
 
     <!-- Active Settings Overview Cards -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3.5 sm:gap-4">
         <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-xs">
             <span class="text-[10px] font-bold uppercase tracking-wider text-slate-600 block">Exam Duration</span>
             <div class="text-2xl font-black text-indigo-600 mt-1">{{ $config->duration_minutes }} <span class="text-xs font-normal text-slate-600">Minutes</span></div>
@@ -61,7 +61,7 @@
     </div>
 
     <!-- Main Settings Form -->
-    <div class="bg-white rounded-3xl border border-slate-200/90 p-8 shadow-xs space-y-8">
+    <div class="bg-white rounded-3xl border border-slate-200/90 p-5 sm:p-8 shadow-xs space-y-8">
         <form action="{{ route('admin.skill-test-settings.update') }}" method="POST" class="space-y-8">
             @csrf
             @method('PUT')
@@ -103,11 +103,11 @@
                             {{ old('duration_minutes', $config->duration_minutes) }} Minutes
                         </span>
                     </div>
-                    <div class="mt-2 flex items-center gap-3">
+                    <div class="mt-2 flex flex-col sm:flex-row sm:items-center gap-3">
                         <input type="number" id="duration_minutes" name="duration_minutes" min="5" max="240" required value="{{ old('duration_minutes', $config->duration_minutes) }}"
-                               class="w-36 px-3.5 py-2.5 border border-slate-300 rounded-xl text-sm font-black text-slate-900 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
-                        <span class="text-xs text-slate-600">Quick Presets:</span>
+                               class="w-full sm:w-36 px-3.5 py-2.5 border border-slate-300 rounded-xl text-sm font-black text-slate-900 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
                         <div class="flex flex-wrap items-center gap-1.5">
+                            <span class="text-xs text-slate-600 mr-1">Quick Presets:</span>
                             @foreach([15, 25, 30, 45, 50, 60, 90] as $presetMins)
                                 <button type="button" onclick="setDuration({{ $presetMins }})"
                                         class="px-2.5 py-1 text-xs font-bold rounded-lg border border-slate-200 bg-slate-50 hover:bg-indigo-50 hover:text-indigo-700 hover:border-indigo-200 transition">
@@ -131,11 +131,11 @@
                             {{ old('total_questions', $config->total_questions) }} MCQs
                         </span>
                     </div>
-                    <div class="mt-2 flex items-center gap-3">
+                    <div class="mt-2 flex flex-col sm:flex-row sm:items-center gap-3">
                         <input type="number" id="total_questions" name="total_questions" min="5" max="200" required value="{{ old('total_questions', $config->total_questions) }}"
-                               class="w-36 px-3.5 py-2.5 border border-slate-300 rounded-xl text-sm font-black text-slate-900 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
-                        <span class="text-xs text-slate-600">Quick Presets:</span>
+                               class="w-full sm:w-36 px-3.5 py-2.5 border border-slate-300 rounded-xl text-sm font-black text-slate-900 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
                         <div class="flex flex-wrap items-center gap-1.5">
+                            <span class="text-xs text-slate-600 mr-1">Quick Presets:</span>
                             @foreach([20, 25, 30, 40, 50, 75, 100] as $presetQ)
                                 <button type="button" onclick="setQuestions({{ $presetQ }})"
                                         class="px-2.5 py-1 text-xs font-bold rounded-lg border border-slate-200 bg-slate-50 hover:bg-indigo-50 hover:text-indigo-700 hover:border-indigo-200 transition">

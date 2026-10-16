@@ -3,12 +3,81 @@
 @section('title', $topic->title . ' - RecapEnglish')
 
 @section('content')
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-4">
 
-    <div class="flex flex-col lg:flex-row gap-8 items-start">
+    <!-- Mobile Table of Contents Quick Trigger Bar -->
+    <div class="lg:hidden bg-white rounded-2xl border border-slate-200/80 p-3.5 shadow-xs flex items-center justify-between gap-3">
+        <div class="flex items-center gap-2.5 min-w-0">
+            <div class="w-8 h-8 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-xs shrink-0">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            </div>
+            <div class="min-w-0">
+                <span class="text-[10px] uppercase font-bold text-slate-500 block truncate">{{ $topic->chapter->title }}</span>
+                <span class="text-xs font-black text-slate-900 block truncate">{{ $topic->title }}</span>
+            </div>
+        </div>
+        <button type="button" 
+                onclick="toggleTopicDrawer()" 
+                class="shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold shadow-xs transition cursor-pointer">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/></svg>
+            <span>All Topics</span>
+        </button>
+    </div>
+
+    <!-- Mobile Slide-Over TOC Drawer -->
+    <div id="topic-mobile-drawer" class="fixed inset-0 z-50 hidden transition-opacity">
+        <div onclick="toggleTopicDrawer()" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs"></div>
+        <div class="fixed inset-y-0 right-0 max-w-xs sm:max-w-sm w-full bg-white shadow-2xl flex flex-col z-10">
+            <div class="p-4 border-b border-slate-100 flex items-center justify-between">
+                <div>
+                    <h3 class="text-xs font-black uppercase tracking-wider text-slate-800">Table of Contents</h3>
+                    <p class="text-[10px] text-indigo-600 font-semibold">{{ $topic->chapter->part->title }}</p>
+                </div>
+                <button type="button" 
+                        onclick="toggleTopicDrawer()" 
+                        class="p-1.5 text-slate-500 hover:text-slate-800 rounded-lg hover:bg-slate-100 transition cursor-pointer">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div class="flex-1 overflow-y-auto p-4 space-y-4">
+                @foreach($parts as $part)
+                    <div>
+                        <div class="text-[11px] font-black uppercase text-indigo-700 tracking-wider mb-1.5 flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-600"></span>
+                            {{ $part->title }}
+                        </div>
+                        <div class="pl-2.5 space-y-2 border-l border-slate-100">
+                            @foreach($part->chapters as $chapter)
+                                <div class="space-y-1">
+                                    <div class="text-xs font-bold text-slate-700">
+                                        {{ $chapter->title }}
+                                    </div>
+                                    @foreach($chapter->topics as $chTopic)
+                                        @php
+                                            $isCurrent = $chTopic->id === $topic->id;
+                                            $isDone = in_array($chTopic->id, $completedTopicIds);
+                                        @endphp
+                                        <a href="{{ route('reader.topic', $chTopic->slug) }}" 
+                                           class="flex items-center justify-between text-xs py-1.5 px-2 rounded-lg transition {{ $isCurrent ? 'bg-indigo-600 text-white font-bold shadow-xs' : 'text-slate-600 hover:bg-slate-50 hover:text-indigo-600' }}">
+                                            <span class="truncate pr-2">{{ $chTopic->title }}</span>
+                                            @if($isDone)
+                                                <svg class="w-3.5 h-3.5 {{ $isCurrent ? 'text-white' : 'text-emerald-500' }} shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                            @endif
+                                        </a>
+                                    @endforeach
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
         
-        <!-- Left Table of Contents Sidebar / Drawer -->
-        <aside class="w-full lg:w-80 shrink-0 bg-white rounded-2xl border border-slate-200/80 p-5 shadow-xs lg:sticky lg:top-20 max-h-[calc(100vh-6rem)] overflow-y-auto">
+        <!-- Desktop Left Table of Contents Sidebar -->
+        <aside class="hidden lg:block lg:w-80 shrink-0 bg-white rounded-2xl border border-slate-200/80 p-5 shadow-xs lg:sticky lg:top-20 max-h-[calc(100vh-6rem)] overflow-y-auto">
             <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
                 <span class="text-xs font-black uppercase tracking-wider text-slate-600">Table of Contents</span>
                 <span class="text-[10px] font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full">Book View</span>
@@ -52,24 +121,24 @@
         <main class="flex-1 w-full min-w-0 space-y-6">
             
             <!-- Breadcrumbs & Action Header -->
-            <div class="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-xs space-y-4">
+            <div class="bg-white rounded-2xl border border-slate-200/80 p-4 sm:p-6 shadow-xs space-y-4">
                 
-                <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-4">
-                    <nav class="flex items-center gap-1.5 text-xs text-slate-600 truncate">
-                        <a href="{{ route('reader.home') }}" class="hover:text-indigo-600 font-semibold">Book</a>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
+                    <nav class="flex items-center gap-1.5 text-xs text-slate-600 flex-wrap">
+                        <a href="{{ route('reader.home') }}" class="hover:text-indigo-600 font-semibold shrink-0">Book</a>
                         <span>/</span>
-                        <span class="truncate">{{ $topic->chapter->part->title }}</span>
+                        <span class="truncate max-w-[120px] sm:max-w-none">{{ $topic->chapter->part->title }}</span>
                         <span>/</span>
-                        <span class="font-bold text-slate-800 truncate">{{ $topic->chapter->title }}</span>
+                        <span class="font-bold text-slate-800 truncate max-w-[140px] sm:max-w-none">{{ $topic->chapter->title }}</span>
                     </nav>
 
                     <!-- Interactive Action Buttons -->
-                    <div class="flex items-center gap-2">
+                    <div class="flex items-center gap-2 shrink-0">
                         @auth
                             <!-- Bookmark button -->
                             <form action="{{ route('reader.toggle-bookmark', $topic->id) }}" method="POST">
                                 @csrf
-                                <button type="submit" class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl border {{ $isBookmarked ? 'bg-amber-50 border-amber-300 text-amber-800' : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100' }} transition">
+                                <button type="submit" class="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl border {{ $isBookmarked ? 'bg-amber-50 border-amber-300 text-amber-800' : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100' }} transition cursor-pointer">
                                     <svg class="w-4 h-4 {{ $isBookmarked ? 'text-amber-500 fill-current' : 'text-slate-400' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/></svg>
                                     <span>{{ $isBookmarked ? 'Saved' : 'Save Topic' }}</span>
                                 </button>
@@ -78,7 +147,7 @@
                             <!-- Mark as Completed button -->
                             <form action="{{ route('reader.toggle-complete', $topic->id) }}" method="POST">
                                 @csrf
-                                <button type="submit" class="inline-flex items-center gap-1.5 text-xs font-bold px-3.5 py-1.5 rounded-xl border {{ $isCompleted ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : 'bg-slate-900 border-slate-900 text-white hover:bg-indigo-600' }} transition">
+                                <button type="submit" class="inline-flex items-center gap-1.5 text-xs font-bold px-3.5 py-1.5 rounded-xl border {{ $isCompleted ? 'bg-emerald-50 border-emerald-300 text-emerald-800' : 'bg-slate-900 border-slate-900 text-white hover:bg-indigo-600' }} transition cursor-pointer">
                                     <svg class="w-4 h-4 {{ $isCompleted ? 'text-emerald-600' : 'text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                                     <span>{{ $isCompleted ? 'Completed' : 'Mark Completed' }}</span>
                                 </button>
@@ -89,15 +158,13 @@
                             </a>
                         @endauth
                     </div>
-                </div>
-
                 <!-- Topic Title & Meta Info -->
                 <div>
                     <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight leading-tight">
                         {{ $topic->title }}
                     </h1>
                     
-                    <div class="flex items-center gap-4 mt-2 text-xs text-slate-600">
+                    <div class="flex flex-wrap items-center gap-2 sm:gap-4 mt-2 text-xs text-slate-600">
                         <span class="inline-flex items-center gap-1">
                             <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                             ~{{ $topic->estimated_read_time }} min read
@@ -303,29 +370,29 @@
             @endif
 
             <!-- Previous & Next Topic Navigation Footer -->
-            <div class="bg-white rounded-2xl border border-slate-200/80 p-5 shadow-xs flex items-center justify-between gap-4">
+            <div class="bg-white rounded-2xl border border-slate-200/80 p-4 sm:p-5 shadow-xs flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
                 @if($previousTopic)
-                    <a href="{{ route('reader.topic', $previousTopic->slug) }}" class="flex items-center gap-2 text-xs font-bold text-slate-700 hover:text-indigo-600 transition p-2 rounded-xl hover:bg-slate-50">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-                        <div class="text-left">
-                            <span class="text-[10px] text-slate-600 block uppercase">Previous Topic</span>
-                            <span class="truncate max-w-[140px] sm:max-w-xs block">{{ $previousTopic->title }}</span>
+                    <a href="{{ route('reader.topic', $previousTopic->slug) }}" class="flex items-center gap-2 text-xs font-bold text-slate-700 hover:text-indigo-600 transition p-2.5 rounded-xl hover:bg-slate-50 border border-slate-100 sm:border-transparent">
+                        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                        <div class="text-left min-w-0">
+                            <span class="text-[10px] text-slate-500 block uppercase font-medium">Previous Topic</span>
+                            <span class="truncate max-w-[200px] sm:max-w-xs block">{{ $previousTopic->title }}</span>
                         </div>
                     </a>
                 @else
-                    <div></div>
+                    <div class="hidden sm:block"></div>
                 @endif
 
                 @if($nextTopic)
-                    <a href="{{ route('reader.topic', $nextTopic->slug) }}" class="flex items-center gap-2 text-xs font-bold text-indigo-600 hover:text-indigo-800 transition p-2 rounded-xl hover:bg-indigo-50 text-right">
-                        <div>
-                            <span class="text-[10px] text-indigo-400 block uppercase">Next Topic</span>
-                            <span class="truncate max-w-[140px] sm:max-w-xs block">{{ $nextTopic->title }}</span>
+                    <a href="{{ route('reader.topic', $nextTopic->slug) }}" class="flex items-center justify-between sm:justify-end gap-2 text-xs font-bold text-indigo-600 hover:text-indigo-800 transition p-2.5 rounded-xl hover:bg-indigo-50 border border-indigo-100 sm:border-transparent text-right">
+                        <div class="min-w-0 text-left sm:text-right">
+                            <span class="text-[10px] text-indigo-400 block uppercase font-medium">Next Topic</span>
+                            <span class="truncate max-w-[200px] sm:max-w-xs block">{{ $nextTopic->title }}</span>
                         </div>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                     </a>
                 @else
-                    <a href="{{ route('reader.home') }}" class="text-xs font-bold text-emerald-600 hover:text-emerald-700">
+                    <a href="{{ route('reader.home') }}" class="text-xs font-bold text-emerald-600 hover:text-emerald-700 text-center py-2">
                         ✓ Completed All Topics! Return to Contents
                     </a>
                 @endif
@@ -341,6 +408,21 @@
 <script>
     let currentScore = 0;
     let allAnswersVisible = false;
+
+    // Mobile Table of Contents Drawer Toggle
+    function toggleTopicDrawer() {
+        const drawer = document.getElementById('topic-mobile-drawer');
+        if (drawer) {
+            const isHidden = drawer.classList.contains('hidden');
+            if (isHidden) {
+                drawer.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                drawer.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }
+    }
 
     // Toggle single answer show/hide
     function toggleAnswer(exerciseId, correctLetter) {

@@ -3,7 +3,7 @@
 @section('page_title', 'Add New Topic')
 
 @section('content')
-<div class="max-w-4xl bg-white rounded-2xl border border-slate-200/80 p-8 shadow-xs space-y-6">
+<div class="max-w-4xl bg-white rounded-2xl border border-slate-200/80 p-5 sm:p-8 shadow-xs space-y-6">
 
     <div>
         <h2 class="text-lg font-black text-slate-900">Add New Grammar Topic</h2>
@@ -45,7 +45,7 @@
                    class="mt-1 block w-full px-3.5 py-2.5 border border-slate-300 rounded-xl text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none">
         </div>
 
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
                 <label for="estimated_read_time" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">Estimated Read Time (Minutes)</label>
                 <input id="estimated_read_time" name="estimated_read_time" type="number" min="1" value="{{ old('estimated_read_time', 5) }}" required

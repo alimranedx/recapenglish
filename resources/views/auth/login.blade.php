@@ -3,7 +3,7 @@
 @section('title', 'Sign In - RecapEnglish')
 
 @section('content')
-<div class="min-h-[calc(100vh-16rem)] flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+<div class="min-h-[calc(100vh-16rem)] flex flex-col justify-center py-10 px-4 sm:px-6 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
         <div class="w-12 h-12 mx-auto rounded-2xl bg-gradient-to-tr from-indigo-600 to-sky-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
@@ -17,7 +17,7 @@
     </div>
 
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div class="bg-white py-8 px-6 shadow-xl shadow-slate-200/50 sm:rounded-2xl sm:px-10 border border-slate-200/80">
+        <div class="bg-white py-8 px-5 sm:px-10 shadow-xl shadow-slate-200/50 rounded-3xl border border-slate-200/80">
             
             <!-- Google OAuth Button -->
             <a href="{{ route('auth.google') }}" class="w-full flex items-center justify-center gap-3 py-2.5 px-4 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 text-sm font-semibold shadow-xs transition group">
@@ -86,14 +86,14 @@
             <!-- Quick Demo Credentials Box -->
             <div class="mt-6 pt-5 border-t border-slate-100">
                 <p class="text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-2">Quick Demo Accounts (Click to auto-fill):</p>
-                <div class="grid grid-cols-3 gap-1.5 text-center">
-                    <button type="button" onclick="fillAuth('superadmin@recapenglish.com', 'password123')" class="px-2 py-1.5 bg-amber-50 hover:bg-amber-100 border border-amber-200 text-amber-800 text-[11px] font-bold rounded-lg transition">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center">
+                    <button type="button" onclick="fillAuth('superadmin@recapenglish.com', 'password123')" class="px-2 py-2 bg-amber-50 hover:bg-amber-100 border border-amber-200 text-amber-800 text-xs font-bold rounded-xl transition cursor-pointer">
                         Super Admin
                     </button>
-                    <button type="button" onclick="fillAuth('admin@recapenglish.com', 'password123')" class="px-2 py-1.5 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-800 text-[11px] font-bold rounded-lg transition">
+                    <button type="button" onclick="fillAuth('admin@recapenglish.com', 'password123')" class="px-2 py-2 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-800 text-xs font-bold rounded-xl transition cursor-pointer">
                         Editor Admin
                     </button>
-                    <button type="button" onclick="fillAuth('student@recapenglish.com', 'password123')" class="px-2 py-1.5 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-800 text-[11px] font-bold rounded-lg transition">
+                    <button type="button" onclick="fillAuth('student@recapenglish.com', 'password123')" class="px-2 py-2 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-800 text-xs font-bold rounded-xl transition cursor-pointer">
                         Learner
                     </button>
                 </div>

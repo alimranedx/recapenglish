@@ -5,17 +5,17 @@
 @section('content')
 <div class="max-w-4xl space-y-6">
 
-    <div class="flex items-center justify-between">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
             <span class="text-[10px] font-bold text-indigo-600 uppercase tracking-wider">Question Management</span>
             <h2 class="text-2xl font-black text-slate-900 tracking-tight mt-0.5">Add Practice Question</h2>
         </div>
-        <a href="{{ route('admin.exercises.index') }}" class="px-3.5 py-1.5 border border-slate-200 text-xs font-bold text-slate-700 rounded-xl hover:bg-slate-50 transition">
+        <a href="{{ route('admin.exercises.index') }}" class="px-3.5 py-1.5 border border-slate-200 text-xs font-bold text-slate-700 rounded-xl hover:bg-slate-50 transition shrink-0 self-start sm:self-auto">
             ← Back to All Questions
         </a>
     </div>
 
-    <div class="bg-white rounded-2xl border border-slate-200/80 p-8 shadow-xs">
+    <div class="bg-white rounded-2xl border border-slate-200/80 p-5 sm:p-8 shadow-xs">
         <form action="{{ route('admin.exercises.store') }}" method="POST" class="space-y-6">
             @csrf
 

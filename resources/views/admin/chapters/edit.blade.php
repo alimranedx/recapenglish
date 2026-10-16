@@ -3,7 +3,7 @@
 @section('page_title', 'Edit Chapter: ' . $chapter->title)
 
 @section('content')
-<div class="max-w-2xl bg-white rounded-2xl border border-slate-200/80 p-8 shadow-xs space-y-6">
+<div class="max-w-2xl bg-white rounded-2xl border border-slate-200/80 p-5 sm:p-8 shadow-xs space-y-6">
 
     <div>
         <h2 class="text-lg font-black text-slate-900">Edit Chapter</h2>
