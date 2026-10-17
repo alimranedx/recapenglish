@@ -16,7 +16,7 @@ class SuperAdminMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if (!auth()->check()) {
-            return redirect()->route('login')->with('error', 'Please login to access this area.');
+            return redirect()->route('admin.login')->with('error', 'Please login to access this area.');
         }
 
         if (!auth()->user()->isSuperAdmin()) {

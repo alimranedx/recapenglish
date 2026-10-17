@@ -85,25 +85,31 @@
 
             <!-- Quick Demo Credentials Box -->
             <div class="mt-6 pt-5 border-t border-slate-100">
-                <p class="text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-2">Quick Demo Accounts (Click to auto-fill):</p>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center">
-                    <button type="button" onclick="fillAuth('superadmin@recapenglish.com', 'password123')" class="px-2 py-2 bg-amber-50 hover:bg-amber-100 border border-amber-200 text-amber-800 text-xs font-bold rounded-xl transition cursor-pointer">
-                        Super Admin
-                    </button>
-                    <button type="button" onclick="fillAuth('admin@recapenglish.com', 'password123')" class="px-2 py-2 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-indigo-800 text-xs font-bold rounded-xl transition cursor-pointer">
-                        Editor Admin
-                    </button>
-                    <button type="button" onclick="fillAuth('student@recapenglish.com', 'password123')" class="px-2 py-2 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-800 text-xs font-bold rounded-xl transition cursor-pointer">
-                        Learner
+                <p class="text-[11px] font-bold uppercase tracking-wider text-slate-600 mb-2">Quick Demo Account (Click to auto-fill):</p>
+                <div>
+                    <button type="button" onclick="fillAuth('student@recapenglish.com', 'password123')" class="w-full px-3 py-2.5 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-800 text-xs font-bold rounded-xl transition cursor-pointer flex items-center justify-between">
+                        <span class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                            Learner Account (student@recapenglish.com)
+                        </span>
+                        <span class="text-[10px] text-emerald-700 font-semibold bg-emerald-100 px-2 py-0.5 rounded-md">Auto-fill</span>
                     </button>
                 </div>
             </div>
 
-            <div class="mt-5 text-center text-xs text-slate-600">
-                Don't have an account? 
-                <a href="{{ route('register') }}" class="font-bold text-indigo-600 hover:text-indigo-500 ml-1">
-                    Sign up now
-                </a>
+            <div class="mt-5 text-center text-xs text-slate-600 space-y-2">
+                <div>
+                    Don't have an account? 
+                    <a href="{{ route('register') }}" class="font-bold text-indigo-600 hover:text-indigo-500 ml-1">
+                        Sign up now
+                    </a>
+                </div>
+                <div class="pt-3 border-t border-slate-100 flex items-center justify-center">
+                    <a href="{{ route('admin.login') }}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200 text-[11px] font-bold text-slate-700 hover:text-indigo-600 transition">
+                        <svg class="w-3.5 h-3.5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                        <span>Staff &amp; Editors: Go to Admin Sign-In &rarr;</span>
+                    </a>
+                </div>
             </div>
 
         </div>

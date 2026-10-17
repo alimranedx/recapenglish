@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\SkillTestConfigController;
 use App\Http\Controllers\Admin\SkillTestReportController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\TopicController;
+use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\GoogleAuthController;
 use App\Http\Controllers\ReaderController;
@@ -60,6 +61,17 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // Google OAuth via Socialite
 Route::get('/auth/google', [GoogleAuthController::class, 'redirect'])->name('auth.google');
 Route::get('/auth/google/callback', [GoogleAuthController::class, 'callback'])->name('auth.google.callback');
+
+/*
+|--------------------------------------------------------------------------
+| Admin Authentication Routes (Guest Login & Console Logout)
+|--------------------------------------------------------------------------
+*/
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('/login', [AdminAuthController::class, 'showLogin'])->name('login');
+    Route::post('/login', [AdminAuthController::class, 'login'])->name('login.submit');
+    Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
+});
 
 /*
 |--------------------------------------------------------------------------

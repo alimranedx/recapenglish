@@ -12,6 +12,10 @@ class GoogleAuthController extends Controller
 {
     public function redirect()
     {
+        if (Auth::check() && Auth::user()->isAdmin()) {
+            return redirect()->route('admin.dashboard')->with('info', 'You are already logged in as an Administrator.');
+        }
+
         if (empty(config('services.google.client_id')) || empty(config('services.google.client_secret'))) {
             return redirect()->route('login')->with('warning', 'Google OAuth credentials (GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET) are not configured in .env yet. Please configure them in .env or login with email & password.');
         }
@@ -32,6 +36,11 @@ class GoogleAuthController extends Controller
             ->orWhere('email', $googleUser->getEmail())
             ->first();
 
+        // Administrator accounts are strictly not allowed to log in via Google OAuth
+        if ($user && $user->isAdmin()) {
+            return redirect()->route('admin.login')->with('error', 'Google Sign-In is not allowed for administrator accounts. Please sign in through the Admin Console using your administrator email and password.');
+        }
+
         if ($user) {
             $user->update([
                 'google_id' => $googleUser->getId(),
@@ -50,10 +59,6 @@ class GoogleAuthController extends Controller
         }
 
         Auth::login($user, true);
-
-        if ($user->isAdmin()) {
-            return redirect()->route('admin.dashboard');
-        }
 
         if ($user->last_topic_id && $user->lastTopic) {
             return redirect()->route('reader.topic', $user->lastTopic->slug);
