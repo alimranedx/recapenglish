@@ -1,0 +1,70 @@
+name: Deploy RecapEnglish to Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Build & Deploy to cPanel via SSH
+
+    steps:
+      - name: ⬇️ Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🐘 Setup PHP 8.2
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite, bcmath, curl
+          coverage: none
+
+      - name: 📦 Install Production Composer Dependencies
+        run: composer install --no-dev --prefer-dist --optimize-autoloader --no-progress --no-interaction
+
+      - name: 🟢 Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: 🎨 Build Frontend Production Assets (Vite & Tailwind)
+        run: |
+          npm ci
+          npm run build
+
+      - name: 🚀 Sync Files to cPanel via rsync (SSH)
+        uses: easingthemes/ssh-deploy@main
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
+          REMOTE_HOST: ${{ secrets.SSH_HOST }}
+          REMOTE_USER: ${{ secrets.SSH_USER }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          TARGET: '/home/shopbusk/recapenglish.shopbusket.com'
+          EXCLUDE: |
+            /node_modules/
+            /.git/
+            /.github/
+            /.env
+            /.env.production
+            /.env.example
+            /database/database.sqlite
+            /storage/logs/
+            /storage/framework/sessions/
+            /tests/
+
+      - name: ⚡ Optimize & Cache on Server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd /home/shopbusk/recapenglish.shopbusket.com
+            php artisan optimize:clear
+            php artisan config:cache
+            php artisan route:cache
+            php artisan view:cache
